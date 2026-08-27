@@ -18,7 +18,6 @@ import puneAsset from "@/assets/city-pune.jpg.asset.json";
 import mumbaiAsset from "@/assets/city-mumbai.jpg.asset.json";
 import kolhapurAsset from "@/assets/city-kolhapur.jpg.asset.json";
 import nashikAsset from "@/assets/city-nashik.jpg.asset.json";
-import henFamily from "@/assets/hen-family.png";
 
 type Training = {
   id: string;
@@ -90,8 +89,8 @@ const BENEFITS = [
 
 function TrainingCard({ t }: { t: Training }) {
   return (
-    <article className="group relative w-[86vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-ink shadow-[0_18px_45px_-24px_rgba(20,30,20,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(20,30,20,0.6)] sm:w-[19rem] lg:w-[21rem]">
-      <div className="relative h-60 overflow-hidden">
+    <article className="group relative w-[86vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-ink shadow-[0_18px_45px_-24px_rgba(20,30,20,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(20,30,20,0.6)] sm:w-[20.5rem] lg:w-[23rem]">
+      <div className="relative h-64 overflow-hidden">
         <img
           src={t.image}
           alt={`${t.city} city landmark`}
@@ -105,8 +104,8 @@ function TrainingCard({ t }: { t: Training }) {
           {t.status}
         </span>
         <div className="absolute inset-x-4 bottom-3">
-          <h3 className="font-display text-3xl font-extrabold leading-none text-cream">{t.city}</h3>
-          <p className="mt-1.5 text-sm text-cream/80">Gavran Poultry Farming Training</p>
+          <h3 className="font-display text-4xl font-extrabold leading-none text-cream">{t.city}</h3>
+          <p className="mt-2 text-base text-cream/85">Gavran Poultry Farming Training</p>
         </div>
       </div>
 
@@ -114,24 +113,24 @@ function TrainingCard({ t }: { t: Training }) {
         <div className="flex items-start gap-4 border-b border-cream/10 pb-4 text-cream">
           <div className="flex items-start gap-2">
             <CalendarDays className="mt-0.5 h-4 w-4 text-gold" />
-            <span className="text-sm leading-tight">
+            <span className="text-[15px] leading-tight">
               {t.date}
               <span className="block text-xs text-cream/60">{t.day}</span>
             </span>
           </div>
           <div className="flex items-start gap-2 border-l border-cream/10 pl-4">
             <Clock className="mt-0.5 h-4 w-4 text-gold" />
-            <span className="text-sm leading-tight">{t.time}</span>
+            <span className="text-[15px] leading-tight">{t.time}</span>
           </div>
         </div>
 
-        <p className="py-3 text-xl font-semibold text-cream">₹ {t.price}</p>
+        <p className="py-3 text-2xl font-semibold text-cream">₹ {t.price}</p>
 
         <a
           href={t.whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-lg bg-forest px-5 py-3 text-sm font-medium text-cream transition-all duration-300 hover:bg-gold hover:text-ink"
+          className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-lg bg-forest px-5 py-3.5 text-base font-medium text-cream transition-all duration-300 hover:bg-gold hover:text-ink"
         >
           <MessageCircle className="h-4 w-4" />
           Join WhatsApp Group
