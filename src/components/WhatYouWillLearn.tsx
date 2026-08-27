@@ -87,6 +87,31 @@ const TIMELINE = [
   { icon: Clock, label: "6:30 PM", sub: "Training Ends" },
 ];
 
+const INCLUDES: { icon: typeof Home; title: string; sub: string; gold?: boolean }[] = [
+  {
+    icon: GraduationCap,
+    title: "एक दिवसाचे प्रात्यक्षिक प्रशिक्षण",
+    sub: "फार्मवर प्रत्यक्ष हँड्स-ऑन प्रशिक्षण",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "शाकाहारी आणि मांसाहारी जेवण",
+    sub: "स्वादिष्ट जेवण समावेश",
+    gold: true,
+  },
+  {
+    icon: Coffee,
+    title: "दिवसभर चहा आणि नाश्ता",
+    sub: "चहा, स्नॅक्स आणि रिफ्रेशमेंट्स",
+    gold: true,
+  },
+  { icon: BookOpen, title: "प्रशिक्षण साहित्य आणि नोट्स", sub: "अभ्यास साहित्य आणि संदर्भ नोट्स" },
+  { icon: Wifi, title: "1 वर्ष ऑनलाइन प्रवेश", sub: "टेलिग्राम ट्रेनिंग ग्रुप आणि सपोर्ट", gold: true },
+  { icon: BadgeCheck, title: "शासन मान्यता प्रमाणपत्र", sub: "प्रशिक्षणानंतर प्रमाणपत्र मिळेल" },
+];
+
+
+
 function useReveal<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
   const [shown, setShown] = useState(false);
