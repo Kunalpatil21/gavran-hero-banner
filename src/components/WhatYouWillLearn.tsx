@@ -211,8 +211,8 @@ export default function WhatYouWillLearn() {
             className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-forest/10 blur-3xl"
           />
 
-          <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-            <div className="flex flex-col">
+          <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-start">
+            <div className="flex min-w-0 flex-col">
               <h3 className="font-display text-3xl font-extrabold leading-snug text-forest sm:text-4xl lg:text-[2.9rem]">
                 एक दिवस. प्रत्यक्ष फार्मवर.
                 <br />
