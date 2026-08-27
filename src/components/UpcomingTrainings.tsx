@@ -90,7 +90,7 @@ const BENEFITS = [
 function TrainingCard({ t }: { t: Training }) {
   return (
     <article className="group relative w-[86vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-ink shadow-[0_18px_45px_-24px_rgba(20,30,20,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(20,30,20,0.6)] sm:w-[19rem] lg:w-[21rem]">
-      <div className="relative h-52 overflow-hidden">
+      <div className="relative h-60 overflow-hidden">
         <img
           src={t.image}
           alt={`${t.city} city landmark`}
@@ -99,7 +99,7 @@ function TrainingCard({ t }: { t: Training }) {
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--ink-solid)_18%,color-mix(in_oklab,var(--ink-solid)_55%,transparent)_42%,transparent_72%)]" />
         <span className="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-ink">
           {t.status}
         </span>
