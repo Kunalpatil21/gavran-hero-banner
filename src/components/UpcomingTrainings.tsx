@@ -206,7 +206,7 @@ export default function UpcomingTrainings() {
             type="button"
             onClick={() => step(1)}
             aria-label="Next trainings"
-            className="absolute -right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:bg-gold hover:text-ink lg:grid xl:-right-6"
+            className="absolute -right-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:scale-105 hover:bg-gold hover:text-ink sm:h-12 sm:w-12 lg:-right-5 xl:-right-7"
           >
             <ArrowRight className="h-5 w-5" />
           </button>
