@@ -7,7 +7,7 @@ import {
   Briefcase,
   Clock,
   Leaf,
-  ArrowRight,
+  
   Users,
   GraduationCap,
   UtensilsCrossed,
