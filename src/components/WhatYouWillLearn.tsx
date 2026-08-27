@@ -23,7 +23,7 @@ import health from "@/assets/topic-health.jpg.asset.json";
 import feed from "@/assets/topic-feed.jpg.asset.json";
 import business from "@/assets/topic-business.jpg.asset.json";
 import session from "@/assets/training-session.jpg.asset.json";
-import henFamily from "@/assets/hen-family.png";
+import SectionDivider from "@/components/SectionDivider";
 
 type Topic = {
   id: string;
