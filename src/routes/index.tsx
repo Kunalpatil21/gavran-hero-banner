@@ -5,6 +5,7 @@ import { ArrowRight, ArrowDown, Menu, X, GraduationCap, Home, Award } from "luci
 import heroAsset from "@/assets/hero-farm.png.asset.json";
 import logoAsset from "@/assets/dwit-logo.png";
 import UpcomingTrainings from "@/components/UpcomingTrainings";
+import WhatYouWillLearn from "@/components/WhatYouWillLearn";
 
 export const Route = createFileRoute("/")({
   head: () => ({
