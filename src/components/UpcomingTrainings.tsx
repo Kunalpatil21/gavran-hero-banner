@@ -99,7 +99,7 @@ function TrainingCard({ t }: { t: Training }) {
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--ink-solid)_18%,color-mix(in_oklab,var(--ink-solid)_55%,transparent)_42%,transparent_72%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--color-ink)_18%,color-mix(in_oklab,var(--color-ink)_55%,transparent)_42%,transparent_74%)]" />
         <span className="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-ink">
           {t.status}
         </span>
