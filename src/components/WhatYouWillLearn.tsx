@@ -1,5 +1,21 @@
 import { useEffect, useRef, useState } from "react";
-import { Home, Bird, HeartPulse, Wheat, Briefcase, Clock, Leaf, ArrowRight } from "lucide-react";
+import {
+  Home,
+  Bird,
+  HeartPulse,
+  Wheat,
+  Briefcase,
+  Clock,
+  Leaf,
+  ArrowRight,
+  Users,
+  GraduationCap,
+  UtensilsCrossed,
+  Coffee,
+  BookOpen,
+  Wifi,
+  BadgeCheck,
+} from "lucide-react";
 
 import farmSetup from "@/assets/topic-farm-setup.jpg.asset.json";
 import chicks from "@/assets/topic-chicks.jpg.asset.json";
