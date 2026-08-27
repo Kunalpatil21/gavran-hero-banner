@@ -18,7 +18,6 @@ import puneAsset from "@/assets/city-pune.jpg.asset.json";
 import mumbaiAsset from "@/assets/city-mumbai.jpg.asset.json";
 import kolhapurAsset from "@/assets/city-kolhapur.jpg.asset.json";
 import nashikAsset from "@/assets/city-nashik.jpg.asset.json";
-import henFamily from "@/assets/hen-family.png";
 
 type Training = {
   id: string;
@@ -90,8 +89,8 @@ const BENEFITS = [
 
 function TrainingCard({ t }: { t: Training }) {
   return (
-    <article className="group relative w-[86vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-ink shadow-[0_18px_45px_-24px_rgba(20,30,20,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(20,30,20,0.6)] sm:w-[19rem] lg:w-[21rem]">
-      <div className="relative h-60 overflow-hidden">
+    <article className="group relative w-[86vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-ink shadow-[0_18px_45px_-24px_rgba(20,30,20,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(20,30,20,0.6)] sm:w-[20.5rem] lg:w-[23rem]">
+      <div className="relative h-64 overflow-hidden">
         <img
           src={t.image}
           alt={`${t.city} city landmark`}
@@ -105,8 +104,8 @@ function TrainingCard({ t }: { t: Training }) {
           {t.status}
         </span>
         <div className="absolute inset-x-4 bottom-3">
-          <h3 className="font-display text-3xl font-extrabold leading-none text-cream">{t.city}</h3>
-          <p className="mt-1.5 text-sm text-cream/80">Gavran Poultry Farming Training</p>
+          <h3 className="font-display text-4xl font-extrabold leading-none text-cream">{t.city}</h3>
+          <p className="mt-2 text-base text-cream/85">Gavran Poultry Farming Training</p>
         </div>
       </div>
 
@@ -114,24 +113,24 @@ function TrainingCard({ t }: { t: Training }) {
         <div className="flex items-start gap-4 border-b border-cream/10 pb-4 text-cream">
           <div className="flex items-start gap-2">
             <CalendarDays className="mt-0.5 h-4 w-4 text-gold" />
-            <span className="text-sm leading-tight">
+            <span className="text-[15px] leading-tight">
               {t.date}
               <span className="block text-xs text-cream/60">{t.day}</span>
             </span>
           </div>
           <div className="flex items-start gap-2 border-l border-cream/10 pl-4">
             <Clock className="mt-0.5 h-4 w-4 text-gold" />
-            <span className="text-sm leading-tight">{t.time}</span>
+            <span className="text-[15px] leading-tight">{t.time}</span>
           </div>
         </div>
 
-        <p className="py-3 text-xl font-semibold text-cream">₹ {t.price}</p>
+        <p className="py-3 text-2xl font-semibold text-cream">₹ {t.price}</p>
 
         <a
           href={t.whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-lg bg-forest px-5 py-3 text-sm font-medium text-cream transition-all duration-300 hover:bg-gold hover:text-ink"
+          className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-lg bg-forest px-5 py-3.5 text-base font-medium text-cream transition-all duration-300 hover:bg-gold hover:text-ink"
         >
           <MessageCircle className="h-4 w-4" />
           Join WhatsApp Group
@@ -178,74 +177,74 @@ export default function UpcomingTrainings() {
     scrollToIndex(Math.min(TRAININGS.length - 1, Math.max(0, active + dir)));
 
   return (
-    <section id="training" className="relative overflow-hidden bg-cream pt-20 sm:pt-24">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-16">
-        <header className="mx-auto max-w-3xl text-center">
-          <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.2em] text-forest">
-            <Leaf className="h-4 w-4 text-forest" />
-            UPCOMING TRAININGS
-          </p>
-          <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-forest sm:text-4xl lg:text-5xl">
-            Practical Gavran Poultry Farming Training Across Maharashtra
-          </h2>
-          <p className="mt-4 text-base text-forest/70 sm:text-lg">
-            Join the next training session near you and start your journey towards successful
-            poultry farming.
-          </p>
+    <section id="training" className="relative overflow-hidden bg-cream pt-16 sm:pt-20">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+        <header className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl">
+            <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.2em] text-gold-deep">
+              <Leaf className="h-4 w-4" />
+              UPCOMING TRAININGS
+            </p>
+            <h2 className="mt-3 font-display text-4xl font-extrabold leading-[1.15] text-forest sm:text-5xl lg:text-[3.4rem]">
+              Practical Gavran Poultry Farming Training Across Maharashtra
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-forest/75 sm:text-xl">
+              Join the next training session near you and start your journey towards successful
+              poultry farming.
+            </p>
+          </div>
+
+          <div className="flex shrink-0 items-center gap-3">
+            <button
+              type="button"
+              onClick={() => step(-1)}
+              aria-label="Previous trainings"
+              className="grid h-12 w-12 place-items-center rounded-full border border-forest/20 bg-white text-forest transition-all duration-300 hover:bg-forest hover:text-cream"
+            >
+              <ArrowLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => step(1)}
+              aria-label="Next trainings"
+              className="grid h-12 w-12 place-items-center rounded-full border border-forest/20 bg-white text-forest transition-all duration-300 hover:bg-forest hover:text-cream"
+            >
+              <ArrowRight className="h-5 w-5" />
+            </button>
+            <a
+              href="#training"
+              className="group hidden items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-base font-medium text-cream transition-all duration-300 hover:bg-gold-deep sm:inline-flex"
+            >
+              View All Trainings
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </div>
         </header>
 
-        <div className="relative mt-12">
-          <button
-            type="button"
-            onClick={() => step(-1)}
-            aria-label="Previous trainings"
-            className="absolute -left-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:scale-105 hover:bg-gold hover:text-ink sm:h-12 sm:w-12 lg:-left-5 xl:-left-7"
-          >
-            <ArrowLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            onClick={() => step(1)}
-            aria-label="Next trainings"
-            className="absolute -right-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:scale-105 hover:bg-gold hover:text-ink sm:h-12 sm:w-12 lg:-right-5 xl:-right-7"
-          >
-            <ArrowRight className="h-5 w-5" />
-          </button>
-
-          <div
-            ref={trackRef}
-            className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2"
-          >
-            {TRAININGS.map((t) => (
-              <TrainingCard key={t.id} t={t} />
-            ))}
-          </div>
+        <div
+          ref={trackRef}
+          className="no-scrollbar mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2"
+        >
+          {TRAININGS.map((t) => (
+            <TrainingCard key={t.id} t={t} />
+          ))}
         </div>
 
-        <div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
-          <div className="flex items-center gap-2 sm:order-1">
-            {TRAININGS.map((t, i) => (
-              <button
-                key={t.id}
-                type="button"
-                onClick={() => scrollToIndex(i)}
-                aria-label={`Go to ${t.city} training`}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  i === active ? "w-6 bg-forest" : "w-2.5 bg-forest/25 hover:bg-forest/50"
-                }`}
-              />
-            ))}
-          </div>
-          <a
-            href="#training"
-            className="group inline-flex items-center gap-3 rounded-lg border border-forest/25 bg-white/60 px-6 py-3 text-sm font-medium text-forest transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-white sm:order-2"
-          >
-            View All Trainings
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+        <div className="mt-6 flex items-center justify-center gap-2">
+          {TRAININGS.map((t, i) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => scrollToIndex(i)}
+              aria-label={`Go to ${t.city} training`}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                i === active ? "w-7 bg-forest" : "w-2.5 bg-forest/25 hover:bg-forest/50"
+              }`}
+            />
+          ))}
         </div>
 
-        <ul className="mt-12 grid gap-y-8 rounded-2xl bg-white/70 px-6 py-8 shadow-[0_18px_50px_-30px_rgba(20,40,20,0.5)] sm:grid-cols-2 lg:grid-cols-6 lg:gap-0">
+        <ul className="mt-10 grid gap-y-8 rounded-2xl bg-white px-6 py-8 shadow-[0_18px_50px_-30px_rgba(20,40,20,0.5)] sm:grid-cols-2 lg:grid-cols-6 lg:gap-0">
           {BENEFITS.map(({ icon: Icon, title, desc }, i) => (
             <li
               key={title}
@@ -253,40 +252,14 @@ export default function UpcomingTrainings() {
                 i > 0 ? "lg:border-l lg:border-forest/12" : ""
               }`}
             >
-              <Icon className="mx-auto h-7 w-7 text-gold-deep" />
-              <p className="mt-3 text-sm font-semibold text-forest">{title}</p>
-              <p className="mt-1 text-xs text-forest/60">{desc}</p>
+              <Icon className="mx-auto h-8 w-8 text-gold-deep" />
+              <p className="mt-3 text-[15px] font-semibold leading-snug text-forest">{title}</p>
+              <p className="mt-1 text-[13px] leading-snug text-forest/60">{desc}</p>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="relative mt-14 h-28 sm:h-36">
-        <svg
-          className="absolute inset-x-0 bottom-0 h-full w-full"
-          viewBox="0 0 1440 160"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M0,74 C240,10 480,10 720,52 C960,94 1200,116 1440,58 L1440,160 L0,160 Z"
-            className="fill-gold"
-          />
-          <path
-            d="M0,88 C240,24 480,24 720,66 C960,108 1200,130 1440,72 L1440,160 L0,160 Z"
-            className="fill-forest"
-          />
-        </svg>
-        <img
-          src={henFamily}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          width={1024}
-          height={512}
-          className="absolute bottom-1 left-1/2 h-20 w-auto -translate-x-1/2 opacity-90 sm:h-28"
-        />
-      </div>
     </section>
   );
 }

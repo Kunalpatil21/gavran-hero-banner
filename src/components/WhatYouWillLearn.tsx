@@ -1,22 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import {
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Home,
-  Bird,
-  HeartPulse,
-  Wheat,
-  Briefcase,
-  Clock,
-  UtensilsCrossed,
-  Coffee,
-  BookOpen,
-  Send,
-  BadgeCheck,
-  GraduationCap,
-  Leaf,
-} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Home, Bird, HeartPulse, Wheat, Briefcase, Clock, Leaf, ArrowRight } from "lucide-react";
 
 import farmSetup from "@/assets/topic-farm-setup.jpg.asset.json";
 import chicks from "@/assets/topic-chicks.jpg.asset.json";
@@ -24,6 +7,7 @@ import health from "@/assets/topic-health.jpg.asset.json";
 import feed from "@/assets/topic-feed.jpg.asset.json";
 import business from "@/assets/topic-business.jpg.asset.json";
 import session from "@/assets/training-session.jpg.asset.json";
+import henFamily from "@/assets/hen-family.png";
 
 type Topic = {
   id: string;
@@ -41,7 +25,7 @@ const TOPICS: Topic[] = [
     icon: Home,
     image: farmSetup.url,
     alt: "Bamboo and wood poultry shed on a farm",
-    points: ["फार्म बनवण्याचे नियम", "शेडची उभारणी", "पिल्ले येण्याआधीची तयारी", "कंपाऊंड नियोजन"],
+    points: ["फार्म बनवण्याचे नियम", "शेडची उभारणी", "पिल्ले येण्याआधीची तयारी"],
   },
   {
     id: "rearing",
@@ -49,7 +33,7 @@ const TOPICS: Topic[] = [
     icon: Bird,
     image: chicks.url,
     alt: "Two yellow chicks on farm ground",
-    points: ["पिल्लांचे संगोपन", "ऋतूनुसार तापमान", "ऋतूनुसार व्यवस्थापन", "विविध कोंबडी जाती"],
+    points: ["पिल्लांचे संगोपन", "ऋतूनुसार व्यवस्थापन", "विविध कोंबडी जाती"],
   },
   {
     id: "health",
@@ -57,7 +41,7 @@ const TOPICS: Topic[] = [
     icon: HeartPulse,
     image: health.url,
     alt: "Healthy country hen standing in a farmyard",
-    points: ["कोंबड्यांचे रोग", "रोगाची लक्षणे", "औषधोपचार", "लसीकरण"],
+    points: ["रोगाची लक्षणे", "औषधोपचार", "लसीकरण वेळापत्रक"],
   },
   {
     id: "feed",
@@ -65,7 +49,7 @@ const TOPICS: Topic[] = [
     icon: Wheat,
     image: feed.url,
     alt: "Bowl of poultry feed with hens behind",
-    points: ["पिल्लांचे खाद्य नियोजन", "मोठ्या पक्ष्यांचे खाद्य", "खाद्य खर्च कमी करणे", "अझोला व BSF फार्मिंग"],
+    points: ["खाद्य नियोजन", "खर्च कमी करणे", "अझोला व BSF फार्मिंग"],
   },
   {
     id: "business",
@@ -73,7 +57,7 @@ const TOPICS: Topic[] = [
     icon: Briefcase,
     image: business.url,
     alt: "Free range flock of country hens",
-    points: ["कोंबड्या विकण्याची पद्धत", "नफा व खर्चाचे नियोजन", "फार्म सुरक्षा", "आवश्यक मार्गदर्शन"],
+    points: ["विक्रीची पद्धत", "नफा व खर्च नियोजन", "फार्म सुरक्षा"],
   },
 ];
 
@@ -85,15 +69,6 @@ const TIMELINE = [
   { icon: Wheat, label: "Feed Planning", sub: "Cost control" },
   { icon: Briefcase, label: "Business Guidance", sub: "Selling & profit" },
   { icon: Clock, label: "6:30 PM", sub: "Training Ends" },
-];
-
-const PERKS = [
-  { icon: GraduationCap, title: "One Day Practical Training", desc: "Hands-on learning at the farm" },
-  { icon: UtensilsCrossed, title: "Veg & Non-Veg Lunch", desc: "Delicious lunch included" },
-  { icon: Coffee, title: "2 Times Tea & Snacks", desc: "Tea, snacks & refreshments" },
-  { icon: BookOpen, title: "Training Material & Notes", desc: "Study material & reference notes" },
-  { icon: Send, title: "1 Year Online Access", desc: "Telegram training access" },
-  { icon: BadgeCheck, title: "Government Certificate", desc: "Certificate after training" },
 ];
 
 function useReveal<T extends HTMLElement>() {
@@ -109,7 +84,7 @@ function useReveal<T extends HTMLElement>() {
           io.disconnect();
         }
       },
-      { threshold: 0.12 },
+      { threshold: 0.1 },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -118,137 +93,76 @@ function useReveal<T extends HTMLElement>() {
 }
 
 export default function WhatYouWillLearn() {
-  const trackRef = useRef<HTMLDivElement | null>(null);
-  const [active, setActive] = useState(0);
   const topics = useReveal<HTMLDivElement>();
   const experience = useReveal<HTMLDivElement>();
 
-  const scrollBy = useCallback((dir: -1 | 1) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>("[data-card]");
-    const step = card ? card.offsetWidth + 24 : el.clientWidth * 0.8;
-    el.scrollBy({ left: dir * step, behavior: "smooth" });
-  }, []);
-
-  const onScroll = useCallback(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>("[data-card]");
-    const step = card ? card.offsetWidth + 24 : 1;
-    setActive(Math.round(el.scrollLeft / step));
-  }, []);
-
   return (
-    <section id="learn" className="relative bg-cream py-20 sm:py-24">
-      <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
+    <section id="learn" className="relative overflow-hidden bg-cream pt-16 sm:pt-20">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-medium tracking-[0.32em] text-gold-deep">WHAT YOU WILL LEARN</p>
-          <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-forest sm:text-4xl lg:text-5xl">
+          <p className="text-sm font-semibold tracking-[0.28em] text-gold-deep">
+            WHAT YOU WILL LEARN
+          </p>
+          <h2 className="mt-3 font-display text-4xl font-extrabold leading-[1.2] text-forest sm:text-5xl lg:text-[3.4rem]">
             तुम्हाला नक्की काय शिकायला मिळणार?
           </h2>
-          <div className="mt-5 flex items-center justify-center gap-3">
+          <div className="mt-4 flex items-center justify-center gap-3">
             <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold" />
             <Leaf className="h-4 w-4 text-gold-deep" />
             <span className="h-px w-16 bg-gradient-to-l from-transparent to-gold" />
           </div>
         </div>
 
-        {/* Carousel */}
+        {/* Topic grid */}
         <div
           ref={topics.ref}
-          className={`relative mt-12 transition-all duration-700 ${
+          className={`mt-10 grid gap-6 transition-all duration-700 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 ${
             topics.shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
-          <button
-            type="button"
-            onClick={() => scrollBy(-1)}
-            aria-label="Previous topics"
-            className="absolute -left-1 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:scale-105 hover:bg-forest/90 lg:-left-6"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollBy(1)}
-            aria-label="Next topics"
-            className="absolute -right-1 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:scale-105 hover:bg-forest/90 lg:-right-6"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-
-          <div
-            ref={trackRef}
-            onScroll={onScroll}
-            className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-1 pb-4 lg:px-8"
-          >
-            {TOPICS.map(({ id, title, icon: Icon, image, alt, points }) => (
-              <article
-                key={id}
-                data-card
-                className="group w-[86%] shrink-0 snap-start overflow-hidden rounded-2xl border border-forest/10 bg-white shadow-[0_16px_40px_-28px_rgba(20,40,20,0.6)] transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/50 hover:shadow-[0_26px_60px_-28px_rgba(20,40,20,0.7)] sm:w-[46%] lg:w-[calc((100%-72px)/4)] xl:w-[calc((100%-96px)/5)]"
-              >
-                <div className="flex items-center gap-3 px-5 pt-5">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-forest text-cream transition-colors duration-300 group-hover:bg-gold-deep">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h3 className="font-display text-lg font-bold text-forest">{title}</h3>
-                </div>
-                <div className="mt-4 overflow-hidden px-5">
-                  <img
-                    src={image}
-                    alt={alt}
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                    className="h-40 w-full rounded-xl object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <ul className="space-y-2.5 px-5 py-5">
+          {TOPICS.map(({ id, title, icon: Icon, image, alt, points }) => (
+            <article
+              key={id}
+              className="group overflow-hidden rounded-2xl border border-forest/10 bg-white shadow-[0_16px_40px_-28px_rgba(20,40,20,0.6)] transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/60 hover:shadow-[0_26px_60px_-28px_rgba(20,40,20,0.7)]"
+            >
+              <div className="relative h-44 overflow-hidden">
+                <img
+                  src={image}
+                  alt={alt}
+                  loading="lazy"
+                  width={800}
+                  height={600}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <span className="absolute bottom-3 left-4 grid h-12 w-12 place-items-center rounded-full bg-forest text-cream shadow-lg transition-colors duration-300 group-hover:bg-gold-deep">
+                  <Icon className="h-6 w-6" />
+                </span>
+              </div>
+              <div className="px-5 pb-6 pt-4">
+                <h3 className="font-display text-xl font-bold text-forest">{title}</h3>
+                <ul className="mt-3 space-y-2.5">
                   {points.map((p) => (
-                    <li key={p} className="flex items-start gap-2.5 text-sm text-forest/80">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-deep" />
+                    <li key={p} className="flex items-start gap-2.5 text-[15px] text-forest/80">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-deep" />
                       {p}
                     </li>
                   ))}
                 </ul>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-4 flex justify-center gap-2">
-            {TOPICS.map((t, i) => (
-              <span
-                key={t.id}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  i === active ? "w-6 bg-forest" : "w-2 bg-forest/25"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-8 flex justify-center">
-          <a
-            href="#learn"
-            className="group inline-flex items-center gap-4 rounded-lg bg-forest px-8 py-4 text-sm font-medium text-cream shadow-[0_18px_40px_-22px_rgba(20,40,20,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-forest/90"
-          >
-            सर्व विषय पहा
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+              </div>
+            </article>
+          ))}
         </div>
 
         {/* Training experience */}
         <div
           ref={experience.ref}
-          className={`mt-16 grid gap-8 rounded-3xl border border-forest/10 bg-white/70 p-6 shadow-[0_24px_70px_-40px_rgba(20,40,20,0.7)] transition-all duration-700 sm:p-8 lg:grid-cols-[1.15fr_1fr] lg:items-stretch ${
+          className={`mt-14 grid gap-8 rounded-3xl border border-forest/10 bg-white p-6 shadow-[0_24px_70px_-40px_rgba(20,40,20,0.7)] transition-all duration-700 sm:p-8 lg:grid-cols-[1.1fr_1fr] lg:items-stretch ${
             experience.shown ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
           <div className="flex flex-col">
-            <h3 className="font-display text-2xl font-extrabold leading-snug text-forest sm:text-3xl lg:text-4xl">
+            <h3 className="font-display text-3xl font-extrabold leading-snug text-forest sm:text-4xl lg:text-[2.75rem]">
               एक दिवस. प्रत्यक्ष फार्मवर.
               <br />
               आयुष्यभरासाठी ज्ञान.
@@ -256,19 +170,18 @@ export default function WhatYouWillLearn() {
             <div className="mt-4 flex items-center gap-3">
               <span className="h-px w-14 bg-gradient-to-r from-transparent to-gold" />
               <Leaf className="h-4 w-4 text-gold-deep" />
-              <span className="h-px w-14 bg-gradient-to-l from-transparent to-gold" />
+              <span className="h-px w-14 flex-1 bg-gradient-to-l from-transparent to-gold" />
             </div>
 
-            {/* Timeline */}
-            <ol className="no-scrollbar mt-7 flex gap-4 overflow-x-auto rounded-2xl bg-cream/70 p-5 sm:gap-2">
+            <ol className="no-scrollbar mt-7 flex gap-3 overflow-x-auto rounded-2xl bg-cream p-5">
               {TIMELINE.map(({ icon: Icon, label, sub }, i) => (
-                <li key={label} className="flex shrink-0 items-center gap-4 sm:gap-2">
+                <li key={label} className="flex shrink-0 items-center gap-3">
                   <div className="w-24 text-center">
-                    <span className="mx-auto grid h-11 w-11 place-items-center rounded-full border border-forest/15 bg-white text-forest shadow-sm transition-colors duration-300 hover:border-gold hover:text-gold-deep">
+                    <span className="mx-auto grid h-12 w-12 place-items-center rounded-full border border-forest/15 bg-white text-forest shadow-sm transition-colors duration-300 hover:border-gold hover:text-gold-deep">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <p className="mt-2 text-[13px] font-semibold leading-tight text-forest">{label}</p>
-                    <p className="text-[11px] leading-tight text-forest/60">{sub}</p>
+                    <p className="mt-2 text-sm font-semibold leading-tight text-forest">{label}</p>
+                    <p className="text-xs leading-tight text-forest/60">{sub}</p>
                   </div>
                   {i < TIMELINE.length - 1 && (
                     <ArrowRight className="h-4 w-4 shrink-0 text-forest/30" aria-hidden="true" />
@@ -277,23 +190,7 @@ export default function WhatYouWillLearn() {
               ))}
             </ol>
 
-            {/* Perks */}
-            <ul className="mt-6 grid gap-x-4 gap-y-6 rounded-2xl bg-cream/70 p-5 sm:grid-cols-3 lg:grid-cols-6">
-              {PERKS.map(({ icon: Icon, title, desc }, i) => (
-                <li
-                  key={title}
-                  className={`px-1 text-center transition-transform duration-300 hover:-translate-y-1 ${
-                    i > 0 ? "lg:border-l lg:border-forest/10" : ""
-                  }`}
-                >
-                  <Icon className="mx-auto h-6 w-6 text-gold-deep" />
-                  <p className="mt-2 text-[12px] font-semibold leading-tight text-forest">{title}</p>
-                  <p className="mt-1 text-[11px] leading-tight text-forest/60">{desc}</p>
-                </li>
-              ))}
-            </ul>
-
-            <p className="mt-6 text-center text-sm text-forest/70">
+            <p className="mt-6 text-center text-base text-forest/70">
               <span className="text-gold-deep">✦</span> प्रत्यक्ष अनुभव • योग्य मार्गदर्शन • यशस्वी
               कुक्कुटपालन <span className="text-gold-deep">✦</span>
             </p>
@@ -306,10 +203,38 @@ export default function WhatYouWillLearn() {
               loading="lazy"
               width={1200}
               height={1200}
-              className="h-64 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-80 lg:h-full"
+              className="h-72 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-96 lg:h-full"
             />
           </div>
         </div>
+      </div>
+
+      {/* Closing wave divider */}
+      <div className="relative mt-14 h-28 sm:h-36">
+        <svg
+          className="absolute inset-x-0 bottom-0 h-full w-full"
+          viewBox="0 0 1440 160"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M0,74 C240,10 480,10 720,52 C960,94 1200,116 1440,58 L1440,160 L0,160 Z"
+            className="fill-gold"
+          />
+          <path
+            d="M0,88 C240,24 480,24 720,66 C960,108 1200,130 1440,72 L1440,160 L0,160 Z"
+            className="fill-forest"
+          />
+        </svg>
+        <img
+          src={henFamily}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          width={1024}
+          height={512}
+          className="absolute bottom-1 left-1/2 h-20 w-auto -translate-x-1/2 opacity-90 sm:h-28"
+        />
       </div>
     </section>
   );
