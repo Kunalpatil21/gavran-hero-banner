@@ -18,6 +18,7 @@ import puneAsset from "@/assets/city-pune.jpg.asset.json";
 import mumbaiAsset from "@/assets/city-mumbai.jpg.asset.json";
 import kolhapurAsset from "@/assets/city-kolhapur.jpg.asset.json";
 import nashikAsset from "@/assets/city-nashik.jpg.asset.json";
+import henFamily from "@/assets/hen-family.png";
 
 type Training = {
   id: string;
@@ -90,7 +91,7 @@ const BENEFITS = [
 function TrainingCard({ t }: { t: Training }) {
   return (
     <article className="group relative w-[86vw] shrink-0 snap-start overflow-hidden rounded-2xl bg-ink shadow-[0_18px_45px_-24px_rgba(20,30,20,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-24px_rgba(20,30,20,0.6)] sm:w-[19rem] lg:w-[21rem]">
-      <div className="relative h-52 overflow-hidden">
+      <div className="relative h-60 overflow-hidden">
         <img
           src={t.image}
           alt={`${t.city} city landmark`}
@@ -99,7 +100,7 @@ function TrainingCard({ t }: { t: Training }) {
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--color-ink)_18%,color-mix(in_oklab,var(--color-ink)_55%,transparent)_42%,transparent_74%)]" />
         <span className="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-ink">
           {t.status}
         </span>
@@ -177,8 +178,8 @@ export default function UpcomingTrainings() {
     scrollToIndex(Math.min(TRAININGS.length - 1, Math.max(0, active + dir)));
 
   return (
-    <section id="training" className="bg-cream py-20 sm:py-24">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+    <section id="training" className="relative overflow-hidden bg-cream pt-20 sm:pt-24">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-16">
         <header className="mx-auto max-w-3xl text-center">
           <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.2em] text-forest">
             <Leaf className="h-4 w-4 text-forest" />
@@ -198,7 +199,7 @@ export default function UpcomingTrainings() {
             type="button"
             onClick={() => step(-1)}
             aria-label="Previous trainings"
-            className="absolute -left-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:bg-gold hover:text-ink lg:grid xl:-left-6"
+            className="absolute -left-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:scale-105 hover:bg-gold hover:text-ink sm:h-12 sm:w-12 lg:-left-5 xl:-left-7"
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
@@ -206,7 +207,7 @@ export default function UpcomingTrainings() {
             type="button"
             onClick={() => step(1)}
             aria-label="Next trainings"
-            className="absolute -right-2 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:bg-gold hover:text-ink lg:grid xl:-right-6"
+            className="absolute -right-3 top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-forest text-cream shadow-lg transition-all duration-300 hover:scale-105 hover:bg-gold hover:text-ink sm:h-12 sm:w-12 lg:-right-5 xl:-right-7"
           >
             <ArrowRight className="h-5 w-5" />
           </button>
@@ -258,6 +259,33 @@ export default function UpcomingTrainings() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="relative mt-14 h-28 sm:h-36">
+        <svg
+          className="absolute inset-x-0 bottom-0 h-full w-full"
+          viewBox="0 0 1440 160"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M0,74 C240,10 480,10 720,52 C960,94 1200,116 1440,58 L1440,160 L0,160 Z"
+            className="fill-gold"
+          />
+          <path
+            d="M0,88 C240,24 480,24 720,66 C960,108 1200,130 1440,72 L1440,160 L0,160 Z"
+            className="fill-forest"
+          />
+        </svg>
+        <img
+          src={henFamily}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          width={1024}
+          height={512}
+          className="absolute bottom-1 left-1/2 h-20 w-auto -translate-x-1/2 opacity-90 sm:h-28"
+        />
       </div>
     </section>
   );
