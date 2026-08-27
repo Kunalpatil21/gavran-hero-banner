@@ -157,56 +157,94 @@ export default function WhatYouWillLearn() {
         {/* Training experience */}
         <div
           ref={experience.ref}
-          className={`mt-14 grid gap-8 rounded-3xl border border-forest/10 bg-white p-6 shadow-[0_24px_70px_-40px_rgba(20,40,20,0.7)] transition-all duration-700 sm:p-8 lg:grid-cols-[1.1fr_1fr] lg:items-stretch ${
+          className={`mt-14 grid gap-8 rounded-[28px] border border-forest/10 bg-white p-6 shadow-[0_24px_70px_-40px_rgba(20,40,20,0.7)] transition-all duration-700 sm:p-8 lg:grid-cols-[1.15fr_1fr] lg:items-stretch ${
             experience.shown ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
           <div className="flex flex-col">
-            <h3 className="font-display text-3xl font-extrabold leading-snug text-forest sm:text-4xl lg:text-[2.75rem]">
+            <h3 className="text-center font-display text-3xl font-extrabold leading-snug text-forest sm:text-4xl lg:text-[2.9rem]">
               एक दिवस. प्रत्यक्ष फार्मवर.
               <br />
-              आयुष्यभरासाठी ज्ञान.
+              <span className="text-gold-deep">आयुष्यभरासाठी ज्ञान.</span>
             </h3>
-            <div className="mt-4 flex items-center gap-3">
-              <span className="h-px w-14 bg-gradient-to-r from-transparent to-gold" />
+            <div className="mt-4 flex items-center justify-center gap-3">
+              <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold" />
               <Leaf className="h-4 w-4 text-gold-deep" />
-              <span className="h-px w-14 flex-1 bg-gradient-to-l from-transparent to-gold" />
+              <span className="h-px w-16 bg-gradient-to-l from-transparent to-gold" />
             </div>
+            <p className="mx-auto mt-4 max-w-xl text-center text-[17px] leading-relaxed text-forest/75">
+              संपूर्ण दिवसाची प्रात्यक्षिके, तज्ज्ञांचे मार्गदर्शन आणि प्रत्यक्ष अनुभवातून शिका आणि
+              आत्मनिर्भर व्हा.
+            </p>
 
-            <ol className="no-scrollbar mt-7 flex gap-3 overflow-x-auto rounded-2xl bg-cream p-5">
+            <ol className="no-scrollbar mt-7 flex gap-3 overflow-x-auto rounded-2xl border border-forest/10 bg-cream p-5">
               {TIMELINE.map(({ icon: Icon, label, sub }, i) => (
                 <li key={label} className="flex shrink-0 items-center gap-3">
                   <div className="w-24 text-center">
-                    <span className="mx-auto grid h-12 w-12 place-items-center rounded-full border border-forest/15 bg-white text-forest shadow-sm transition-colors duration-300 hover:border-gold hover:text-gold-deep">
-                      <Icon className="h-5 w-5" />
+                    <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-forest/10 bg-white text-forest shadow-sm transition-colors duration-300 hover:border-gold hover:text-gold-deep">
+                      <Icon className="h-6 w-6" />
                     </span>
-                    <p className="mt-2 text-sm font-semibold leading-tight text-forest">{label}</p>
-                    <p className="text-xs leading-tight text-forest/60">{sub}</p>
+                    <p className="mt-2 text-sm font-bold leading-tight text-forest">{label}</p>
+                    <p className="mt-0.5 text-xs leading-tight text-forest/60">{sub}</p>
                   </div>
                   {i < TIMELINE.length - 1 && (
-                    <ArrowRight className="h-4 w-4 shrink-0 text-forest/30" aria-hidden="true" />
+                    <span
+                      className="h-px w-6 shrink-0 self-start border-t-2 border-dashed border-gold/60"
+                      style={{ marginTop: "1.75rem" }}
+                      aria-hidden="true"
+                    />
                   )}
                 </li>
               ))}
             </ol>
 
-            <p className="mt-6 text-center text-base text-forest/70">
-              <span className="text-gold-deep">✦</span> प्रत्यक्ष अनुभव • योग्य मार्गदर्शन • यशस्वी
-              कुक्कुटपालन <span className="text-gold-deep">✦</span>
-            </p>
+            <div className="mt-8 flex items-center gap-3">
+              <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gold/60" />
+              <h4 className="font-display text-xl font-bold text-forest sm:text-2xl">
+                प्रशिक्षणात काय मिळेल?
+              </h4>
+              <span className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/60" />
+            </div>
+
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {INCLUDES.map(({ icon: Icon, title, sub, gold }) => (
+                <div
+                  key={title}
+                  className="rounded-2xl border border-forest/10 bg-cream/60 px-3 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:bg-white hover:shadow-[0_18px_40px_-28px_rgba(20,40,20,0.7)]"
+                >
+                  <Icon
+                    className={`mx-auto h-8 w-8 ${gold ? "text-gold-deep" : "text-forest"}`}
+                    strokeWidth={1.6}
+                  />
+                  <p className="mt-3 text-[15px] font-bold leading-tight text-forest">{title}</p>
+                  <p className="mt-1.5 text-[13px] leading-snug text-forest/65">{sub}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl">
+          <div className="relative overflow-hidden rounded-[22px]">
             <img
               src={session.url}
               alt="Farmers attending a Gavran poultry training session with a trainer at DWIT Farm"
               loading="lazy"
               width={1200}
-              height={1200}
-              className="h-72 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-96 lg:h-full"
+              height={1600}
+              className="h-80 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-[28rem] lg:h-full"
             />
+            <div className="absolute inset-x-4 bottom-4 flex items-center gap-4 rounded-2xl bg-forest/95 px-5 py-4 shadow-lg backdrop-blur-sm">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-cream/10 text-gold">
+                <Users className="h-6 w-6" />
+              </span>
+              <p className="text-[15px] font-semibold leading-snug text-cream sm:text-base">
+                प्रत्यक्ष शिका, प्रत्यक्ष करा,
+                <br />
+                आणि आपल्या यशाची सुरुवात करा!
+              </p>
+            </div>
           </div>
         </div>
+
       </div>
 
       {/* Closing wave divider */}
