@@ -23,7 +23,7 @@ import health from "@/assets/topic-health.jpg.asset.json";
 import feed from "@/assets/topic-feed.jpg.asset.json";
 import business from "@/assets/topic-business.jpg.asset.json";
 import session from "@/assets/training-session.jpg.asset.json";
-import henFamily from "@/assets/hen-family.png";
+import SectionDivider from "@/components/SectionDivider";
 
 type Topic = {
   id: string;
@@ -300,33 +300,8 @@ export default function WhatYouWillLearn() {
 
       </div>
 
-      {/* Closing wave divider */}
-      <div className="relative mt-14 h-28 sm:h-36">
-        <svg
-          className="absolute inset-x-0 bottom-0 h-full w-full"
-          viewBox="0 0 1440 160"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M0,74 C240,10 480,10 720,52 C960,94 1200,116 1440,58 L1440,160 L0,160 Z"
-            className="fill-gold"
-          />
-          <path
-            d="M0,88 C240,24 480,24 720,66 C960,108 1200,130 1440,72 L1440,160 L0,160 Z"
-            className="fill-forest"
-          />
-        </svg>
-        <img
-          src={henFamily}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          width={1024}
-          height={512}
-          className="absolute bottom-1 left-1/2 h-20 w-auto -translate-x-1/2 opacity-90 sm:h-28"
-        />
-      </div>
+      <SectionDivider />
+
     </section>
   );
 }
