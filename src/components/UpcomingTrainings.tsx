@@ -179,7 +179,7 @@ export default function UpcomingTrainings() {
 
   return (
     <section id="training" className="relative overflow-hidden bg-cream pt-20 sm:pt-24">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-16">
         <header className="mx-auto max-w-3xl text-center">
           <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.2em] text-forest">
             <Leaf className="h-4 w-4 text-forest" />
