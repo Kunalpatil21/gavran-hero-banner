@@ -234,6 +234,7 @@ function Index() {
       </div>
     </main>
     <UpcomingTrainings />
+    <WhatYouWillLearn />
     </>
   );
 }
