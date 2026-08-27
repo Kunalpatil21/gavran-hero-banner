@@ -4,6 +4,7 @@ import { ArrowRight, ArrowDown, Menu, X, GraduationCap, Home, Award } from "luci
 
 import heroAsset from "@/assets/hero-farm.png.asset.json";
 import logoAsset from "@/assets/dwit-logo.png";
+import UpcomingTrainings from "@/components/UpcomingTrainings";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,6 +53,7 @@ function Index() {
   }, []);
 
   return (
+    <>
     <main id="home" className="relative min-h-screen overflow-hidden bg-ink">
       {/* Background */}
       <div className="absolute inset-0">
