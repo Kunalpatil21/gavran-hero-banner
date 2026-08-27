@@ -227,22 +227,14 @@ export default function WhatYouWillLearn() {
                 आत्मनिर्भर व्हा.
               </p>
 
-              <ol className="no-scrollbar mt-7 flex gap-0 overflow-x-auto rounded-2xl border border-forest/10 bg-white/80 p-5 shadow-inner backdrop-blur">
-                {TIMELINE.map(({ icon: Icon, label, sub }, i) => (
-                  <li key={label} className="group flex shrink-0 items-start">
-                    <div className="w-[6.5rem] text-center">
-                      <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-forest text-cream shadow-md transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-gold-deep">
-                        <Icon className="h-6 w-6" />
-                      </span>
-                      <p className="mt-2.5 text-sm font-bold leading-tight text-forest">{label}</p>
-                      <p className="mt-0.5 text-xs leading-tight text-forest/60">{sub}</p>
-                    </div>
-                    {i < TIMELINE.length - 1 && (
-                      <span
-                        className="mt-7 h-0 w-6 shrink-0 border-t-2 border-dashed border-gold/70"
-                        aria-hidden="true"
-                      />
-                    )}
+              <ol className="mt-7 grid grid-cols-3 gap-y-6 rounded-2xl border border-forest/10 bg-white/80 p-5 shadow-inner backdrop-blur sm:grid-cols-4 xl:grid-cols-7">
+                {TIMELINE.map(({ icon: Icon, label, sub }) => (
+                  <li key={label} className="group text-center">
+                    <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-forest text-cream shadow-md transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-gold-deep sm:h-14 sm:w-14">
+                      <Icon className="h-6 w-6" />
+                    </span>
+                    <p className="mt-2.5 px-1 text-[13px] font-bold leading-tight text-forest sm:text-sm">{label}</p>
+                    <p className="mt-0.5 px-1 text-[11px] leading-tight text-forest/60 sm:text-xs">{sub}</p>
                   </li>
                 ))}
               </ol>
