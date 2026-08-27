@@ -18,6 +18,7 @@ import puneAsset from "@/assets/city-pune.jpg.asset.json";
 import mumbaiAsset from "@/assets/city-mumbai.jpg.asset.json";
 import kolhapurAsset from "@/assets/city-kolhapur.jpg.asset.json";
 import nashikAsset from "@/assets/city-nashik.jpg.asset.json";
+import henFamily from "@/assets/hen-family.png";
 
 type Training = {
   id: string;
