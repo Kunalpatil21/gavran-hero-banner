@@ -232,5 +232,7 @@ function Index() {
         </ul>
       </div>
     </main>
+    <UpcomingTrainings />
+    </>
   );
 }
