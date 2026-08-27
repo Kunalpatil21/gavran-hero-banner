@@ -178,7 +178,7 @@ export default function UpcomingTrainings() {
     scrollToIndex(Math.min(TRAININGS.length - 1, Math.max(0, active + dir)));
 
   return (
-    <section id="training" className="bg-cream py-20 sm:py-24">
+    <section id="training" className="relative overflow-hidden bg-cream pt-20 sm:pt-24">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <header className="mx-auto max-w-3xl text-center">
           <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.2em] text-forest">
