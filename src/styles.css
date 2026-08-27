@@ -183,6 +183,14 @@
   animation: slow-zoom 22s ease-out forwards alternate infinite;
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-zoom,
   .hero-rise {
