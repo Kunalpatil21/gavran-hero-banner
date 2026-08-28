@@ -8,6 +8,8 @@ import UpcomingTrainings from "@/components/UpcomingTrainings";
 import WhatYouWillLearn from "@/components/WhatYouWillLearn";
 import AboutDwitFarm from "@/components/AboutDwitFarm";
 import FarmVideos from "@/components/FarmVideos";
+import SectionDivider from "@/components/SectionDivider";
+import SiteFooter from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -239,6 +241,8 @@ function Index() {
     <WhatYouWillLearn />
     <AboutDwitFarm />
     <FarmVideos />
+    <SectionDivider />
+    <SiteFooter />
     </>
   );
 }
