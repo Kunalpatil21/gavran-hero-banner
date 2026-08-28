@@ -241,7 +241,7 @@ export default function WhatYouWillLearn() {
 
               <div className="mt-8 flex items-center gap-3">
                 <h4 className="font-display text-xl font-bold text-forest sm:text-2xl">
-                  प्रशिक्षणात काय मिळेल?
+                  What is included in the training?
                 </h4>
                 <span className="h-px flex-1 bg-gradient-to-r from-gold/70 to-transparent" />
               </div>
