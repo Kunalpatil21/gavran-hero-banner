@@ -7,6 +7,7 @@ import logoAsset from "@/assets/dwit-logo.png";
 import UpcomingTrainings from "@/components/UpcomingTrainings";
 import WhatYouWillLearn from "@/components/WhatYouWillLearn";
 import AboutDwitFarm from "@/components/AboutDwitFarm";
+import FarmVideos from "@/components/FarmVideos";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -237,6 +238,7 @@ function Index() {
     <UpcomingTrainings />
     <WhatYouWillLearn />
     <AboutDwitFarm />
+    <FarmVideos />
     </>
   );
 }
