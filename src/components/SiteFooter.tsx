@@ -124,7 +124,7 @@ export default function SiteFooter() {
             <p className="mt-4 text-[15px] leading-relaxed text-forest/75">
               Stay connected for the latest updates, training videos and farming tips.
             </p>
-            <ul className="mt-5 flex flex-wrap gap-3">
+            <ul className="mt-5 flex flex-nowrap gap-2.5">
               {SOCIALS.map(({ icon: Icon, label, href }) => (
                 <li key={label}>
                   <a
@@ -132,7 +132,7 @@ export default function SiteFooter() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    className="grid h-11 w-11 place-items-center rounded-full border border-forest/15 bg-white text-forest shadow-[0_10px_24px_-18px_rgba(20,40,20,0.8)] transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:bg-forest hover:text-cream"
+                    className="grid h-10 w-10 place-items-center rounded-full border border-forest/15 bg-white text-forest shadow-[0_10px_24px_-18px_rgba(20,40,20,0.8)] transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:bg-forest hover:text-cream"
                   >
                     <Icon className="h-5 w-5" />
                   </a>
