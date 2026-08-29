@@ -149,6 +149,9 @@ export default function WhatYouWillLearn() {
             <Leaf className="h-4 w-4 text-gold-deep" />
             <span className="h-px w-16 bg-gradient-to-l from-transparent to-gold" />
           </div>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-forest/80 sm:text-lg">
+            गावरान कुक्कुटपालन यशस्वीपणे करण्यासाठी आवश्यक ज्ञान, योग्य पद्धती आणि व्यावहारिक मार्गदर्शन शिका.
+          </p>
         </div>
 
         {/* Topic grid */}
