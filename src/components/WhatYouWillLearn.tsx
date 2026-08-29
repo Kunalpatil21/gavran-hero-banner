@@ -25,6 +25,7 @@ type Topic = {
   image: string;
   alt: string;
   points: string[];
+  headerColor: string;
 };
 
 const TOPICS: Topic[] = [
