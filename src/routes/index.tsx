@@ -167,19 +167,25 @@ function Index() {
             className="hero-rise block text-[13vw] text-cream sm:text-6xl lg:text-[5.2rem]"
             style={{ animationDelay: "0.1s" }}
           >
-            गावरान कुक्कुटपालन
+            गावरान कुक्कुटपालनाची
+          </span>
+          <span
+            className="hero-rise block text-[13vw] text-cream sm:text-6xl lg:text-[5.2rem]"
+            style={{ animationDelay: "0.2s" }}
+          >
+            योग्य वाटचाल
           </span>
           <span
             className="hero-rise mt-1 block text-[11vw] text-gold sm:text-5xl lg:text-[4.4rem]"
-            style={{ animationDelay: "0.25s" }}
+            style={{ animationDelay: "0.35s" }}
           >
-            शिका • करा • यशस्वी व्हा
+            ज्ञान • अनुभव • मार्गदर्शन
           </span>
         </h1>
 
         <div
           className="hero-rise mt-7 flex max-w-lg items-center gap-3"
-          style={{ animationDelay: "0.4s" }}
+          style={{ animationDelay: "0.5s" }}
         >
           <span className="h-px flex-1 bg-gradient-to-r from-gold/60 to-transparent" />
           <span className="text-gold/80">✦</span>
@@ -188,9 +194,10 @@ function Index() {
 
         <p
           className="hero-rise mt-7 max-w-md text-lg leading-relaxed text-cream/85 sm:text-xl"
-          style={{ animationDelay: "0.5s" }}
+          style={{ animationDelay: "0.65s" }}
         >
-          Learn Practical Gavran Poultry Farming directly from the farm with Umesh Patil.
+          गावरान कोंबडी पालनातील प्रत्यक्ष अनुभव, योग्य पद्धती आणि व्यवसायासाठी
+          आवश्यक मार्गदर्शन — Dwit Farm सोबत.
         </p>
 
         <div
