@@ -7,14 +7,7 @@ import {
   Briefcase,
   Clock,
   Leaf,
-  
   Users,
-  GraduationCap,
-  UtensilsCrossed,
-  Coffee,
-  BookOpen,
-  Wifi,
-  BadgeCheck,
 } from "lucide-react";
 
 import farmSetup from "@/assets/topic-farm-setup.jpg.asset.json";
@@ -87,28 +80,6 @@ const TIMELINE = [
   { icon: Clock, label: "6:30 PM", sub: "Training Ends" },
 ];
 
-const INCLUDES: { icon: typeof Home; title: string; sub: string; gold?: boolean }[] = [
-  {
-    icon: GraduationCap,
-    title: "One Day Practical Training",
-    sub: "Hands-on training directly on the farm",
-  },
-  {
-    icon: UtensilsCrossed,
-    title: "Veg & Non-Veg Lunch",
-    sub: "Delicious food included",
-    gold: true,
-  },
-  {
-    icon: Coffee,
-    title: "Tea & Snacks All Day",
-    sub: "Tea, snacks and refreshments",
-    gold: true,
-  },
-  { icon: BookOpen, title: "Training Material & Notes", sub: "Study material and reference notes" },
-  { icon: Wifi, title: "1 Year Online Access", sub: "Telegram training group and support", gold: true },
-  { icon: BadgeCheck, title: "Government Certificate", sub: "Certificate provided after training" },
-];
 
 
 
@@ -239,33 +210,6 @@ export default function WhatYouWillLearn() {
                 ))}
               </ol>
 
-              <div className="mt-8 flex items-center gap-3">
-                <h4 className="font-display text-xl font-bold text-forest sm:text-2xl">
-                  What is included in the training?
-                </h4>
-                <span className="h-px flex-1 bg-gradient-to-r from-gold/70 to-transparent" />
-              </div>
-
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                {INCLUDES.map(({ icon: Icon, title, sub, gold }) => (
-                  <div
-                    key={title}
-                    className="flex items-start gap-3 rounded-2xl border border-forest/10 bg-white px-4 py-4 shadow-[0_12px_30px_-26px_rgba(20,40,20,0.8)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_20px_44px_-26px_rgba(20,40,20,0.8)]"
-                  >
-                    <span
-                      className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl ${
-                        gold ? "bg-gold/20 text-gold-deep" : "bg-forest/10 text-forest"
-                      }`}
-                    >
-                      <Icon className="h-6 w-6" strokeWidth={1.7} />
-                    </span>
-                    <div className="text-left">
-                      <p className="text-[15px] font-bold leading-tight text-forest">{title}</p>
-                      <p className="mt-1 text-[13px] leading-snug text-forest/65">{sub}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="lg:sticky lg:top-24">
