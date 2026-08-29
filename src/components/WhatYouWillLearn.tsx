@@ -163,15 +163,20 @@ export default function WhatYouWillLearn() {
         {/* Topic grid */}
         <div
           ref={topics.ref}
-          className={`mt-10 grid gap-6 transition-all duration-700 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 ${
+          className={`mt-10 grid gap-3 transition-all duration-700 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 ${
             topics.shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
-          {TOPICS.map(({ id, title, icon: Icon, image, alt, points }) => (
+          {TOPICS.map(({ id, title, image, alt, points, headerColor }) => (
             <article
               key={id}
               className="group overflow-hidden rounded-2xl border border-forest/10 bg-white shadow-[0_16px_40px_-28px_rgba(20,40,20,0.6)] transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/60 hover:shadow-[0_26px_60px_-28px_rgba(20,40,20,0.7)]"
             >
+              <div className={`px-4 py-3 ${headerColor}`}>
+                <h3 className="text-center font-display text-lg font-bold text-white">
+                  {title}
+                </h3>
+              </div>
               <div className="relative h-44 overflow-hidden">
                 <img
                   src={image}
@@ -181,13 +186,9 @@ export default function WhatYouWillLearn() {
                   height={600}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <span className="absolute bottom-3 left-4 grid h-12 w-12 place-items-center rounded-full bg-forest text-cream shadow-lg transition-colors duration-300 group-hover:bg-gold-deep">
-                  <Icon className="h-6 w-6" />
-                </span>
               </div>
-              <div className="px-5 pb-6 pt-4">
-                <h3 className="font-display text-xl font-bold text-forest">{title}</h3>
-                <ul className="mt-3 space-y-2.5">
+              <div className="px-4 pb-5 pt-4">
+                <ul className="space-y-2.5">
                   {points.map((p) => (
                     <li key={p} className="flex items-start gap-2.5 text-[15px] text-forest/80">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-deep" />
