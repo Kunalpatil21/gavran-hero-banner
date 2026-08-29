@@ -41,6 +41,7 @@ const TOPICS: Topic[] = [
       "पिल्ले येण्यापूर्वीची तयारी",
       "कोंबड्यांचे संरक्षण",
     ],
+    headerColor: "bg-[#6B7B3C]",
   },
   {
     id: "rearing",
@@ -54,6 +55,7 @@ const TOPICS: Topic[] = [
       "ऋतूनुसार व्यवस्थापन",
       "कोंबड्यांच्या विविध जाती",
     ],
+    headerColor: "bg-[#8B5A2B]",
   },
   {
     id: "health",
@@ -67,6 +69,7 @@ const TOPICS: Topic[] = [
       "लसीकरण",
       "औषधांचे योग्य व्यवस्थापन",
     ],
+    headerColor: "bg-[#D97706]",
   },
   {
     id: "feed",
@@ -80,6 +83,7 @@ const TOPICS: Topic[] = [
       "खाद्यावरील खर्च कमी करणे",
       "अझोला व BSF फार्मिंग",
     ],
+    headerColor: "bg-[#A3A948]",
   },
   {
     id: "business",
@@ -93,6 +97,7 @@ const TOPICS: Topic[] = [
       "कोंबडी पालनाचे फायदे",
       "इन्क्युबेटर व कुक्कुट पिल्ले",
     ],
+    headerColor: "bg-[#4A6741]",
   },
 ];
 
