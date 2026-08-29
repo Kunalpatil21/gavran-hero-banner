@@ -5,6 +5,7 @@ import { ArrowRight, ArrowDown, Menu, X, GraduationCap, Home, Award } from "luci
 import heroAsset from "@/assets/hero-farm.png.asset.json";
 import logoAsset from "@/assets/dwit-logo.png";
 import UpcomingTrainings from "@/components/UpcomingTrainings";
+import WhatYouWillLearn from "@/components/WhatYouWillLearn";
 import AboutDwitFarm from "@/components/AboutDwitFarm";
 import FarmVideos from "@/components/FarmVideos";
 import SectionDivider from "@/components/SectionDivider";
@@ -244,6 +245,7 @@ function Index() {
       </div>
     </main>
     <UpcomingTrainings />
+    <WhatYouWillLearn />
     <AboutDwitFarm />
     <FarmVideos />
     <SectionDivider />
