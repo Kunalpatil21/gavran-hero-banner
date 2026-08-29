@@ -31,7 +31,6 @@ const TOPICS: Topic[] = [
   {
     id: "setup",
     title: "फार्म सेट-अप",
-    icon: Home,
     image: farmSetup.url,
     alt: "Bamboo and wood poultry shed on a farm",
     points: [
@@ -45,7 +44,6 @@ const TOPICS: Topic[] = [
   {
     id: "rearing",
     title: "कोंबडी संगोपन",
-    icon: Bird,
     image: chicks.url,
     alt: "Two yellow chicks on farm ground",
     points: [
@@ -59,7 +57,6 @@ const TOPICS: Topic[] = [
   {
     id: "health",
     title: "आरोग्य आणि औषध",
-    icon: HeartPulse,
     image: health.url,
     alt: "Healthy country hen standing in a farmyard",
     points: [
@@ -73,7 +70,6 @@ const TOPICS: Topic[] = [
   {
     id: "feed",
     title: "खाद्य व खर्च",
-    icon: Wheat,
     image: feed.url,
     alt: "Bowl of poultry feed with hens behind",
     points: [
@@ -87,7 +83,6 @@ const TOPICS: Topic[] = [
   {
     id: "business",
     title: "व्यवसाय मार्गदर्शन",
-    icon: Briefcase,
     image: business.url,
     alt: "Free range flock of country hens",
     points: [
