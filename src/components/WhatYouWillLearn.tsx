@@ -21,7 +21,6 @@ import session from "@/assets/training-session.jpg.asset.json";
 type Topic = {
   id: string;
   title: string;
-  icon: typeof Home;
   image: string;
   alt: string;
   points: string[];
