@@ -5,12 +5,6 @@ import {
   CalendarDays,
   MapPin,
   Navigation,
-  GraduationCap,
-  UtensilsCrossed,
-  Coffee,
-  BookOpen,
-  Wifi,
-  BadgeCheck,
   Leaf,
   MessageCircle,
 } from "lucide-react";
@@ -89,14 +83,6 @@ const TRAININGS: Training[] = [
   },
 ];
 
-const BENEFITS = [
-  { icon: GraduationCap, title: "One Day Practical Training", desc: "Hands-on learning at the farm" },
-  { icon: UtensilsCrossed, title: "Veg & Non-Veg Lunch", desc: "Delicious lunch included" },
-  { icon: Coffee, title: "2 Times Tea & Snacks", desc: "Tea, snacks & refreshments" },
-  { icon: BookOpen, title: "Training Material & Notes", desc: "Study material & reference notes" },
-  { icon: Wifi, title: "1 Year Online Access", desc: "Telegram training access" },
-  { icon: BadgeCheck, title: "Government Certificate", desc: "Certificate after training" },
-];
 
 function TrainingCard({ t }: { t: Training }) {
   return (
@@ -285,22 +271,7 @@ export default function UpcomingTrainings() {
           ))}
         </div>
 
-        <ul className="mt-10 grid gap-y-8 rounded-2xl bg-white px-6 py-8 shadow-[0_18px_50px_-30px_rgba(20,40,20,0.5)] sm:grid-cols-2 lg:grid-cols-6 lg:gap-0">
-          {BENEFITS.map(({ icon: Icon, title, desc }, i) => (
-            <li
-              key={title}
-              className={`px-2 text-center transition-transform duration-300 hover:-translate-y-1 ${
-                i > 0 ? "lg:border-l lg:border-forest/12" : ""
-              }`}
-            >
-              <Icon className="mx-auto h-8 w-8 text-gold-deep" />
-              <p className="mt-3 text-[15px] font-semibold leading-snug text-forest">{title}</p>
-              <p className="mt-1 text-[13px] leading-snug text-forest/60">{desc}</p>
-            </li>
-          ))}
-        </ul>
       </div>
-
     </section>
   );
 }
