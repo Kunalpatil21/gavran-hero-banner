@@ -30,11 +30,16 @@ type Topic = {
 const TOPICS: Topic[] = [
   {
     id: "setup",
-    title: "फार्म सेटअप",
+    title: "फार्म सेट-अप",
     icon: Home,
     image: farmSetup.url,
     alt: "Bamboo and wood poultry shed on a farm",
-    points: ["फार्म बनवण्याचे नियम", "शेडची उभारणी", "पिल्ले येण्याआधीची तयारी"],
+    points: [
+      "फार्म बनवण्याचे नियम",
+      "शेडची उभारणी",
+      "पिल्ले येण्यापूर्वीची तयारी",
+      "कोंबड्यांचे संरक्षण",
+    ],
   },
   {
     id: "rearing",
@@ -42,15 +47,25 @@ const TOPICS: Topic[] = [
     icon: Bird,
     image: chicks.url,
     alt: "Two yellow chicks on farm ground",
-    points: ["पिल्लांचे संगोपन", "ऋतूनुसार व्यवस्थापन", "विविध कोंबडी जाती"],
+    points: [
+      "पिल्लांची योग्य निवड",
+      "पिल्लांचे संगोपन",
+      "ऋतूनुसार व्यवस्थापन",
+      "कोंबड्यांच्या विविध जाती",
+    ],
   },
   {
     id: "health",
-    title: "आरोग्य आणि औषधे",
+    title: "आरोग्य आणि औषध",
     icon: HeartPulse,
     image: health.url,
     alt: "Healthy country hen standing in a farmyard",
-    points: ["रोगाची लक्षणे", "औषधोपचार", "लसीकरण वेळापत्रक"],
+    points: [
+      "रोगांची लक्षणे",
+      "औषधोपचार व काळजी",
+      "लसीकरण",
+      "औषधांचे योग्य व्यवस्थापन",
+    ],
   },
   {
     id: "feed",
@@ -58,7 +73,12 @@ const TOPICS: Topic[] = [
     icon: Wheat,
     image: feed.url,
     alt: "Bowl of poultry feed with hens behind",
-    points: ["खाद्य नियोजन", "खर्च कमी करणे", "अझोला व BSF फार्मिंग"],
+    points: [
+      "पिल्लांचे खाद्य नियोजन",
+      "योग्य खाद्याचे प्रकार",
+      "खाद्यावरील खर्च कमी करणे",
+      "अझोला व BSF फार्मिंग",
+    ],
   },
   {
     id: "business",
@@ -66,7 +86,12 @@ const TOPICS: Topic[] = [
     icon: Briefcase,
     image: business.url,
     alt: "Free range flock of country hens",
-    points: ["विक्रीची पद्धत", "नफा व खर्च नियोजन", "फार्म सुरक्षा"],
+    points: [
+      "कोंबड्यांच्या विक्रीची पद्धत",
+      "नफा व खर्चाचे नियोजन",
+      "कोंबडी पालनाचे फायदे",
+      "इन्क्युबेटर व कुक्कुट पिल्ले",
+    ],
   },
 ];
 
