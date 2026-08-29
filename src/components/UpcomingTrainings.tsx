@@ -179,22 +179,25 @@ export default function UpcomingTrainings() {
   return (
     <section id="training" className="relative overflow-hidden bg-cream pt-16 sm:pt-20">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-        <header className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.2em] text-gold-deep">
-              <Leaf className="h-4 w-4" />
-              UPCOMING TRAININGS
-            </p>
-            <h2 className="mt-3 font-display text-4xl font-extrabold leading-[1.15] text-forest sm:text-5xl lg:text-[3.4rem]">
-              Practical Gavran Poultry Farming Training Across Maharashtra
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-forest/75 sm:text-xl">
-              Join the next training session near you and start your journey towards successful
-              poultry farming.
-            </p>
+        <header className="flex flex-col items-center text-center">
+          <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.2em] text-gold-deep">
+            <Leaf className="h-4 w-4" />
+            UPCOMING TRAININGS
+          </p>
+          <h2 className="mt-3 max-w-4xl font-display text-4xl font-extrabold leading-[1.15] text-forest sm:text-5xl lg:text-[3.4rem]">
+            Practical Gavran Poultry Farming Training Across Maharashtra
+          </h2>
+          <div className="mt-5 flex items-center gap-3 text-gold-deep">
+            <span className="h-px w-14 bg-gold-deep/50 sm:w-20" />
+            <Leaf className="h-4 w-4" />
+            <span className="h-px w-14 bg-gold-deep/50 sm:w-20" />
           </div>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-forest/75 sm:text-xl">
+            Join the next training session near you and start your journey towards successful
+            poultry farming.
+          </p>
 
-          <div className="flex shrink-0 items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => step(-1)}
@@ -213,13 +216,14 @@ export default function UpcomingTrainings() {
             </button>
             <a
               href="#training"
-              className="group hidden items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-base font-medium text-cream transition-all duration-300 hover:bg-gold-deep sm:inline-flex"
+              className="group inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-base font-medium text-cream transition-all duration-300 hover:bg-gold-deep"
             >
               View All Trainings
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
         </header>
+
 
         <div
           ref={trackRef}
