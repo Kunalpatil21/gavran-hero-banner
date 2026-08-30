@@ -111,6 +111,39 @@ const TIMELINE = [
   { icon: Clock, label: "6:30 PM", sub: "Training Ends" },
 ];
 
+const INCLUDES = [
+  {
+    icon: GraduationCap,
+    title: "One Day Practical Training",
+    sub: "Hands-on training directly on the farm",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Veg & Non-Veg Lunch",
+    sub: "Delicious food included",
+  },
+  {
+    icon: Coffee,
+    title: "Tea & Snacks All Day",
+    sub: "Tea, snacks and refreshments",
+  },
+  {
+    icon: BookOpen,
+    title: "Training Material & Notes",
+    sub: "Study material and reference notes",
+  },
+  {
+    icon: Award,
+    title: "Certificate of Participation",
+    sub: "Certificate provided after training",
+  },
+  {
+    icon: Headphones,
+    title: "1 Year Support",
+    sub: "Guidance & support via WhatsApp group",
+  },
+];
+
 
 
 
