@@ -8,6 +8,12 @@ import {
   Clock,
   Leaf,
   Users,
+  GraduationCap,
+  UtensilsCrossed,
+  Coffee,
+  BookOpen,
+  Award,
+  Headphones,
 } from "lucide-react";
 
 import farmSetup from "@/assets/topic-farm-setup.jpg.asset.json";
