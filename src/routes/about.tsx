@@ -128,13 +128,13 @@ function AboutPage() {
                 </li>
               ))}
               <li className="py-4">
-                <Link
-                  to="/#training"
+                <a
+                  href="/#training"
                   onClick={() => setOpen(false)}
                   className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-gold-deep to-gold px-5 py-3 text-sm font-medium text-ink"
                 >
                   Join Training <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
