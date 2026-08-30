@@ -8,6 +8,12 @@ import {
   Clock,
   Leaf,
   Users,
+  GraduationCap,
+  UtensilsCrossed,
+  Coffee,
+  BookOpen,
+  Award,
+  Headphones,
 } from "lucide-react";
 
 import farmSetup from "@/assets/topic-farm-setup.jpg.asset.json";
@@ -103,6 +109,39 @@ const TIMELINE = [
   { icon: Wheat, label: "Feed Planning", sub: "Cost control" },
   { icon: Briefcase, label: "Business Guidance", sub: "Selling & profit" },
   { icon: Clock, label: "6:30 PM", sub: "Training Ends" },
+];
+
+const INCLUDES = [
+  {
+    icon: GraduationCap,
+    title: "One Day Practical Training",
+    sub: "Hands-on training directly on the farm",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Veg & Non-Veg Lunch",
+    sub: "Delicious food included",
+  },
+  {
+    icon: Coffee,
+    title: "Tea & Snacks All Day",
+    sub: "Tea, snacks and refreshments",
+  },
+  {
+    icon: BookOpen,
+    title: "Training Material & Notes",
+    sub: "Study material and reference notes",
+  },
+  {
+    icon: Award,
+    title: "Certificate of Participation",
+    sub: "Certificate provided after training",
+  },
+  {
+    icon: Headphones,
+    title: "1 Year Support",
+    sub: "Guidance & support via WhatsApp group",
+  },
 ];
 
 
@@ -238,6 +277,34 @@ export default function WhatYouWillLearn() {
                   </li>
                 ))}
               </ol>
+
+              {/* What is included in the training? */}
+              <div className="mt-10">
+                <div className="flex items-center gap-4">
+                  <h4 className="font-display text-2xl font-extrabold text-forest sm:text-3xl">
+                    What is included in the training?
+                  </h4>
+                  <span className="hidden h-px flex-1 bg-gradient-to-r from-gold to-transparent sm:block" />
+                  <Leaf className="h-5 w-5 shrink-0 text-gold-deep" />
+                </div>
+
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {INCLUDES.map(({ icon: Icon, title, sub }) => (
+                    <div
+                      key={title}
+                      className="group flex items-start gap-4 rounded-2xl border border-forest/10 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_14px_40px_-24px_rgba(20,40,20,0.55)]"
+                    >
+                      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold/15 text-gold-deep transition-colors duration-300 group-hover:bg-gold-deep group-hover:text-cream">
+                        <Icon className="h-6 w-6" />
+                      </span>
+                      <div>
+                        <p className="font-display text-base font-bold text-forest sm:text-lg">{title}</p>
+                        <p className="mt-0.5 text-sm leading-snug text-forest/70">{sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
             </div>
 
