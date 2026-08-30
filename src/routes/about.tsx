@@ -174,9 +174,9 @@ function AboutPage() {
                 height={600}
                 className="h-full w-full object-cover object-center"
               />
-              {/* Soft cream fade to the left */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/90 to-transparent sm:from-cream sm:via-cream/80 sm:to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-cream/40 via-transparent to-cream/30 sm:hidden" />
+              {/* Soft cream fade to the left — stronger on mobile for readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/95 to-cream/30 sm:from-cream sm:via-cream/80 sm:to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-cream/60 via-transparent to-cream/50 sm:hidden" />
             </div>
           </div>
         </section>
