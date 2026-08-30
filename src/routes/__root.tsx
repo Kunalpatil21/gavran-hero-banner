@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "DWIT Farm — Gavran Poultry Farming & Training" },
+      { name: "description", content: "Learn practical Gavran poultry farming directly from the farm with Umesh Patil. Hands-on training, farm experience and government certification." },
+      { name: "author", content: "DWIT Farm" },
+      { property: "og:title", content: "DWIT Farm — Gavran Poultry Farming & Training" },
+      { property: "og:description", content: "Learn practical Gavran poultry farming directly from the farm with Umesh Patil. Hands-on training, farm experience and government certification." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@DwitFarm" },
     ],
     links: [
       {
