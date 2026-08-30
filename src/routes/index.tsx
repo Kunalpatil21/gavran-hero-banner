@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { label: "Home", href: "#home" },
-  { label: "About Umesh", href: "#about" },
+  { label: "About Us", href: "/about" },
   { label: "Gavran Poultry", href: "#poultry" },
   { label: "Training", href: "#training" },
   { label: "Gallery", href: "#gallery" },
