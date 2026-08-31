@@ -7,7 +7,6 @@ import logoAsset from "@/assets/dwit-logo.png";
 import UpcomingTrainings from "@/components/UpcomingTrainings";
 import WhatYouWillLearn from "@/components/WhatYouWillLearn";
 import AboutDwitFarm from "@/components/AboutDwitFarm";
-import AboutStory from "@/components/AboutStory";
 import FarmVideos from "@/components/FarmVideos";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -245,7 +244,6 @@ function Index() {
         </ul>
       </div>
     </main>
-    <AboutStory />
     <UpcomingTrainings />
     <WhatYouWillLearn />
     <AboutDwitFarm />
