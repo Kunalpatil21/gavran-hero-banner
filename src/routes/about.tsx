@@ -118,7 +118,7 @@ function AboutPage() {
         </nav>
 
         {open && (
-          <div className="border-t border-gold/15 bg-ink/95 backdrop-blur-xl lg:hidden">
+          <div className="border-t border-gold/15 bg-black lg:hidden">
             <ul className="mx-auto flex max-w-[1600px] flex-col px-5 py-2 sm:px-8">
               {NAV.map((item) => (
                 <li key={item.label}>
