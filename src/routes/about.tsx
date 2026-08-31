@@ -7,6 +7,9 @@ import logoAsset from "@/assets/dwit-logo.png";
 import AboutStory from "@/components/AboutStory";
 import AboutUmesh from "@/components/AboutUmesh";
 import OurPurpose from "@/components/OurPurpose";
+import FarmerTestimonials from "@/components/FarmerTestimonials";
+import SectionDivider from "@/components/SectionDivider";
+import SiteFooter from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -185,7 +188,10 @@ function AboutPage() {
         <AboutStory />
         <AboutUmesh />
         <OurPurpose />
+        <FarmerTestimonials />
       </main>
+      <SectionDivider />
+      <SiteFooter />
     </>
   );
 }
