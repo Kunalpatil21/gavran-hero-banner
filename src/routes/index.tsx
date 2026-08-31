@@ -245,6 +245,7 @@ function Index() {
         </ul>
       </div>
     </main>
+    <AboutStory />
     <UpcomingTrainings />
     <WhatYouWillLearn />
     <AboutDwitFarm />
