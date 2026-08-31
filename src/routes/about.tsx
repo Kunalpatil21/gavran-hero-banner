@@ -4,6 +4,7 @@ import { ArrowRight, Menu, X } from "lucide-react";
 
 import aboutBannerAsset from "@/assets/about-banner.png.asset.json";
 import logoAsset from "@/assets/dwit-logo.png";
+import AboutStory from "@/components/AboutStory";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -179,6 +180,7 @@ function AboutPage() {
           </div>
         </section>
 
+        <AboutStory />
       </main>
     </>
   );
