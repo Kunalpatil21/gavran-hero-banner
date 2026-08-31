@@ -6,6 +6,7 @@ import aboutBannerAsset from "@/assets/about-banner.png.asset.json";
 import logoAsset from "@/assets/dwit-logo.png";
 import AboutStory from "@/components/AboutStory";
 import AboutUmesh from "@/components/AboutUmesh";
+import OurPurpose from "@/components/OurPurpose";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -183,6 +184,7 @@ function AboutPage() {
 
         <AboutStory />
         <AboutUmesh />
+        <OurPurpose />
       </main>
     </>
   );
