@@ -57,10 +57,8 @@ function AboutPage() {
     <>
       {/* Navbar */}
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "border-b border-gold/15 bg-ink/90 backdrop-blur-xl py-2 shadow-lg"
-            : "border-b border-transparent bg-ink/40 py-3"
+        className={`fixed inset-x-0 top-0 z-50 border-b border-gold/15 bg-black py-3 shadow-lg transition-all duration-500 ${
+          scrolled ? "py-2" : ""
         }`}
       >
         <nav className="mx-auto grid max-w-[1600px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:grid-cols-[auto_1fr_auto]">
@@ -120,7 +118,7 @@ function AboutPage() {
         </nav>
 
         {open && (
-          <div className="border-t border-gold/15 bg-ink/95 backdrop-blur-xl lg:hidden">
+          <div className="border-t border-gold/15 bg-black lg:hidden">
             <ul className="mx-auto flex max-w-[1600px] flex-col px-5 py-2 sm:px-8">
               {NAV.map((item) => (
                 <li key={item.label}>
