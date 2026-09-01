@@ -37,7 +37,7 @@ const NAV = [
   { label: "Gavran Poultry", href: "#poultry" },
   { label: "Training", href: "#training" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const TRUST = [
