@@ -7,6 +7,7 @@ import {
   Navigation,
   Leaf,
   MessageCircle,
+  Check,
 } from "lucide-react";
 
 import puneAsset from "@/assets/city-pune.jpg.asset.json";
@@ -24,7 +25,6 @@ type Training = {
   date: string;
   day: string;
   time: string;
-  status: string;
   whatsapp: string;
 };
 
@@ -39,7 +39,6 @@ const TRAININGS: Training[] = [
     date: "30 Aug 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
-    status: "Upcoming",
     whatsapp: "https://wa.me/919999999999",
   },
   {
@@ -52,7 +51,6 @@ const TRAININGS: Training[] = [
     date: "06 Sep 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
-    status: "Upcoming",
     whatsapp: "https://wa.me/919999999999",
   },
   {
@@ -65,7 +63,6 @@ const TRAININGS: Training[] = [
     date: "13 Sep 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
-    status: "Upcoming",
     whatsapp: "https://wa.me/919999999999",
   },
   {
@@ -78,13 +75,20 @@ const TRAININGS: Training[] = [
     date: "20 Sep 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
-    status: "Upcoming",
     whatsapp: "https://wa.me/919999999999",
   },
 ];
 
+function isFuture(dateStr: string) {
+  const training = new Date(`${dateStr} 00:00:00`);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return training.getTime() >= today.getTime();
+}
 
 function TrainingCard({ t }: { t: Training }) {
+  const upcoming = isFuture(t.date);
+
   return (
     <article className="group relative flex w-[84vw] shrink-0 snap-start flex-col overflow-hidden rounded-2xl bg-white shadow-[0_18px_45px_-28px_rgba(20,40,20,0.5)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-26px_rgba(20,40,20,0.55)] sm:w-[19rem] lg:w-[20.5rem]">
       <div className="relative h-52 overflow-hidden">
@@ -96,10 +100,24 @@ function TrainingCard({ t }: { t: Training }) {
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
         />
+        {!upcoming && <div className="absolute inset-0 bg-black/30" />}
         <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--color-ink)_8%,color-mix(in_oklab,var(--color-ink)_45%,transparent)_38%,transparent_68%)]" />
-        <span className="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-ink">
-          {t.status}
-        </span>
+
+        {upcoming ? (
+          <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-ink">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ink/60 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-ink" />
+            </span>
+            UPCOMING
+          </span>
+        ) : (
+          <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-forest/80 px-3 py-1 text-xs font-semibold text-cream">
+            <Check className="h-3 w-3" />
+            COMPLETED
+          </span>
+        )}
+
         <div className="absolute inset-x-4 bottom-3">
           <h3 className="font-display text-3xl font-extrabold leading-none text-cream">{t.city}</h3>
           <p className="mt-1.5 text-sm text-cream/80">{t.district}</p>
@@ -122,6 +140,9 @@ function TrainingCard({ t }: { t: Training }) {
             <p className="mt-0.5 text-[13px] leading-snug text-forest/70">
               {t.date} &nbsp;|&nbsp; {t.time}
               <span className="block">{t.day}</span>
+              {!upcoming && (
+                <span className="block text-forest/50">Training Completed</span>
+              )}
             </p>
           </div>
         </div>
@@ -148,15 +169,25 @@ function TrainingCard({ t }: { t: Training }) {
             View Details
             <ArrowRight className="h-3.5 w-3.5" />
           </a>
-          <a
-            href={t.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-forest px-3 py-3 text-[13px] font-medium text-cream transition-colors duration-300 hover:bg-gold-deep"
-          >
-            <MessageCircle className="h-3.5 w-3.5" />
-            Join WhatsApp
-          </a>
+          {upcoming ? (
+            <a
+              href={t.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-forest px-3 py-3 text-[13px] font-medium text-cream transition-colors duration-300 hover:bg-gold-deep"
+            >
+              <MessageCircle className="h-3.5 w-3.5" />
+              Join WhatsApp
+            </a>
+          ) : (
+            <a
+              href="#training"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-forest/25 px-3 py-3 text-[13px] font-medium text-forest transition-colors duration-300 hover:bg-forest hover:text-cream"
+            >
+              View Training Details
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
+          )}
         </div>
       </div>
     </article>
