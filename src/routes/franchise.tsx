@@ -282,7 +282,7 @@ function FranchisePage() {
 
             {/* Founder quote */}
             <div className="flex items-center justify-end">
-              <div className="flex max-w-sm items-center gap-5 rounded-[18px] bg-forest/90 p-6 text-cream backdrop-blur-sm lg:bg-transparent lg:p-0">
+              <div className="flex max-w-sm items-center gap-5 rounded-[18px] bg-forest/90 p-6 text-cream shadow-[0_24px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur-sm">
                 <img
                   src={umeshAsset.url}
                   alt="Umesh Patil, founder of Dwit Farm"
@@ -291,7 +291,7 @@ function FranchisePage() {
                 />
                 <div>
                   <span className="font-display text-3xl leading-none text-gold">&ldquo;</span>
-                  <p className="mt-1 text-[15px] leading-relaxed text-cream/90 lg:text-cream/95">
+                  <p className="mt-1 text-[15px] leading-relaxed text-cream/90">
                     आमचे ध्येय आहे शेतकऱ्यांना बळकटी देणे आणि यशस्वी गावरान पोल्ट्री उद्योजक तयार
                     करणे.
                   </p>
