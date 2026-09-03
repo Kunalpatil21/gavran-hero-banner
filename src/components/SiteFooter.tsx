@@ -7,7 +7,7 @@ const QUICK_LINKS = [
   "Our Training",
   "One Day Training",
   "YouTube Videos",
-  "Gallery",
+  "Franchise",
   "Contact Us",
 ];
 
