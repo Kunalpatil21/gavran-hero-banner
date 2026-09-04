@@ -80,7 +80,7 @@ export default function FarmerTestimonials() {
           </div>
         </div>
         <a
-          href="/#training"
+          href="/training"
           className="inline-flex shrink-0 items-center rounded-md bg-gradient-to-r from-gold-deep to-gold px-7 py-3.5 text-sm font-semibold text-ink shadow-[0_16px_40px_-18px_rgba(0,0,0,0.95)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-16px_var(--color-gold)]"
         >
           Join a Training Program

@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FranchiseRouteImport } from './routes/franchise'
 import { Route as GavranPoultryRouteImport } from './routes/gavran-poultry'
+import { Route as TrainingRouteImport } from './routes/training'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,11 @@ const GavranPoultryRoute = GavranPoultryRouteImport.update({
   path: '/gavran-poultry',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrainingRoute = TrainingRouteImport.update({
+  id: '/training',
+  path: '/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/franchise': typeof FranchiseRoute
   '/gavran-poultry': typeof GavranPoultryRoute
+  '/training': typeof TrainingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/franchise': typeof FranchiseRoute
   '/gavran-poultry': typeof GavranPoultryRoute
+  '/training': typeof TrainingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,14 +70,23 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/franchise': typeof FranchiseRoute
   '/gavran-poultry': typeof GavranPoultryRoute
+  '/training': typeof TrainingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/franchise' | '/gavran-poultry'
+  fullPaths:
+    '/' | '/about' | '/contact' | '/franchise' | '/gavran-poultry' | '/training'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/franchise' | '/gavran-poultry'
+  to:
+    '/' | '/about' | '/contact' | '/franchise' | '/gavran-poultry' | '/training'
   id:
-    '__root__' | '/' | '/about' | '/contact' | '/franchise' | '/gavran-poultry'
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/franchise'
+    | '/gavran-poultry'
+    | '/training'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -78,6 +95,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FranchiseRoute: typeof FranchiseRoute
   GavranPoultryRoute: typeof GavranPoultryRoute
+  TrainingRoute: typeof TrainingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -117,6 +135,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GavranPoultryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/training': {
+      id: '/training'
+      path: '/training'
+      fullPath: '/training'
+      preLoaderRoute: typeof TrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -126,6 +151,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FranchiseRoute: FranchiseRoute,
   GavranPoultryRoute: GavranPoultryRoute,
+  TrainingRoute: TrainingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

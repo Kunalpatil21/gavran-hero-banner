@@ -37,7 +37,7 @@ const NAV = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Gavran Poultry", href: "/gavran-poultry" },
-  { label: "Training", href: "/#training" },
+  { label: "Training", href: "/training" },
   { label: "Franchise", href: "/franchise" },
   { label: "Contact", href: "/contact" },
 ];
@@ -100,7 +100,7 @@ function AboutPage() {
 
           <div className="flex items-center gap-3">
             <a
-              href="/#training"
+              href="/training"
               className="hidden items-center gap-2 rounded-md bg-gradient-to-r from-gold-deep to-gold px-5 py-2.5 text-sm font-medium text-ink shadow-[0_10px_28px_-12px_rgba(0,0,0,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-12px_var(--color-gold)] sm:inline-flex"
             >
               Join Training
@@ -133,7 +133,7 @@ function AboutPage() {
               ))}
               <li className="py-4">
                 <a
-                  href="/#training"
+                  href="/training"
                   onClick={() => setOpen(false)}
                   className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-gold-deep to-gold px-5 py-3 text-sm font-medium text-ink"
                 >
