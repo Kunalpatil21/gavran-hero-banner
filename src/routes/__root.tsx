@@ -121,8 +121,45 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+const CHUNK_RELOAD_KEY = "dwit_chunk_reloaded";
+
+/** A stale browser tab can request a JS chunk from a previous deploy.
+ *  Reload once so it picks up the current build instead of blank-screening. */
+function useStaleChunkRecovery() {
+  useEffect(() => {
+    const isChunkError = (message?: string) =>
+      !!message &&
+      /(dynamically imported module|Importing a module script failed|Failed to fetch dynamically imported module|ChunkLoadError)/i.test(
+        message,
+      );
+
+    const recover = (message?: string) => {
+      if (!isChunkError(message)) return;
+      if (sessionStorage.getItem(CHUNK_RELOAD_KEY)) return;
+      sessionStorage.setItem(CHUNK_RELOAD_KEY, "1");
+      window.location.reload();
+    };
+
+    const onError = (e: ErrorEvent) => recover(e.message);
+    const onRejection = (e: PromiseRejectionEvent) =>
+      recover(typeof e.reason === "string" ? e.reason : e.reason?.message);
+    const onPreloadError = (e: Event) =>
+      recover((e as CustomEvent<{ message?: string }>).detail?.message ?? "dynamically imported module");
+
+    window.addEventListener("error", onError);
+    window.addEventListener("unhandledrejection", onRejection);
+    window.addEventListener("vite:preloadError", onPreloadError);
+    return () => {
+      window.removeEventListener("error", onError);
+      window.removeEventListener("unhandledrejection", onRejection);
+      window.removeEventListener("vite:preloadError", onPreloadError);
+    };
+  }, []);
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useStaleChunkRecovery();
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -131,3 +168,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+
