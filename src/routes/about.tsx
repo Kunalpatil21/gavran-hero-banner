@@ -162,7 +162,7 @@ function AboutPage() {
           <div className="absolute inset-0 -z-10 bg-cream/55 sm:hidden" />
 
           {/* Left content */}
-          <div className="relative mx-auto w-full max-w-[1400px] px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
+          <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
             <div className="max-w-xl sm:w-[62%] lg:w-[54%]">
               <h1 className="font-display text-[2.6rem] font-extrabold leading-[1.05] tracking-tight text-forest sm:text-[3.2rem] lg:text-[3.8rem]">
                 About Us
