@@ -233,20 +233,20 @@ function ContactPage() {
         )}
       </header>
 
-      <main className="bg-white pt-[72px] sm:pt-[84px]">
+      <main className="bg-white">
         {/* Banner */}
-        <section className="relative isolate overflow-hidden bg-cream">
+        <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
           <img
             src={gateImage}
             alt="Wooden DWIT Farm entrance gate leading to the poultry shed"
-            className="absolute inset-y-0 right-0 -z-10 h-full w-full object-cover object-center sm:w-[68%]"
+            className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center]"
             loading="eager"
           />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-25% via-cream/85 via-45% to-transparent to-72%" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-20% via-cream/90 via-45% to-transparent to-72%" />
           <div className="absolute inset-0 -z-10 bg-cream/55 sm:hidden" />
 
-          <div className="mx-auto flex min-h-[300px] max-w-[1400px] items-center px-5 py-12 sm:min-h-[340px] sm:px-8 lg:min-h-[380px] lg:px-12">
-            <div className="max-w-md">
+          <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
+            <div className="max-w-xl sm:w-[62%%] lg:w-[54%%]">
               <p className="flex items-center gap-2 text-[13px] font-semibold tracking-[0.18em] text-forest/80">
                 <Leaf className="h-4 w-4 text-gold-deep" />
                 CONTACT US
