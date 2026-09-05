@@ -267,7 +267,7 @@ function TrainingPage() {
           <div className="mx-auto -mt-10 max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="grid divide-y divide-forest/10 rounded-2xl border border-forest/10 bg-white p-6 shadow-[0_28px_60px_-40px_rgba(20,40,20,0.75)] sm:p-8 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
               {HERO_STATS.map(({ icon: Icon, value, label, note }) => (
-                <div key={label} className="flex items-start gap-4 py-5 lg:px-4 lg:py-0">
+                <div key={label} className="flex items-start gap-4 py-5 lg:py-0">
                   <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-gold/15 text-gold-deep">
                     <Icon className="h-6 w-6" />
                   </span>
