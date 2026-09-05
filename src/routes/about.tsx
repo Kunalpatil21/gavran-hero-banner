@@ -146,36 +146,36 @@ function AboutPage() {
       </header>
 
       {/* About banner */}
-      <main className="min-h-screen bg-cream pb-16 pt-24 sm:pt-28">
-        <section className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <div className="relative isolate flex min-h-[300px] items-center overflow-hidden rounded-[24px] border border-forest/10 bg-cream shadow-[0_24px_60px_-32px_rgba(20,40,20,0.35)] md:min-h-[320px] lg:min-h-[340px]">
-            {/* Background image (right-anchored, full bleed) */}
-            <img
-              src={aboutBannerAsset.url}
-              alt="Umesh Patil holding a Gavran hen at DWIT Farm with poultry shed in the background"
-              loading="eager"
-              width={1600}
-              height={700}
-              className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center]"
-            />
-            {/* Soft cream fade from the left */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-15% via-cream/85 via-40% to-transparent to-70%" />
-            <div className="absolute inset-0 -z-10 bg-cream/45 sm:hidden" />
+      <main className="min-h-screen bg-cream pb-16 pt-[72px] sm:pt-[84px]">
+        <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
+          {/* Background image (full-bleed) */}
+          <img
+            src={aboutBannerAsset.url}
+            alt="Umesh Patil holding a Gavran hen at DWIT Farm with poultry shed in the background"
+            loading="eager"
+            width={1600}
+            height={700}
+            className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center]"
+          />
+          {/* Soft cream fade from the left */}
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-20% via-cream/90 via-45% to-transparent to-72%" />
+          <div className="absolute inset-0 -z-10 bg-cream/55 sm:hidden" />
 
-            {/* Left content */}
-            <div className="relative w-full px-6 py-10 sm:w-[62%] sm:px-10 lg:w-[54%] lg:px-14 lg:py-12">
-              <h1 className="font-display text-[2.4rem] font-extrabold leading-[1.05] tracking-tight text-forest sm:text-[3rem] lg:text-[3.5rem]">
+          {/* Left content */}
+          <div className="relative mx-auto w-full max-w-[1400px] px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
+            <div className="max-w-xl sm:w-[62%] lg:w-[54%]">
+              <h1 className="font-display text-[2.6rem] font-extrabold leading-[1.05] tracking-tight text-forest sm:text-[3.2rem] lg:text-[3.8rem]">
                 About Us
               </h1>
 
-              <p className="mt-3 font-display text-xl font-bold leading-snug text-forest sm:text-2xl lg:text-[1.7rem]">
+              <p className="mt-4 font-display text-xl font-bold leading-snug text-forest sm:text-2xl lg:text-[1.8rem]">
                 शिका. समजा. अंमलात आणा.
               </p>
-              <p className="mt-1 font-display text-xl font-bold leading-snug text-gold-deep sm:text-2xl lg:text-[1.7rem]">
+              <p className="mt-1 font-display text-xl font-bold leading-snug text-gold-deep sm:text-2xl lg:text-[1.8rem]">
                 आणि बदल घडवा.
               </p>
 
-              <p className="mt-5 max-w-md text-[14px] leading-relaxed text-forest/75 sm:text-[15px]">
+              <p className="mt-6 max-w-md text-[15px] leading-relaxed text-forest/80 sm:text-base">
                 Dwit Farm is on a mission to empower farmers with practical
                 knowledge, real-world training, and continuous support.
               </p>
