@@ -146,7 +146,7 @@ function AboutPage() {
       </header>
 
       {/* About banner */}
-      <main className="min-h-screen bg-cream pb-16 pt-[72px] sm:pt-[84px]">
+      <main className="min-h-screen bg-cream pb-16">
         <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
           {/* Background image (full-bleed) */}
           <img
