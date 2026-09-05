@@ -6,7 +6,6 @@ import {
   X,
   Leaf,
   Users,
-  MapPin,
   Bird,
   Home as HomeIcon,
   HeartPulse,
@@ -59,26 +58,6 @@ const NAV = [
   { label: "Contact", href: "/contact" },
 ];
 
-const HERO_STATS = [
-  {
-    icon: Sprout,
-    value: "1000+",
-    label: "Farmers Trained",
-    note: "Empowering farmers with practical knowledge.",
-  },
-  {
-    icon: Users,
-    value: "50+",
-    label: "Training Programs",
-    note: "Comprehensive programs for all skill levels.",
-  },
-  {
-    icon: MapPin,
-    value: "Across India",
-    label: "Serving Farmers",
-    note: "Reaching farmers in many states and growing together.",
-  },
-];
 
 const PROGRAMS = [
   {
@@ -258,26 +237,6 @@ function TrainingPage() {
                 Practical knowledge, real-world training and continuous support to help you build a
                 successful poultry farming business.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats card */}
-        <section className="bg-white">
-          <div className="mx-auto -mt-10 max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <div className="grid divide-y divide-forest/10 rounded-2xl border border-forest/10 bg-white p-6 shadow-[0_28px_60px_-40px_rgba(20,40,20,0.75)] sm:p-8 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
-              {HERO_STATS.map(({ icon: Icon, value, label, note }) => (
-                <div key={label} className="flex items-start gap-4 py-5 lg:py-0">
-                  <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-gold/15 text-gold-deep">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <div>
-                    <p className="font-display text-2xl font-extrabold text-forest">{value}</p>
-                    <p className="text-[15px] font-medium text-forest/85">{label}</p>
-                    <p className="mt-1 text-sm leading-relaxed text-forest/60">{note}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
