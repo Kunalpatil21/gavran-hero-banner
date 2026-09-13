@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ContractFarmingRouteImport } from './routes/contract-farming'
 import { Route as FranchiseRouteImport } from './routes/franchise'
 import { Route as GavranPoultryRouteImport } from './routes/gavran-poultry'
 import { Route as TrainingRouteImport } from './routes/training'
@@ -29,6 +30,11 @@ const AboutRoute = AboutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContractFarmingRoute = ContractFarmingRouteImport.update({
+  id: '/contract-farming',
+  path: '/contract-farming',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FranchiseRoute = FranchiseRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/contract-farming': typeof ContractFarmingRoute
   '/franchise': typeof FranchiseRoute
   '/gavran-poultry': typeof GavranPoultryRoute
   '/training': typeof TrainingRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/contract-farming': typeof ContractFarmingRoute
   '/franchise': typeof FranchiseRoute
   '/gavran-poultry': typeof GavranPoultryRoute
   '/training': typeof TrainingRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/contract-farming': typeof ContractFarmingRoute
   '/franchise': typeof FranchiseRoute
   '/gavran-poultry': typeof GavranPoultryRoute
   '/training': typeof TrainingRoute
@@ -75,15 +84,28 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/contact' | '/franchise' | '/gavran-poultry' | '/training'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/contract-farming'
+    | '/franchise'
+    | '/gavran-poultry'
+    | '/training'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/about' | '/contact' | '/franchise' | '/gavran-poultry' | '/training'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/contract-farming'
+    | '/franchise'
+    | '/gavran-poultry'
+    | '/training'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
+    | '/contract-farming'
     | '/franchise'
     | '/gavran-poultry'
     | '/training'
@@ -93,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  ContractFarmingRoute: typeof ContractFarmingRoute
   FranchiseRoute: typeof FranchiseRoute
   GavranPoultryRoute: typeof GavranPoultryRoute
   TrainingRoute: typeof TrainingRoute
@@ -119,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contract-farming': {
+      id: '/contract-farming'
+      path: '/contract-farming'
+      fullPath: '/contract-farming'
+      preLoaderRoute: typeof ContractFarmingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/franchise': {
@@ -149,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  ContractFarmingRoute: ContractFarmingRoute,
   FranchiseRoute: FranchiseRoute,
   GavranPoultryRoute: GavranPoultryRoute,
   TrainingRoute: TrainingRoute,
