@@ -54,6 +54,7 @@ const NAV = [
   { label: "About Us", href: "/about" },
   { label: "Gavran Poultry", href: "/gavran-poultry" },
   { label: "Training", href: "/training" },
+  { label: "Contract Farming", href: "/contract-farming" },
   { label: "Franchise", href: "/franchise" },
   { label: "Contact", href: "/contact" },
 ];
