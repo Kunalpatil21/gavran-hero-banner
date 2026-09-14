@@ -395,11 +395,11 @@ function ContractFarmingPage() {
   );
 }
 
-function Field({ id, name, label, type = "text", error, className }: { id: string; name: string; label: string; type?: string; error?: string; className: string }) {
+function Field({ id, name, label, type = "text", error, className }: { id: string; name: string; label: string; type?: string; error: string | undefined; className: string }) {
   return <div><label className={labelClass} htmlFor={id}>{label}</label><input id={id} name={name} type={type} maxLength={type === "email" ? 255 : 100} aria-invalid={Boolean(error)} className={`${className} mt-1.5`} />{error && <p className="mt-1 text-xs text-gold-deep">{error}</p>}</div>;
 }
 
-function SelectField({ id, name, label, error, options }: { id: string; name: string; label: string; error?: string; options: string[] }) {
+function SelectField({ id, name, label, error, options }: { id: string; name: string; label: string; error: string | undefined; options: string[] }) {
   return <div><label className={labelClass} htmlFor={id}>{label}</label><select id={id} name={name} defaultValue="" aria-invalid={Boolean(error)} className={`${inputClass} mt-1.5`}><option value="" disabled>निवडा</option>{options.map((option) => <option key={option}>{option}</option>)}</select>{error && <p className="mt-1 text-xs text-gold-deep">{error}</p>}</div>;
 }
 
