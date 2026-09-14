@@ -26,6 +26,8 @@ export const Route = createFileRoute("/")({
         content:
           "Practical Gavran poultry farming training on the farm with Umesh Patil — hands-on sessions and government certificate.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
