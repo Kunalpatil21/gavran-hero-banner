@@ -350,7 +350,7 @@ function ContractFarmingPage() {
         <section className="bg-cream/45 py-16">
           <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
             <div className="text-center"><h2 className="font-display text-3xl font-extrabold text-forest sm:text-4xl">वारंवार विचारले जाणारे प्रश्न (FAQ)</h2><p className="mt-2 text-forest/65">तुमच्या सर्व प्रश्नांची उत्तरे येथे मिळतील</p></div>
-            <div className="mt-9 grid gap-3 md:grid-cols-2">{FAQS.map(({ q, a }) => <details key={q} className="group rounded-md border border-forest/10 bg-white px-5 py-4"><summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-forest">{q}<ChevronDown className="h-4 w-4 shrink-0 transition group-open:rotate-180" /></summary><p className="mt-3 border-t border-forest/10 pt-3 text-sm leading-relaxed text-forest/70">{a}</p></details>)}</div>
+            <div className="mt-9 grid items-start gap-3 md:grid-cols-2">{FAQS.map(({ q, a }) => <details key={q} className="group rounded-md border border-forest/10 bg-white px-5 py-4"><summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-forest">{q}<ChevronDown className="h-4 w-4 shrink-0 transition group-open:rotate-180" /></summary><p className="mt-3 border-t border-forest/10 pt-3 text-sm leading-relaxed text-forest/70">{a}</p></details>)}</div>
           </div>
         </section>
 
