@@ -5,8 +5,6 @@ const QUICK_LINKS = [
   "Home",
   "About Us",
   "Our Training",
-  "One Day Training",
-  "YouTube Videos",
   "Contract Farming",
   "Franchise",
   "Contact Us",
