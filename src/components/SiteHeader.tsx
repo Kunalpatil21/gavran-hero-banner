@@ -32,8 +32,8 @@ export default function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "border-b border-gold/15 bg-ink/85 py-2 shadow-lg backdrop-blur-xl"
-          : "border-b border-transparent py-4"
+          ? "border-b border-gold/15 bg-ink/90 py-2 shadow-lg backdrop-blur-xl"
+          : "border-b border-gold/10 bg-ink/80 py-4 backdrop-blur-md"
       }`}
     >
       <nav className="mx-auto grid max-w-[1600px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:grid-cols-[auto_1fr_auto]">
