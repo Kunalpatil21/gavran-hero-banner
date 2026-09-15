@@ -1,9 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
-  Menu,
-  X,
   Leaf,
   ShieldCheck,
   Heart,
@@ -27,12 +24,12 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import logoAsset from "@/assets/dwit-logo.png";
 import bannerAsset from "@/assets/gp-banner.jpg.asset.json";
 import chicksAsset from "@/assets/gp-chicks.jpg.asset.json";
 import hensAsset from "@/assets/gp-hens.jpg.asset.json";
 import meatAsset from "@/assets/gp-meat.jpg.asset.json";
 import eggsAsset from "@/assets/gp-eggs.jpg.asset.json";
+import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -58,15 +55,6 @@ export const Route = createFileRoute("/gavran-poultry")({
   component: GavranPoultryPage,
 });
 
-const NAV = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Gavran Poultry", href: "/gavran-poultry" },
-  { label: "Training", href: "/training" },
-  { label: "Contract Farming", href: "/contract-farming" },
-  { label: "Franchise", href: "/franchise" },
-  { label: "Contact", href: "/contact" },
-];
 
 const WHATSAPP = "https://wa.me/919226466497";
 
@@ -207,98 +195,11 @@ function SectionHeading({ label, title }: { label: string; title: string }) {
 }
 
 function GavranPoultryPage() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <>
-      {/* Navbar */}
-      <header
-        className={`fixed inset-x-0 top-0 z-50 border-b border-gold/15 bg-black shadow-lg transition-all duration-500 ${
-          scrolled ? "py-2" : "py-3"
-        }`}
-      >
-        <nav className="mx-auto grid max-w-[1600px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:grid-cols-[auto_1fr_auto]">
-          <Link to="/" className="flex min-w-0 items-center gap-3">
-            <img
-              src={logoAsset}
-              alt="DWIT Farm logo"
-              width={56}
-              height={56}
-              className="h-10 w-10 shrink-0 sm:h-12 sm:w-12"
-            />
-            <span className="min-w-0">
-              <span className="block truncate text-lg font-semibold tracking-[0.12em] text-cream sm:text-xl">
-                DWIT <span className="font-display text-gold">FARM</span>
-              </span>
-              <span className="hidden text-[10px] tracking-[0.26em] text-cream/60 sm:block">
-                GAVRAN POULTRY &amp; SUPPLY
-              </span>
-            </span>
-          </Link>
-
-          <ul className="hidden items-center justify-center gap-6 lg:flex xl:gap-8">
-            {NAV.map((item) => {
-              const isActive = item.href === "/gavran-poultry";
-              return (
-                <li key={item.label}>
-                  <Link
-                    to={item.href}
-                    className={`relative inline-block py-1 text-[15px] text-cream/85 transition-colors duration-300 hover:text-gold after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 ${
-                      isActive ? "text-gold after:scale-x-100" : ""
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="/training"
-              className="hidden items-center gap-2 rounded-md bg-gradient-to-r from-gold-deep to-gold px-5 py-2.5 text-sm font-medium text-ink shadow-[0_10px_28px_-12px_rgba(0,0,0,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-12px_var(--color-gold)] sm:inline-flex"
-            >
-              Join Training
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-gold/30 text-cream lg:hidden"
-            >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
-        </nav>
-
-        {open && (
-          <div className="border-t border-gold/15 bg-black lg:hidden">
-            <ul className="mx-auto flex max-w-[1600px] flex-col px-5 py-2 sm:px-8">
-              {NAV.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    to={item.href}
-                    onClick={() => setOpen(false)}
-                    className="block border-b border-cream/5 py-3 text-cream/85 transition-colors hover:text-gold"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </header>
+      <SiteHeader />
 
       <main className="bg-white">
         {/* Banner */}
