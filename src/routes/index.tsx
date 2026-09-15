@@ -1,13 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { ArrowRight, ArrowDown, Menu, X, GraduationCap, Home, Award } from "lucide-react";
+import { ArrowRight, ArrowDown, GraduationCap, Home, Award } from "lucide-react";
 
 import heroAsset from "@/assets/hero-farm.png.asset.json";
-import logoAsset from "@/assets/dwit-logo.png";
 import UpcomingTrainings from "@/components/UpcomingTrainings";
 import WhatYouWillLearn from "@/components/WhatYouWillLearn";
 import AboutDwitFarm from "@/components/AboutDwitFarm";
 import FarmVideos from "@/components/FarmVideos";
+import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -33,15 +32,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const NAV = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "/about" },
-  { label: "Gavran Poultry", href: "/gavran-poultry" },
-  { label: "Training", href: "/training" },
-  { label: "Contract Farming", href: "/contract-farming" },
-  { label: "Franchise", href: "/franchise" },
-  { label: "Contact", href: "/contact" },
-];
 
 const TRUST = [
   { icon: GraduationCap, line1: "Practical", line2: "Training" },
@@ -50,15 +40,7 @@ const TRUST = [
 ];
 
 function Index() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <>
@@ -74,94 +56,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70" />
       </div>
 
-      {/* Navbar */}
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "border-b border-gold/15 bg-ink/85 backdrop-blur-xl py-2"
-            : "border-b border-transparent py-4"
-        }`}
-      >
-        <nav className="mx-auto grid max-w-[1600px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:grid-cols-[auto_1fr_auto]">
-          <a href="#home" className="flex min-w-0 items-center gap-3">
-            <img
-              src={logoAsset}
-              alt="DWIT Farm logo"
-              width={56}
-              height={56}
-              className="h-11 w-11 shrink-0 sm:h-14 sm:w-14"
-            />
-            <span className="min-w-0">
-              <span className="block truncate text-lg font-semibold tracking-[0.14em] text-cream sm:text-2xl">
-                DWIT <span className="font-display text-gold">FARM</span>
-              </span>
-              <span className="hidden text-[10px] tracking-[0.28em] text-cream/60 sm:block">
-                GAVRAN POULTRY FARMING &amp; TRAINING
-              </span>
-            </span>
-          </a>
-
-          <ul className="hidden items-center justify-center gap-7 lg:flex xl:gap-9">
-            {NAV.map((item, i) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className={`relative inline-block py-1 text-[15px] text-cream/85 transition-colors duration-300 hover:text-gold after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-bottom-right after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 ${
-                    i === 0 ? "text-gold after:scale-x-100" : ""
-                  }`}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="#training"
-              className="hidden items-center gap-3 rounded-md bg-gradient-to-r from-gold-deep to-gold px-6 py-3 text-sm font-medium text-ink shadow-[0_10px_30px_-12px_rgba(0,0,0,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-12px_var(--color-gold)] sm:inline-flex"
-            >
-              Join Training
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              aria-label={open ? "Close menu" : "Open menu"}
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-gold/30 text-cream lg:hidden"
-            >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
-        </nav>
-
-        {open && (
-          <div className="border-t border-gold/15 bg-ink/95 backdrop-blur-xl lg:hidden">
-            <ul className="mx-auto flex max-w-[1600px] flex-col px-5 py-2 sm:px-8">
-              {NAV.map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="block border-b border-cream/5 py-3 text-cream/85 transition-colors hover:text-gold"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-              <li className="py-4">
-                <a
-                  href="#training"
-                  onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-gold-deep to-gold px-5 py-3 text-sm font-medium text-ink"
-                >
-                  Join Training <ArrowRight className="h-4 w-4" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        )}
-      </header>
+      <SiteHeader />
 
       {/* Hero content */}
       <div className="relative mx-auto flex min-h-screen max-w-[1600px] flex-col justify-center px-5 pt-32 pb-16 sm:px-8 sm:pt-36 lg:pb-24">
