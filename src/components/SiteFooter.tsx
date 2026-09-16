@@ -10,26 +10,6 @@ const QUICK_LINKS = [
   "Contact Us",
 ];
 
-const TRAINING_LINKS = [
-  "Poultry Farming Training",
-  "Farm Management",
-  "Feed & Nutrition",
-  "Health & Medicine",
-  "Disease Management",
-  "Business & Marketing",
-  "One Day Workshop",
-];
-
-const USEFUL_LINKS = [
-  "Poultry Farming Guide",
-  "Chicken Breeds",
-  "Feed Chart",
-  "Success Stories",
-  "Blog & Articles",
-  "FAQ",
-  "Privacy Policy",
-];
-
 const SOCIALS = [
   { icon: Youtube, label: "YouTube", href: "https://www.youtube.com" },
   { icon: Facebook, label: "Facebook", href: "https://www.facebook.com" },
@@ -63,7 +43,7 @@ export default function SiteFooter() {
   return (
     <footer id="contact" className="bg-cream">
       <div className="mx-auto max-w-[1400px] px-5 pb-12 pt-14 sm:px-8 lg:px-12">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1.1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_1fr] lg:gap-16">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-4">
@@ -114,8 +94,6 @@ export default function SiteFooter() {
           </div>
 
           <LinkColumn title="Quick Links" links={QUICK_LINKS} />
-          <LinkColumn title="Training" links={TRAINING_LINKS} />
-          <LinkColumn title="Useful Information" links={USEFUL_LINKS} />
 
           <div>
             <h3 className="font-display text-lg font-bold text-forest">Follow Us</h3>
