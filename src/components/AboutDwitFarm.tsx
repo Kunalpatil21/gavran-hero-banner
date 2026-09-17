@@ -9,7 +9,7 @@ import {
   Quote,
 } from "lucide-react";
 
-import umeshAsset from "@/assets/umesh-patil.png.asset.json";
+import umeshAsset from "@/assets/umesh-patil-home.png.asset.json";
 
 const MISSION = [
   {
