@@ -1,4 +1,4 @@
-import { Phone, MapPin, ChevronRight, Youtube, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronRight, Youtube, Facebook, Instagram, MessageCircle } from "lucide-react";
 import logoAsset from "@/assets/dwit-logo.png";
 
 const QUICK_LINKS = [
@@ -67,6 +67,17 @@ export default function SiteFooter() {
                 </span>
                 <a href="tel:9226466497" className="text-[15px] text-forest/85 hover:text-gold-deep">
                   9226466497
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-forest text-cream">
+                  <Mail className="h-4 w-4" />
+                </span>
+                <a
+                  href="mailto:dwitfarm@gmail.com"
+                  className="text-[15px] text-forest/85 hover:text-gold-deep"
+                >
+                  dwitfarm@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3 sm:col-span-2 lg:col-span-1 xl:col-span-2">
