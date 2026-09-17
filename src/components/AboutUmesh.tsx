@@ -1,6 +1,6 @@
 import { Leaf, ShieldCheck, Users, Sprout, Star } from "lucide-react";
 
-import umeshAsset from "@/assets/umesh-patil.png.asset.json";
+import umeshAsset from "@/assets/umesh-patil-about.png.asset.json";
 
 const STATS = [
   { icon: ShieldCheck, value: "10+", label: "Years of Experience" },
@@ -17,7 +17,7 @@ export default function AboutUmesh() {
         <div className="overflow-hidden rounded-[20px] border border-forest/10 shadow-[0_28px_60px_-38px_rgba(20,40,20,0.7)]">
           <img
             src={umeshAsset.url}
-            alt="Umesh Patil standing inside the DWIT Farm poultry shed with Gavran hens"
+            alt="Umesh Patil"
             loading="lazy"
             width={960}
             height={1280}
