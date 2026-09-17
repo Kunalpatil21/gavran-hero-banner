@@ -2,12 +2,12 @@ import { Phone, Mail, MapPin, ChevronRight, Youtube, Facebook, Instagram, Messag
 import logoAsset from "@/assets/dwit-logo.png";
 
 const QUICK_LINKS = [
-  "Home",
-  "About Us",
-  "Our Training",
-  "Contract Farming",
-  "Franchise",
-  "Contact Us",
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Our Training", href: "/training" },
+  { label: "Contract Farming", href: "/contract-farming" },
+  { label: "Franchise", href: "/franchise" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const SOCIALS = [
@@ -17,20 +17,20 @@ const SOCIALS = [
   { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919226466497" },
 ];
 
-function LinkColumn({ title, links }: { title: string; links: string[] }) {
+function LinkColumn({ title, links }: { title: string; links: Array<{ label: string; href: string }> }) {
   return (
     <div>
       <h3 className="font-display text-lg font-bold text-forest">{title}</h3>
       <span className="mt-2 block h-[3px] w-9 rounded-full bg-gold" />
       <ul className="mt-3 space-y-2">
-        {links.map((l) => (
-          <li key={l}>
+        {links.map((link) => (
+          <li key={link.label}>
             <a
-              href="#"
+              href={link.href}
               className="group inline-flex items-center gap-2 text-[15px] text-forest/75 transition-colors duration-300 hover:text-gold-deep"
             >
               <ChevronRight className="h-3.5 w-3.5 text-gold-deep transition-transform duration-300 group-hover:translate-x-0.5" />
-              {l}
+              {link.label}
             </a>
           </li>
         ))}
@@ -42,10 +42,10 @@ function LinkColumn({ title, links }: { title: string; links: string[] }) {
 export default function SiteFooter() {
   return (
     <footer id="contact" className="bg-cream">
-      <div className="mx-auto max-w-[1400px] px-5 py-9 sm:px-8 lg:px-12 lg:py-10">
-        <div className="grid items-start gap-8 sm:grid-cols-2 lg:grid-cols-[1.6fr_0.8fr_1fr] lg:gap-12">
+      <div className="mx-auto max-w-[1400px] px-5 py-10 sm:px-8 lg:px-12 lg:py-12">
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(240px,0.8fr)] lg:gap-16">
           {/* Brand */}
-          <div>
+          <div className="min-w-0 lg:border-r lg:border-forest/10 lg:pr-16">
             <div className="flex items-center gap-3">
               <img src={logoAsset} alt="DWIT Farm logo" width={64} height={64} className="h-14 w-14" />
               <div>
@@ -55,12 +55,12 @@ export default function SiteFooter() {
               </div>
             </div>
 
-            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-forest/75">
+            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-forest/75">
               Dwit Farm is dedicated to promoting sustainable poultry farming through practical
               knowledge, training and the right guidance for a better tomorrow.
             </p>
 
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
               <li className="flex items-center gap-3">
                 <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-forest text-cream">
                   <Phone className="h-4 w-4" />
@@ -80,7 +80,7 @@ export default function SiteFooter() {
                   dwitfarm@gmail.com
                 </a>
               </li>
-              <li className="flex items-center gap-3 sm:col-span-2 lg:col-span-1 xl:col-span-2">
+              <li className="flex items-center gap-3 sm:col-span-2">
                 <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-forest text-cream">
                   <MapPin className="h-4 w-4" />
                 </span>
@@ -91,31 +91,35 @@ export default function SiteFooter() {
                 </p>
               </li>
             </ul>
+
+            <div className="mt-6 border-t border-forest/10 pt-5">
+              <h3 className="font-display text-lg font-bold text-forest">Follow Us</h3>
+              <span className="mt-2 block h-[3px] w-9 rounded-full bg-gold" />
+              <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="max-w-lg text-[15px] leading-relaxed text-forest/75">
+                  Stay connected for the latest updates, training videos and farming tips.
+                </p>
+                <ul className="flex shrink-0 flex-nowrap gap-2.5">
+                  {SOCIALS.map(({ icon: Icon, label, href }) => (
+                    <li key={label}>
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={label}
+                        className="grid h-10 w-10 place-items-center rounded-full border border-forest/15 bg-white text-forest shadow-[0_10px_24px_-18px_rgba(20,40,20,0.8)] transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:bg-forest hover:text-cream"
+                      >
+                        <Icon className="h-5 w-5" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <LinkColumn title="Quick Links" links={QUICK_LINKS} />
-
-          <div>
-            <h3 className="font-display text-lg font-bold text-forest">Follow Us</h3>
-            <span className="mt-2 block h-[3px] w-9 rounded-full bg-gold" />
-            <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-forest/75">
-              Stay connected for the latest updates, training videos and farming tips.
-            </p>
-            <ul className="mt-4 flex flex-nowrap gap-2.5">
-              {SOCIALS.map(({ icon: Icon, label, href }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={label}
-                    className="grid h-10 w-10 place-items-center rounded-full border border-forest/15 bg-white text-forest shadow-[0_10px_24px_-18px_rgba(20,40,20,0.8)] transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:bg-forest hover:text-cream"
-                  >
-                    <Icon className="h-5 w-5" />
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="min-w-0 lg:pt-1">
+            <LinkColumn title="Quick Links" links={QUICK_LINKS} />
           </div>
         </div>
       </div>
