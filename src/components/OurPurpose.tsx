@@ -49,7 +49,7 @@ export default function OurPurpose() {
       <div className="mt-2 flex items-center gap-2">
         <span className="h-[3px] w-9 rounded-full bg-gold-deep" />
         <Leaf className="h-4 w-4 text-forest" />
-      </div>
+      </article>
 
       <div className="mt-7 grid items-start gap-5 lg:grid-cols-2">
         {PURPOSES.map(({ icon: Icon, title, introduction, body }, i) => (
