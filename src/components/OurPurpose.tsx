@@ -73,7 +73,7 @@ export default function OurPurpose() {
             <p className="mt-3 text-[15px] leading-[1.85] text-forest/80">{body}</p>
           </article>
         ))}
-      </article>
+      </div>
 
       <article className="mt-5 rounded-[20px] border border-gold/30 bg-forest p-6 shadow-[0_24px_55px_-38px_rgba(20,40,20,0.9)] sm:p-8">
         <div className="flex items-center gap-4">
@@ -101,7 +101,7 @@ export default function OurPurpose() {
             </li>
           ))}
         </ul>
-      </div>
+      </article>
     </section>
   );
 }
