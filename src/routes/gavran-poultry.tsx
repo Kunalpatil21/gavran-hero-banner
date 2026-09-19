@@ -390,8 +390,8 @@ function GavranPoultryPage() {
                 <ul className="grid max-w-lg grid-cols-2 gap-x-6 gap-y-2.5 sm:grid-cols-3">
                   {CITIES.flat()
                     .filter(Boolean)
-                    .map((c) => (
-                      <li key={c} className="flex items-center gap-2 text-[15px] text-forest/85">
+                    .map((c, index) => (
+                      <li key={`${c}-${index}`} className="flex items-center gap-2 text-[15px] text-forest/85">
                         <span className="h-1.5 w-1.5 rounded-full bg-gold-deep" />
                         {c}
                       </li>
