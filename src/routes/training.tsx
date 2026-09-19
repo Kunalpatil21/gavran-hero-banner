@@ -1,12 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
   Leaf,
   Users,
-  Bird,
   Home as HomeIcon,
-  HeartPulse,
-  TrendingUp,
   Presentation,
   Sprout,
   ShieldCheck,
@@ -16,10 +13,6 @@ import {
 
 import trainingHero from "@/assets/training-hero.jpg.asset.json";
 import trainingSession from "@/assets/training-session.jpg.asset.json";
-import gpHens from "@/assets/gp-hens.jpg.asset.json";
-import topicFarmSetup from "@/assets/topic-farm-setup.jpg.asset.json";
-import topicHealth from "@/assets/topic-health.jpg.asset.json";
-import topicBusiness from "@/assets/topic-business.jpg.asset.json";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -49,33 +42,6 @@ export const Route = createFileRoute("/training")({
 });
 
 
-
-const PROGRAMS = [
-  {
-    icon: Bird,
-    image: gpHens.url,
-    title: "Beginner Training",
-    text: "For those who are new to poultry farming. Learn the basics and get started with confidence.",
-  },
-  {
-    icon: HomeIcon,
-    image: topicFarmSetup.url,
-    title: "Farm Management",
-    text: "Learn how to manage your farm efficiently for better productivity and profitability.",
-  },
-  {
-    icon: HeartPulse,
-    image: topicHealth.url,
-    title: "Health & Nutrition",
-    text: "Understand proper feeding, nutrition and disease prevention for healthy and strong birds.",
-  },
-  {
-    icon: TrendingUp,
-    image: topicBusiness.url,
-    title: "Advanced Training",
-    text: "Advanced strategies, business planning and scaling your poultry farming business.",
-  },
-];
 
 const LEARN = [
   { icon: Sprout, title: "Breed Selection", text: "Choose the right breed for better results." },
@@ -134,47 +100,6 @@ function TrainingPage() {
 
         <UpcomingTrainings />
         <WhatYouWillLearn />
-
-        {/* Programs */}
-        <section className="bg-white py-14 sm:py-16">
-          <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-            <h2 className="text-center font-display text-3xl font-extrabold text-forest sm:text-4xl">
-              Our Training Programs
-            </h2>
-            <p className="mt-2 text-center text-gold-deep">❧</p>
-
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {PROGRAMS.map(({ icon: Icon, image, title, text }) => (
-                <article
-                  key={title}
-                  className="group overflow-hidden rounded-xl border border-forest/10 bg-white shadow-[0_20px_50px_-38px_rgba(20,40,20,0.9)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_-34px_rgba(20,40,20,0.9)]"
-                >
-                  <div className="relative">
-                    <img
-                      src={image}
-                      alt={title}
-                      loading="lazy"
-                      className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <span className="absolute -bottom-6 left-5 grid h-12 w-12 place-items-center rounded-full bg-forest text-gold shadow-lg">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                  </div>
-                  <div className="px-5 pb-5 pt-9">
-                    <h3 className="font-display text-xl font-bold text-forest">{title}</h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-forest/70">{text}</p>
-                    <Link
-                      to="/contact"
-                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold-deep transition-transform duration-300 hover:translate-x-0.5"
-                    >
-                      Learn More <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* What you will learn */}
         <section className="bg-white pb-14 sm:pb-16">
