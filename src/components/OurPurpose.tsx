@@ -51,11 +51,11 @@ export default function OurPurpose() {
         <Leaf className="h-4 w-4 text-forest" />
       </div>
 
-      <div className="mt-7 grid items-start gap-5 lg:grid-cols-2">
+      <div className="mt-7 grid items-stretch gap-5 lg:grid-cols-2">
         {PURPOSES.map(({ icon: Icon, title, introduction, body }, i) => (
           <article
             key={title}
-            className="rounded-[20px] border border-forest/10 bg-white/70 p-6 shadow-[0_20px_50px_-40px_rgba(20,40,20,0.8)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_26px_60px_-34px_rgba(20,40,20,0.6)] sm:p-8"
+            className="h-full rounded-[20px] border border-forest/10 bg-white/70 p-6 shadow-[0_20px_50px_-40px_rgba(20,40,20,0.8)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_26px_60px_-34px_rgba(20,40,20,0.6)] sm:p-8"
           >
             <span
               className={`grid h-14 w-14 place-items-center rounded-full ${
