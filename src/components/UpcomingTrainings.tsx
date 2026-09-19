@@ -4,9 +4,7 @@ import {
   ArrowRight,
   CalendarDays,
   MapPin,
-  Navigation,
   Leaf,
-  MessageCircle,
   Check,
 } from "lucide-react";
 
@@ -147,47 +145,23 @@ function TrainingCard({ t }: { t: Training }) {
           </div>
         </div>
 
-        <a
-          href={t.mapUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="group/map flex items-start gap-2.5 border-b border-forest/10 py-3.5"
-        >
-          <Navigation className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" />
-          <span className="flex-1">
-            <span className="block text-[13px] font-semibold text-forest">See Location</span>
-            <span className="mt-0.5 block text-[13px] text-forest/70">View on Map / Get Directions</span>
-          </span>
-          <ArrowRight className="mt-3 h-4 w-4 shrink-0 text-forest/50 transition-transform duration-300 group-hover/map:translate-x-1" />
-        </a>
-
-        <div className="mt-4 flex items-center gap-2.5">
+        <div className="mt-auto flex items-center gap-2.5 pt-4">
           <a
-            href="#training"
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-forest/25 px-3 py-3 text-[13px] font-medium text-forest transition-colors duration-300 hover:bg-forest hover:text-cream"
+            href="/training"
+            className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-forest px-3 py-3 text-sm font-semibold text-cream transition-colors duration-300 hover:bg-gold-deep"
           >
             View Details
             <ArrowRight className="h-3.5 w-3.5" />
           </a>
-          {upcoming ? (
-            <a
-              href={t.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-forest px-3 py-3 text-[13px] font-medium text-cream transition-colors duration-300 hover:bg-gold-deep"
-            >
-              <MessageCircle className="h-3.5 w-3.5" />
-              Join WhatsApp
-            </a>
-          ) : (
-            <a
-              href="#training"
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-forest/25 px-3 py-3 text-[13px] font-medium text-forest transition-colors duration-300 hover:bg-forest hover:text-cream"
-            >
-              View Training Details
-              <ArrowRight className="h-3.5 w-3.5" />
-            </a>
-          )}
+          <a
+            href={t.mapUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg border border-forest/60 px-3 py-3 text-sm font-semibold text-forest transition-colors duration-300 hover:bg-forest hover:text-cream"
+          >
+            <MapPin className="h-4 w-4" />
+            Direction
+          </a>
         </div>
       </div>
     </article>
