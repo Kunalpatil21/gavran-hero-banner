@@ -248,16 +248,17 @@ export default function WhatYouWillLearn() {
 
           <div className="relative grid gap-8 lg:grid-cols-[1fr_400px] lg:items-start">
             <div className="flex min-w-0 flex-col">
-              <h3 className="font-display text-3xl font-extrabold leading-snug text-forest sm:text-4xl lg:text-[2.9rem]">
+              <h3 className="text-center font-display text-3xl font-extrabold leading-snug text-forest sm:text-4xl lg:text-[2.75rem]">
                 एक दिवस. प्रत्यक्ष फार्मवर.
                 <br />
                 <span className="text-gold-deep">आयुष्यभरासाठी ज्ञान.</span>
               </h3>
-              <div className="mt-4 flex items-center gap-3">
-                <span className="h-1 w-14 rounded-full bg-gold" />
+              <div className="mt-4 flex items-center justify-center gap-3">
+                <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold" />
                 <Leaf className="h-4 w-4 text-gold-deep" />
+                <span className="h-px w-16 bg-gradient-to-l from-transparent to-gold" />
               </div>
-              <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-forest/75">
+              <p className="mx-auto mt-4 max-w-2xl text-center text-[17px] leading-relaxed text-forest/75">
                 संपूर्ण दिवसाची प्रात्यक्षिके, तज्ज्ञांचे मार्गदर्शन आणि प्रत्यक्ष अनुभवातून शिका आणि
                 आत्मनिर्भर व्हा.
               </p>
