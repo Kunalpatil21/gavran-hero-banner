@@ -23,6 +23,8 @@ import topicBusiness from "@/assets/topic-business.jpg.asset.json";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
+import UpcomingTrainings from "@/components/UpcomingTrainings";
+import WhatYouWillLearn from "@/components/WhatYouWillLearn";
 
 export const Route = createFileRoute("/training")({
   head: () => ({
@@ -129,6 +131,9 @@ function TrainingPage() {
             </div>
           </div>
         </section>
+
+        <UpcomingTrainings />
+        <WhatYouWillLearn />
 
         {/* Programs */}
         <section className="bg-white py-14 sm:py-16">
