@@ -8,23 +8,23 @@ const TESTIMONIALS = [
   {
     photo: farmer1,
     quote:
-      "Dwit Farm training ne mari soch badal di. Aaj mera poultry business pehle se kaafi profitable hai.",
-    name: "Ramesh Patil",
-    role: "Poultry Farmer, Maharashtra",
+      "DWIT Farm चे प्रशिक्षण घेतल्यानंतर गावरान कोंबडी पालनाबद्दलची माझी समज खूप वाढली. प्रत्यक्ष फार्मवर शिकायला मिळाल्यामुळे अनेक गोष्टी सहज समजल्या.",
+    name: "रमेश पाटील",
+    role: "प्रशिक्षणार्थी, महाराष्ट्र",
   },
   {
     photo: farmer2,
     quote:
-      "Practical knowledge aur simple techniques ne meri productivity double kar di.",
-    name: "Sandeep More",
-    role: "Poultry Farmer, Karnataka",
+      "गावरान कोंबडी पालनाची योग्य पद्धत, संगोपन आणि खाद्य व्यवस्थापन याबद्दल खूप चांगले मार्गदर्शन मिळाले. प्रत्यक्ष अनुभवातून शिकण्याचा वेगळाच फायदा झाला.",
+    name: "संदीप मोरे",
+    role: "प्रशिक्षणार्थी, महाराष्ट्र",
   },
   {
     photo: farmer3,
     quote:
-      "Best investment kiya maine Dwit Farm training me. Staff support bhi excellent hai.",
-    name: "Vinod Jadhav",
-    role: "Poultry Farmer, Gujarat",
+      "DWIT Farm कडून मिळालेली माहिती आणि मार्गदर्शन खूप उपयोगी ठरले. गावरान कुक्कुटपालनाबद्दलचा माझा आत्मविश्वास वाढला आणि पुढे काय करायचे याची योग्य दिशा मिळाली.",
+    name: "विनोद जाधव",
+    role: "कुक्कुटपालन व्यवसायिक, महाराष्ट्र",
   },
 ];
 
@@ -32,7 +32,7 @@ export default function FarmerTestimonials() {
   return (
     <section className="mx-auto mt-10 max-w-[1400px] px-4 sm:mt-14 sm:px-6 lg:px-8">
       <h2 className="font-display text-[1.9rem] font-extrabold leading-tight tracking-tight text-forest sm:text-[2.2rem]">
-        What Our Farmers Say
+        लोकांचा DWIT Farm सोबतचा अनुभव
       </h2>
       <span className="mt-2 block h-[3px] w-16 rounded-full bg-gold-deep" />
 
