@@ -248,19 +248,16 @@ export default function WhatYouWillLearn() {
 
           <div className="relative grid gap-8 lg:grid-cols-[1fr_400px] lg:items-start">
             <div className="flex min-w-0 flex-col">
-              <h3 className="text-center font-display text-3xl font-extrabold leading-snug text-forest sm:text-4xl lg:text-[2.75rem]">
-                एक दिवस. प्रत्यक्ष फार्मवर.
-                <br />
-                <span className="text-gold-deep">आयुष्यभरासाठी ज्ञान.</span>
+              <h3 className="max-w-2xl font-display text-3xl font-extrabold leading-snug text-forest sm:text-4xl lg:text-[2.75rem]">
+                एक दिवस प्रत्यक्ष फार्मवर अनुभव घ्या
               </h3>
-              <div className="mt-4 flex items-center justify-center gap-3">
-                <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold" />
+              <div className="mt-4 flex items-center gap-3">
+                <span className="h-1 w-14 rounded-full bg-gold" />
                 <Leaf className="h-4 w-4 text-gold-deep" />
-                <span className="h-px w-16 bg-gradient-to-l from-transparent to-gold" />
               </div>
-              <p className="mx-auto mt-4 max-w-2xl text-center text-[17px] leading-relaxed text-forest/75">
-                संपूर्ण दिवसाची प्रात्यक्षिके, तज्ज्ञांचे मार्गदर्शन आणि प्रत्यक्ष अनुभवातून शिका आणि
-                आत्मनिर्भर व्हा.
+              <p className="mt-4 max-w-2xl text-left text-[17px] leading-relaxed text-forest/75">
+                गावरान कुक्कुटपालनाची योग्य पद्धत प्रत्यक्ष फार्मवर शिका, रोजच्या कामाचा अनुभव घ्या आणि
+                स्वतःचा व्यवसाय सुरू करण्यासाठी योग्य मार्गदर्शन मिळवा.
               </p>
 
               <ol className="mt-7 grid grid-cols-3 gap-y-6 rounded-2xl border border-forest/10 bg-white/80 p-5 shadow-inner backdrop-blur sm:grid-cols-4 xl:grid-cols-7">
