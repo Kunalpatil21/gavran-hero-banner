@@ -1,12 +1,6 @@
-import { Leaf, Sprout, Users, MapPin } from "lucide-react";
+import { Leaf } from "lucide-react";
 
 import gateImage from "@/assets/dwit-farm-gate.jpg";
-
-const STATS = [
-  { icon: Sprout, value: "1000+", label: "Farmers Trained" },
-  { icon: Users, value: "50+", label: "Training Program" },
-  { icon: MapPin, value: "Across India", label: "Serving Farmers" },
-];
 
 export default function AboutStory() {
   return (
@@ -16,8 +10,8 @@ export default function AboutStory() {
         <div className="min-w-0">
           <div className="flex items-center gap-2">
             <Leaf className="h-4 w-4 text-forest" />
-            <p className="text-[13px] font-bold tracking-[0.22em] text-forest">
-              ABOUT DWIT FARM
+            <p className="text-[13px] font-bold text-gold-deep">
+              DWIT Farm बद्दल
             </p>
           </div>
           <div className="mt-2 flex items-center gap-2">
@@ -25,37 +19,27 @@ export default function AboutStory() {
             <Leaf className="h-3.5 w-3.5 text-gold-deep" />
           </div>
 
-          <h2 className="mt-4 font-display text-[2.2rem] font-extrabold leading-[1.1] tracking-tight text-forest sm:text-[2.8rem]">
-            About Dwit Farm
+          <h2 className="mt-4 font-display text-[2.2rem] font-extrabold leading-[1.1] text-forest sm:text-[2.8rem]">
+            DWIT Farm बद्दल
           </h2>
           <span className="mt-4 block h-[3px] w-16 rounded-full bg-gold-deep" />
 
-          <p className="mt-6 max-w-lg text-[15px] leading-[1.9] text-forest/80 sm:text-base">
-            Dwit Farm was started with a simple belief — every farmer deserves
-            the right knowledge, at the right time, in the right way. What began
-            as a small effort to help nearby farmers has now grown into a
-            trusted learning platform for thousands.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-4 rounded-2xl bg-gold/10 px-4 py-5 sm:px-6">
-            {STATS.map(({ icon: Icon, value, label }, i) => (
-              <div
-                key={label}
-                className={`flex min-w-0 flex-1 items-center gap-3 ${
-                  i < STATS.length - 1 ? "sm:border-r sm:border-forest/10" : ""
-                } pr-3`}
-              >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-gold/25 text-gold-deep">
-                  <Icon className="h-5 w-5" strokeWidth={1.8} />
-                </span>
-                <div className="min-w-0">
-                  <p className="font-display text-lg font-extrabold leading-tight text-forest">
-                    {value}
-                  </p>
-                  <p className="truncate text-[13px] text-forest/70">{label}</p>
-                </div>
-              </div>
-            ))}
+          <div className="mt-6 max-w-xl space-y-4 text-[15px] leading-[1.9] text-forest/80 sm:text-base">
+            <p>
+              <strong className="font-bold text-forest">DWIT Farm</strong> ची सुरुवात शुद्ध
+              गावरान कोंबडी पालनाची आवड आणि शेतकऱ्यांना मदत करण्याच्या उद्देशाने झाली. गेल्या काही
+              वर्षांत गावरान कोंबडी पालनाचा प्रत्यक्ष अनुभव घेत आम्ही स्वतःचा फार्म आणि व्यवसाय उभा
+              केला.
+            </p>
+            <p>
+              आज <strong className="font-bold text-forest">DWIT Farm</strong> मध्ये गावरान पिल्ले,
+              कोंबड्या, अंडी आणि गावरान चिकन उपलब्ध करून दिले जाते. तसेच गावरान कोंबडी पालन सुरू करू
+              इच्छिणाऱ्या शेतकऱ्यांना <strong className="font-bold text-forest">प्रशिक्षण, योग्य मार्गदर्शन आणि प्रत्यक्ष अनुभवावर आधारित मदत</strong> दिली जाते.
+            </p>
+            <p>
+              शुद्ध गावरान कोंबडीची चव आणि गुणवत्ता अधिकाधिक लोकांपर्यंत पोहोचवणे आणि शेतकऱ्यांना या
+              व्यवसायातून चांगली संधी मिळवून देणे, हा <strong className="font-bold text-gold-deep">DWIT Farm चा मुख्य उद्देश</strong> आहे.
+            </p>
           </div>
         </div>
 
