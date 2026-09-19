@@ -238,15 +238,10 @@ export default function UpcomingTrainings() {
             <Leaf className="h-4 w-4" />
             UPCOMING TRAININGS
           </p>
-          <h2 className="mt-3 max-w-4xl font-display text-4xl font-extrabold leading-[1.15] text-forest sm:text-5xl lg:text-[3.4rem]">
-            Practical Gavran Poultry Farming Training Across Maharashtra
+          <h2 className="mt-2 max-w-4xl font-display text-3xl font-extrabold leading-tight text-forest sm:text-4xl lg:text-[2.75rem]">
+            Practical Gavran Poultry Farming Trainings
           </h2>
-          <div className="mt-5 flex items-center gap-3 text-gold-deep">
-            <span className="h-px w-14 bg-gold-deep/50 sm:w-20" />
-            <Leaf className="h-4 w-4" />
-            <span className="h-px w-14 bg-gold-deep/50 sm:w-20" />
-          </div>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-forest/75 sm:text-xl">
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-forest/75 sm:text-lg">
             Join the next training session near you and start your journey towards successful
             poultry farming.
           </p>
