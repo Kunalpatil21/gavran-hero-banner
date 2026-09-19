@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, ChevronRight, Youtube, Facebook, Instagram, MessageCircle } from "lucide-react";
-import logoAsset from "@/assets/dwit-logo.png";
+import logoAsset from "@/assets/dwit-logo-primary.png.asset.json";
 
 const QUICK_LINKS = [
   "Home",
@@ -47,7 +47,7 @@ export default function SiteFooter() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3">
-              <img src={logoAsset} alt="DWIT Farm logo" width={64} height={64} className="h-14 w-14" />
+              <img src={logoAsset.url} alt="DWIT Farm logo" width={64} height={64} className="h-14 w-14" />
               <div>
                 <p className="font-display text-3xl font-extrabold leading-none text-forest">Dwit Farm</p>
                 <p className="mt-1.5 text-[15px] font-medium text-gold-deep">From Farm. For Farmers.</p>
