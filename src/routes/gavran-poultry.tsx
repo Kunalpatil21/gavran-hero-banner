@@ -9,9 +9,6 @@ import {
   Phone,
   ClipboardList,
   Package,
-  Bird,
-  Drumstick,
-  Egg,
   Star,
   UserCheck,
   Clock,
@@ -29,6 +26,10 @@ import chicksAsset from "@/assets/gp-chicks.jpg.asset.json";
 import hensAsset from "@/assets/gp-hens.jpg.asset.json";
 import meatAsset from "@/assets/gp-meat.jpg.asset.json";
 import eggsAsset from "@/assets/gp-eggs.jpg.asset.json";
+import monthOldChicksImage from "@/assets/gp-month-old-chicks.jpg";
+import azollaBedImage from "@/assets/gp-azolla-bed.jpg";
+import poultryFeedImage from "@/assets/gp-poultry-feed.jpg";
+import poultryEquipmentImage from "@/assets/gp-poultry-equipment.jpg";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -59,81 +60,93 @@ export const Route = createFileRoute("/gavran-poultry")({
 const WHATSAPP = "https://wa.me/919226466497";
 
 const USPS = [
-  { icon: Leaf, title: "100% शुद्ध गावरान", sub: "नैसर्गिक आहार, निरोगी आणि तंदुरुस्त" },
-  { icon: ShieldCheck, title: "रोगप्रतिकारक क्षमता जास्त", sub: "नैसर्गिक वातावरणात वाढवलेले" },
-  { icon: Heart, title: "आरोग्यदायी आणि स्वादिष्ट", sub: "चवदार, पौष्टिक आणि सुरक्षित" },
-  { icon: Truck, title: "संपूर्ण महाराष्ट्रात डिलिव्हरी", sub: "वेळेवर आणि सुरक्षित डिलिव्हरी" },
-  { icon: Headphones, title: "ऑर्डर व सपोर्ट", sub: "कधीही संपर्क करा, आम्ही तयार" },
+  { icon: Leaf, title: "100% शुद्ध गावरान", sub: "नैसर्गिक पद्धतीने वाढवलेले" },
+  { icon: ShieldCheck, title: "रोगप्रतिकारक क्षमता", sub: "निरोगी आणि मजबूत" },
+  { icon: Heart, title: "आरोग्यदायी आणि सुरक्षित", sub: "चवदार, पौष्टिक आणि नैसर्गिक" },
+  { icon: Truck, title: "संपूर्ण महाराष्ट्रात डिलिव्हरी", sub: "वेळेवर आणि सुरक्षित" },
+  { icon: Headphones, title: "ऑर्डर व सपोर्ट", sub: "त्वरित संपर्क आणि मार्गदर्शन" },
 ];
 
 const PRODUCTS = [
   {
     no: "01",
-    icon: Bird,
     image: chicksAsset.url,
-    alt: "गावरान बाळ पिल्ले",
-    title: "बाळ पिल्ले (चिक्स)",
-    sub: "निरोगी आणि जोमदार गावरान पिल्ले",
-    points: [
-      "लसीकरण केलेली",
-      "रोगप्रतिकारक क्षमता जास्त",
-      "खाणे वाढ आणि कमी मृत्युदर",
-      "योग्य मार्गदर्शनासह उपलब्ध",
-    ],
-    price: "₹30 – ₹45",
-    unit: "/ प्रति पिल्ले",
-    min: "किमान ऑर्डर: 25 पिल्ले",
+    alt: "एक दिवसांची गावरान पिल्ले",
+    title: "१ दिवसांचे पिल्ले",
+    english: "1-Day Chick",
+    description: "निरोगी आणि सक्रिय गावरान पिल्ले",
+    points: ["शुद्ध गावरान वंश", "सक्रिय आणि निरोगी", "योग्य वाढीसाठी मार्गदर्शन"],
+    price: "₹60 / पिल्लू",
   },
   {
     no: "02",
-    icon: Bird,
-    image: hensAsset.url,
-    alt: "गावरान कोंबडी आणि कोंबडा",
-    title: "कोंबडी / कोंबडा (जिवंत)",
-    sub: "शुद्ध गावरान कोंबड्या आणि कोंबडे",
-    points: [
-      "पालनासाठी आणि प्रजननासाठी योग्य",
-      "नैसर्गिक पद्धतीने वाढवलेले",
-      "तंदुरुस्त आणि वजनदार",
-      "रोगमुक्त आणि सक्रिय",
-    ],
-    price: "₹350 – ₹600",
-    unit: "/ प्रति नग",
-    min: "किमान ऑर्डर: 5 नग",
+    image: monthOldChicksImage,
+    alt: "एक महिन्यांची गावरान पिल्ले",
+    title: "१ महिन्यांचे पिल्ले",
+    english: "1-Month Chick",
+    description: "सुदृढ आणि लसीकरण केलेली पिल्ले",
+    points: ["चांगली वाढ आणि वजन", "रोगप्रतिकारक क्षमता", "शेतीसाठी तयार"],
+    price: "₹150 / पिल्लू",
   },
   {
     no: "03",
-    icon: Drumstick,
-    image: meatAsset.url,
-    alt: "ताजे गावरान चिकन",
-    title: "मांस (मटणासाठी)",
-    sub: "ताजे आणि स्वच्छ गावरान मांस",
-    points: [
-      "नैसर्गिक आहारावर वाढवलेले",
-      "चवदार आणि पौष्टिक",
-      "स्वच्छ, हायजेनिक प्रक्रिया",
-      "फ्रेश कट आणि होम डिलिव्हरी",
-    ],
-    price: "₹320 – ₹380",
-    unit: "/ प्रति किलो",
-    min: "किमान ऑर्डर: 1 किलो",
+    image: hensAsset.url,
+    alt: "गावरान कोंबडा आणि कोंबडी",
+    title: "गावरान कोंबडा / कोंबडी",
+    english: "Hen / Cock",
+    description: "दर्जेदार शुद्ध गावरान कोंबडी",
+    points: ["नैसर्गिक पद्धतीने वाढवलेली", "चवदार आणि पौष्टिक", "शेती व घरगुती वापरासाठी योग्य"],
+    price: "₹600 / किलो",
   },
   {
     no: "04",
-    icon: Egg,
     image: eggsAsset.url,
     alt: "गावरान अंडी",
     title: "गावरान अंडी",
-    sub: "ताजी, पौष्टिक आणि शुद्ध गावरान अंडी",
-    points: [
-      "दैनंदिन ताजी अंडी",
-      "हाय प्रोटीन आणि पौष्टिक",
-      "स्वच्छ आणि नैसर्गिक",
-      "घरपोच डिलिव्हरी उपलब्ध",
-    ],
-    price: "₹110 – ₹140",
-    unit: "/ प्रति डझन",
-    min: "किमान ऑर्डर: 1 डझन (12 अंडी)",
+    english: "Eggs",
+    description: "ताजी आणि नैसर्गिक गावरान अंडी",
+    points: ["पौष्टिक आणि आरोग्यदायी", "नैसर्गिक पद्धतीने उत्पादन", "छान चव आणि दर्जा"],
+    price: "₹20 / अंडे",
+  },
+  {
+    no: "05",
+    image: azollaBedImage,
+    alt: "कुक्कुटपालनासाठी अझोला बेड",
+    title: "अझोला बेड",
+    english: "Azolla Bed",
+    description: "कुक्कुटपालनासाठी उपयुक्त अझोला बेड",
+    points: ["उच्च प्रतीचे सेटअप", "सोपे व्यवस्थापन", "कोंबड्यांसाठी उत्तम पूरक आहार"],
+    price: "माहितीसाठी संपर्क करा",
+  },
+  {
+    no: "06",
+    image: poultryFeedImage,
+    alt: "दर्जेदार कुक्कुट खाद्य",
+    title: "कुक्कुट खाद्य",
+    english: "Poultry Feed",
+    description: "गावरान कोंबड्यांसाठी दर्जेदार खाद्य",
+    points: ["संतुलित पोषण", "नैसर्गिक वाढीसाठी उपयुक्त", "चांगले आरोग्य आणि उत्पादन"],
+    price: "माहितीसाठी संपर्क करा",
+  },
+  {
+    no: "07",
+    image: poultryEquipmentImage,
+    alt: "कुक्कुटपालनासाठी फीडर आणि ड्रिंकर साहित्य",
+    title: "कुक्कुटपालन साहित्य",
+    english: "Poultry Equipment",
+    description: "सर्व प्रकारचे कुक्कुटपालन साहित्य",
+    points: ["उत्तम दर्जाचे फीडर आणि ड्रिंकर", "शेतीसाठी आवश्यक साधने", "परवडणाऱ्या किमतीत उपलब्ध"],
+    price: "माहितीसाठी संपर्क करा",
+  },
+  {
+    no: "08",
+    image: meatAsset.url,
+    alt: "स्वच्छ ताजे गावरान चिकन",
+    title: "गावरान चिकन",
+    english: "Pure Gavran Chicken",
+    description: "ताजे, स्वच्छ आणि चवदार गावरान चिकन",
+    points: ["नैसर्गिक पद्धतीने वाढवलेले", "उत्तम चव आणि गुणवत्ता", "घरगुती व हॉटेल वापरासाठी योग्य"],
+    price: "माहितीसाठी संपर्क करा",
   },
 ];
 
@@ -235,46 +248,39 @@ function GavranPoultryPage() {
           </div>
         </section>
 
-        {/* Intro + USPs */}
-        <section className="bg-white">
-          <div className="mx-auto max-w-[1400px] px-5 pb-4 pt-14 sm:px-8 lg:px-12">
-            <SectionHeading
-              label="आमच्याकडून काय मिळेल?"
-              title="शुद्ध गावरान कोंबड्या – संपूर्ण महाराष्ट्रात उपलब्ध!"
-            />
+        {/* Product showcase */}
+        <section className="bg-cream/45">
+          <div className="mx-auto max-w-[1400px] px-5 pb-16 pt-14 sm:px-8 sm:pb-20 lg:px-12 lg:pt-18">
+            <SectionHeading label="आमच्याकडून दर्जेदार उत्पादने" title="शुद्ध गावरान कोंबडी – संपूर्ण महाराष्ट्रात उपलब्ध!" />
             <div className="mx-auto mt-4 flex max-w-xs items-center gap-3">
               <span className="h-px flex-1 bg-gold/50" />
               <Leaf className="h-4 w-4 text-gold-deep" />
               <span className="h-px flex-1 bg-gold/50" />
             </div>
             <p className="mx-auto mt-5 max-w-3xl text-center text-[16px] leading-relaxed text-forest/75">
-              आमच्या फार्मवर नैसर्गिक पद्धतीने वाढवलेले गावरान कोंबड्या, पिल्ले, मांस आणि अंडी
-              तुमच्यापर्यंत ताजी आणि सुरक्षित पोहोचवण्याची आमची हमी.
+              DWIT Farm कडून तुम्हाला दर्जेदार गावरान पिल्ले, कोंबड्या, अंडी, चिकन आणि
+              कुक्कुटपालनासाठी आवश्यक उत्पादने विश्वासार्ह गुणवत्तेसह उपलब्ध करून दिली जातात.
             </p>
 
-            <div className="mt-9 grid gap-px overflow-hidden rounded-2xl border border-forest/10 bg-forest/10 shadow-[0_20px_50px_-40px_rgba(20,40,20,0.9)] sm:grid-cols-2 lg:grid-cols-5">
+            <div className="mt-9 grid gap-px overflow-hidden rounded-xl border border-forest/10 bg-forest/10 shadow-[0_20px_50px_-40px_rgba(20,40,20,0.9)] sm:grid-cols-2 lg:grid-cols-5">
               {USPS.map(({ icon: Icon, title, sub }) => (
-                <div key={title} className="flex items-start gap-3 bg-cream/60 p-5">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white text-gold-deep shadow-sm">
+                <div key={title} className="flex items-center gap-3 bg-cream/80 p-4">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-background text-gold-deep shadow-sm">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <div>
-                    <p className="text-[15px] font-semibold leading-snug text-forest">{title}</p>
-                    <p className="mt-1 text-[13px] leading-snug text-forest/65">{sub}</p>
+                  <div className="min-w-0">
+                    <p className="text-[14px] font-bold leading-snug text-forest">{title}</p>
+                    <p className="mt-0.5 text-[12px] leading-snug text-forest/65">{sub}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* Product cards */}
-        <section className="bg-white">
-          <div className="mx-auto grid max-w-[1400px] gap-6 px-5 py-10 sm:grid-cols-2 sm:px-8 lg:grid-cols-4 lg:px-12">
-            {PRODUCTS.map(({ no, icon: Icon, image, alt, title, sub, points, price, unit, min }) => (
+            <div className="mt-8 grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {PRODUCTS.map(({ no, image, alt, title, english, description, points, price }) => (
               <article
                 key={title}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-forest/12 bg-white shadow-[0_18px_44px_-34px_rgba(20,40,20,0.9)] transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/45 hover:shadow-[0_26px_60px_-30px_rgba(20,40,20,0.7)]"
+                className="group flex h-full flex-col overflow-hidden rounded-lg border border-forest/10 bg-background shadow-[0_16px_38px_-28px_rgba(20,40,20,0.8)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_24px_52px_-28px_rgba(20,40,20,0.65)]"
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -283,49 +289,48 @@ function GavranPoultryPage() {
                     loading="lazy"
                     width={1024}
                     height={700}
-                    className="h-44 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <span className="absolute left-3 top-3 grid h-9 w-9 place-items-center rounded-lg bg-forest text-[13px] font-bold text-cream">
+                  <span className="absolute left-3 top-3 grid h-8 min-w-8 place-items-center rounded-md bg-forest px-2 text-[12px] font-bold text-cream shadow-md">
                     {no}
-                  </span>
-                  <span className="absolute -bottom-5 left-4 grid h-11 w-11 place-items-center rounded-full border-4 border-white bg-forest text-cream">
-                    <Icon className="h-5 w-5" />
                   </span>
                 </div>
 
-                <div className="flex flex-1 flex-col p-5 pt-8">
-                  <h3 className="font-display text-[1.15rem] font-bold text-forest">{title}</h3>
-                  <p className="mt-1.5 text-[13.5px] leading-snug text-forest/65">{sub}</p>
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="font-display text-[1.2rem] font-extrabold leading-tight text-forest">{title}</h3>
+                  <p className="mt-1 text-[12.5px] font-medium text-forest/55">{english}</p>
+                  <p className="mt-3 min-h-10 text-[13.5px] leading-relaxed text-forest/70">{description}</p>
 
-                  <ul className="mt-4 space-y-2">
+                  <ul className="mt-4 space-y-2.5">
                     {points.map((p) => (
-                      <li key={p} className="flex items-start gap-2 text-[13.5px] leading-snug text-forest/80">
-                        <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold-deep" />
+                      <li key={p} className="flex items-start gap-2.5 text-[13px] leading-snug text-forest/80">
+                        <span className="mt-px grid h-5 w-5 shrink-0 place-items-center rounded-full bg-gold/20 text-gold-deep">
+                          <Check className="h-3 w-3" />
+                        </span>
                         {p}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-5 rounded-xl bg-cream/80 p-4">
-                    <p className="font-display text-[1.3rem] font-extrabold text-forest">
-                      {price}
-                      <span className="ml-1 text-[13px] font-medium text-forest/65">{unit}</span>
-                    </p>
-                    <p className="mt-1 text-[12.5px] text-forest/60">{min}</p>
+                  <div className="mt-auto pt-5">
+                    <div className="rounded-md bg-cream px-3 py-3 text-center">
+                      <p className="font-display text-[1.08rem] font-extrabold text-forest">{price}</p>
+                    </div>
                   </div>
-
-                  <a
-                    href={WHATSAPP}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-forest px-4 py-3 text-[14px] font-medium text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-forest/90"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    WhatsApp वर चौकशी करा
-                  </a>
                 </div>
               </article>
             ))}
+            </div>
+
+            <div className="mt-10 text-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-forest px-7 py-3.5 text-[15px] font-semibold text-cream shadow-[0_14px_30px_-20px_rgba(20,40,20,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-forest/90"
+              >
+                सर्व उत्पादनांची माहिती पहा
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
         </section>
 
@@ -385,8 +390,8 @@ function GavranPoultryPage() {
                 <ul className="grid max-w-lg grid-cols-2 gap-x-6 gap-y-2.5 sm:grid-cols-3">
                   {CITIES.flat()
                     .filter(Boolean)
-                    .map((c) => (
-                      <li key={c} className="flex items-center gap-2 text-[15px] text-forest/85">
+                    .map((c, index) => (
+                      <li key={`${c}-${index}`} className="flex items-center gap-2 text-[15px] text-forest/85">
                         <span className="h-1.5 w-1.5 rounded-full bg-gold-deep" />
                         {c}
                       </li>
