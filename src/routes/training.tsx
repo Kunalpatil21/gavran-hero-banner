@@ -65,7 +65,7 @@ function TrainingPage() {
     <>
       <SiteHeader />
 
-      <main className="bg-white">
+      <main className="bg-cream">
         {/* Hero banner */}
         <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
           <img
@@ -102,7 +102,7 @@ function TrainingPage() {
         <WhatYouWillLearn />
 
         {/* What you will learn */}
-        <section className="bg-white pb-14 sm:pb-16">
+        <section className="bg-cream pb-14 sm:pb-16">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="grid gap-8 rounded-2xl bg-cream p-6 sm:p-9 lg:grid-cols-2 lg:items-center">
               <div>
@@ -137,7 +137,7 @@ function TrainingPage() {
         </section>
 
         {/* Formats */}
-        <section className="bg-white pb-14 sm:pb-16">
+        <section className="bg-cream pb-14 sm:pb-16">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <h2 className="text-center font-display text-3xl font-extrabold text-forest sm:text-4xl">
               Training Formats
@@ -166,7 +166,7 @@ function TrainingPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-white pb-16">
+        <section className="bg-cream pb-16">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="flex flex-col items-center gap-6 rounded-2xl bg-forest px-6 py-8 text-center sm:px-10 lg:flex-row lg:justify-between lg:text-left">
               <div className="flex flex-col items-center gap-5 lg:flex-row">
