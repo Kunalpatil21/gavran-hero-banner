@@ -176,22 +176,18 @@ export default function WhatYouWillLearn() {
     <section id="learn" className="relative overflow-hidden bg-cream pt-16 sm:pt-20">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* Heading */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold tracking-[0.28em] text-gold-deep">
+        <header className="flex flex-col items-center text-center">
+          <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.2em] text-gold-deep">
+            <Leaf className="h-4 w-4" />
             WHAT YOU WILL LEARN
           </p>
-          <h2 className="mt-3 font-display text-4xl font-extrabold leading-[1.2] text-forest sm:text-5xl lg:text-[3.4rem]">
+          <h2 className="mt-2 max-w-4xl font-display text-3xl font-extrabold leading-tight text-forest sm:text-4xl lg:text-[2.75rem]">
             तुम्हाला नक्की काय शिकायला मिळणार?
           </h2>
-          <div className="mt-4 flex items-center justify-center gap-3">
-            <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold" />
-            <Leaf className="h-4 w-4 text-gold-deep" />
-            <span className="h-px w-16 bg-gradient-to-l from-transparent to-gold" />
-          </div>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-forest/80 sm:text-lg">
+          <p className="mt-3 max-w-3xl text-base leading-relaxed text-forest/75 sm:text-lg">
             गावरान कुक्कुटपालन यशस्वीपणे करण्यासाठी आवश्यक ज्ञान, योग्य पद्धती आणि व्यावहारिक मार्गदर्शन शिका.
           </p>
-        </div>
+        </header>
 
         {/* Topic grid */}
         <div
