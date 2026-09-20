@@ -230,19 +230,17 @@ function GavranPoultryPage() {
 
           <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
             <div className="max-w-xl sm:w-[62%] lg:w-[54%]">
-              <p className="flex items-center gap-2 text-[13px] font-semibold tracking-[0.18em] text-forest/80">
-                <Leaf className="h-4 w-4 text-gold-deep" />
+              <h1 className="font-display text-[2.6rem] font-extrabold leading-[1.05] tracking-tight text-forest sm:text-[3.2rem] lg:text-[3.8rem]">
                 GAVRAN POULTRY
-              </p>
-              <h1 className="mt-4 font-display text-[2.4rem] font-extrabold leading-[1.08] tracking-tight text-forest sm:text-[2.9rem] lg:text-[3.2rem]">
-                शुद्ध गावरान
-                <br />
-                <span className="text-gold-deep">पोल्ट्री उत्पादने</span>
               </h1>
-              <span className="mt-5 block h-[3px] w-16 rounded-full bg-gold" />
-              <p className="mt-5 text-[15px] leading-relaxed text-forest/75">
-                पिल्ले, कोंबड्या, ताजे मांस आणि गावरान अंडी — नैसर्गिक पद्धतीने वाढवलेली,
-                थेट फार्मवरून तुमच्या घरापर्यंत.
+
+              <p className="mt-4 font-display text-xl font-bold leading-snug text-gold-deep sm:text-2xl lg:text-[1.8rem]">
+                शुद्ध गावरान कुक्कुट उत्पादने
+              </p>
+
+              <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-forest/80 sm:text-base">
+                गावरान पिल्ले, कोंबड्या, अंडी आणि ताजे गावरान चिकन — चांगली गुणवत्ता
+                आणि शुद्ध गावरान चव एका ठिकाणी.
               </p>
             </div>
           </div>
