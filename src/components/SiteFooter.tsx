@@ -6,7 +6,6 @@ const QUICK_LINKS = [
   "About Us",
   "Our Training",
   "Contract Farming",
-  "Franchise",
   "Contact Us",
 ];
 

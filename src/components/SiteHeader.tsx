@@ -10,7 +10,6 @@ const NAV_ITEMS = [
   { label: "Gavran Poultry", to: "/gavran-poultry" },
   { label: "Training", to: "/training" },
   { label: "Contract Farming", to: "/contract-farming" },
-  { label: "Franchise", to: "/franchise" },
   { label: "Contact", to: "/contact" },
 ] as const;
 
