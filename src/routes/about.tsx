@@ -59,19 +59,16 @@ function AboutPage() {
           <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
             <div className="max-w-xl sm:w-[62%] lg:w-[54%]">
               <h1 className="font-display text-[2.6rem] font-extrabold leading-[1.05] tracking-tight text-forest sm:text-[3.2rem] lg:text-[3.8rem]">
-                About Us
+                ABOUT DWIT FARM
               </h1>
 
-              <p className="mt-4 font-display text-xl font-bold leading-snug text-forest sm:text-2xl lg:text-[1.8rem]">
-                शिका. समजा. अंमलात आणा.
-              </p>
-              <p className="mt-1 font-display text-xl font-bold leading-snug text-gold-deep sm:text-2xl lg:text-[1.8rem]">
-                आणि बदल घडवा.
+              <p className="mt-4 font-display text-xl font-bold leading-snug text-gold-deep sm:text-2xl lg:text-[1.8rem]">
+                गावरान कोंबडी पालनाची आवड ते DWIT Farm.
               </p>
 
-              <p className="mt-6 max-w-md text-[15px] leading-relaxed text-forest/80 sm:text-base">
-                Dwit Farm is on a mission to empower farmers with practical
-                knowledge, real-world training, and continuous support.
+              <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-forest/80 sm:text-base">
+                स्वतःच्या फार्मपासून सुरू झालेला हा प्रवास आज गावरान पिल्ले, कोंबड्या,
+                अंडी आणि चिकनपर्यंत पोहोचला आहे.
               </p>
             </div>
           </div>
