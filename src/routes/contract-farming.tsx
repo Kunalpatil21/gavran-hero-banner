@@ -12,7 +12,6 @@ import {
   FileCheck2,
   FileText,
   Handshake,
-  Headphones,
   Leaf,
   Mail,
   MapPin,
@@ -22,7 +21,6 @@ import {
   ShieldCheck,
   Sprout,
   Users,
-  WalletCards,
   X,
 } from "lucide-react";
 
@@ -56,13 +54,6 @@ export const Route = createFileRoute("/contract-farming")({
   component: ContractFarmingPage,
 });
 
-
-const HERO_POINTS = [
-  { icon: ShieldCheck, label: "गुणवत्तापूर्ण पिल्ले" },
-  { icon: Users, label: "तांत्रिक मार्गदर्शन" },
-  { icon: Headphones, label: "नियमित फार्म भेट" },
-  { icon: WalletCards, label: "Buy Back सुविधा" },
-];
 
 const WHY = [
   { icon: ShieldCheck, title: "रोग कमी, पक्षी निरोगी", text: "नियोजित आरोग्य व्यवस्थापन आणि योग्य निगा." },
@@ -239,23 +230,24 @@ function ContractFarmingPage() {
       <SiteHeader />
 
       <main className="bg-white">
-        <section className="relative isolate flex min-h-[610px] items-center overflow-hidden bg-cream lg:min-h-[680px]">
-          <img src={heroAsset.url} alt="DWIT Farm poultry sheds and free-range Gavran hens" className="absolute inset-0 -z-20 h-full w-full object-cover object-[68%_center]" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-20% via-cream/95 via-48% to-transparent to-82%" />
-          <div className="absolute inset-0 -z-10 bg-cream/70 sm:hidden" />
-          <div className="mx-auto w-full max-w-[1400px] px-5 pb-14 pt-28 sm:px-8 lg:px-12 lg:pt-32">
-            <div className="max-w-2xl sm:w-[68%] lg:w-[58%]">
-              <p className="font-semibold uppercase tracking-[0.14em] text-gold-deep">DWIT FARM</p>
-              <h1 className="mt-2 font-display text-4xl font-extrabold leading-tight text-forest sm:text-5xl lg:text-6xl">कॉन्ट्रॅक्ट फार्मिंग मॉडेल</h1>
-              <p className="mt-4 font-display text-2xl font-bold text-forest">गावरान कोंबडी पालनासाठी विश्वासार्ह करार पद्धती</p>
-              <p className="mt-3 text-lg font-semibold text-forest/80">तुमची मेहनत — आमची जबाबदारी — हमखास बाजारपेठ!</p>
-              <ul className="mt-7 grid gap-3 sm:grid-cols-2">
-                {HERO_POINTS.map(({ icon: Icon, label }) => <li key={label} className="flex items-center gap-3 text-sm font-semibold text-forest"><span className="grid h-9 w-9 place-items-center rounded-full bg-forest text-cream"><Icon className="h-4 w-4" /></span>{label}</li>)}
-              </ul>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="#application" className="inline-flex items-center justify-center gap-2 rounded-md bg-gold px-6 py-3.5 font-semibold text-ink transition hover:-translate-y-0.5">आताच नोंदणी करा <ArrowRight className="h-4 w-4" /></a>
-                <a href="https://wa.me/919226466497" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 rounded-md bg-forest px-6 py-3.5 font-semibold text-cream transition hover:-translate-y-0.5"><MessageCircle className="h-5 w-5" /> WhatsApp करा +91 92264 66497</a>
-              </div>
+        <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
+          <img src={heroAsset.url} alt="DWIT Farm poultry sheds and free-range Gavran hens" className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center]" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-20% via-cream/90 via-45% to-transparent to-72%" />
+          <div className="absolute inset-0 -z-10 bg-cream/55 sm:hidden" />
+          <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
+            <div className="max-w-xl sm:w-[62%] lg:w-[54%]">
+              <h1 className="font-display text-[2.6rem] font-extrabold leading-[1.05] tracking-tight text-forest sm:text-[3.2rem] lg:text-[3.8rem]">
+                CONTRACT FARMING
+              </h1>
+
+              <p className="mt-4 font-display text-xl font-bold leading-snug text-gold-deep sm:text-2xl lg:text-[1.8rem]">
+                मेहनत तुमची. साथ DWIT Farm ची.
+              </p>
+
+              <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-forest/80 sm:text-base">
+                गावरान कोंबडी पालनासाठी पिल्ले, योग्य मार्गदर्शन आणि आवश्यक सहकार्य देत
+                तुमच्या फार्मच्या वाढीसाठी DWIT Farm तुमच्या सोबत.
+              </p>
             </div>
           </div>
         </section>
