@@ -141,19 +141,14 @@ function ContactPage() {
 
           <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
             <div className="max-w-xl sm:w-[62%] lg:w-[54%]">
-              <p className="flex items-center gap-2 text-[13px] font-semibold tracking-[0.18em] text-forest/80">
-                <Leaf className="h-4 w-4 text-gold-deep" />
+              <h1 className="font-display text-[2.6rem] font-extrabold leading-[1.05] tracking-tight text-forest sm:text-[3.2rem] lg:text-[3.8rem]">
                 CONTACT US
-              </p>
-              <h1 className="mt-4 font-display text-[2.5rem] font-extrabold leading-[1.08] tracking-tight text-forest sm:text-[3rem] lg:text-[3.4rem]">
-                We&apos;re Here to
-                <br />
-                Help You <span className="text-gold-deep">Grow</span>
               </h1>
-              <span className="mt-5 block h-[3px] w-16 rounded-full bg-gold" />
-              <p className="mt-5 text-[15px] leading-relaxed text-forest/75">
-                Have questions about our training programs, poultry farming, or need support?
-                Reach out to us – we&apos;d love to hear from you.
+              <p className="mt-4 font-display text-xl font-bold leading-snug text-gold-deep sm:text-2xl lg:text-[1.8rem]">
+                आम्ही तुमच्या मदतीसाठी येथे आहोत.
+              </p>
+              <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-forest/80 sm:text-base">
+                गावरान कुक्कुटपालन, आमची उत्पादने किंवा इतर कोणत्याही माहितीसाठी आमच्याशी संपर्क करा. आम्हाला तुमच्याशी बोलायला नक्कीच आवडेल.
               </p>
             </div>
           </div>
