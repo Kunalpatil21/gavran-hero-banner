@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import {
   Leaf,
   Lightbulb,
@@ -137,13 +138,13 @@ export default function AboutDwitFarm() {
                 <Quote className="mt-0.5 h-5 w-5 shrink-0 text-gold-deep" />
                 प्रत्यक्ष शिका, प्रत्यक्ष करा आणि आपल्या यशाची सुरुवात करा.
               </blockquote>
-              <a
-                href="#contact"
+              <Link
+                to="/about"
                 className="group inline-flex shrink-0 items-center gap-3 rounded-md bg-gradient-to-r from-gold-deep to-gold px-7 py-3.5 text-sm font-semibold text-ink shadow-[0_16px_40px_-18px_rgba(0,0,0,0.95)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-16px_var(--color-gold)]"
               >
                 Know More
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
