@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import {
   ArrowLeft,
   ArrowRight,
@@ -237,13 +238,13 @@ export default function UpcomingTrainings() {
             >
               <ArrowRight className="h-5 w-5" />
             </button>
-            <a
-              href="#training"
+            <Link
+              to="/training"
               className="group inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-base font-medium text-cream transition-all duration-300 hover:bg-gold-deep"
             >
               View All Trainings
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            </Link>
           </div>
         </header>
 
