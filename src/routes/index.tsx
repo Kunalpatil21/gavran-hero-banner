@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, Leaf, Sprout } from "lucide-react";
+import { ArrowRight, BadgeCheck, Bird, Sprout } from "lucide-react";
 
 import heroAsset from "@/assets/hero-farm.png.asset.json";
 import UpcomingTrainings from "@/components/UpcomingTrainings";
@@ -34,9 +34,9 @@ export const Route = createFileRoute("/")({
 
 
 const TRUST = [
-  { icon: Award, label: "शुद्ध गावरान" },
+  { icon: Bird, label: "शुद्ध गावरान" },
   { icon: Sprout, label: "नैसर्गिक संगोपन" },
-  { icon: Leaf, label: "दर्जेदार उत्पादने" },
+  { icon: BadgeCheck, label: "दर्जेदार उत्पादने" },
 ];
 
 function Index() {
@@ -80,7 +80,9 @@ function Index() {
           style={{ animationDelay: "0.5s" }}
         >
           <span className="h-px flex-1 bg-gradient-to-r from-gold/60 to-transparent" />
-          <span className="text-sm font-semibold text-gold">नैसर्गिक पद्धत • उत्तम गुणवत्ता • अस्सल गावरान चव</span>
+          <span className="text-center text-lg font-bold leading-relaxed text-gold sm:text-xl">
+            नैसर्गिक पद्धत • उत्तम गुणवत्ता • अस्सल गावरान चव
+          </span>
           <span className="h-px flex-1 bg-gradient-to-l from-gold/60 to-transparent" />
         </div>
 
