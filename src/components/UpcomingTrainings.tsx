@@ -170,7 +170,7 @@ function TrainingCard({ t }: { t: Training }) {
 }
 
 
-export default function UpcomingTrainings() {
+export default function UpcomingTrainings({ showViewAll = true }: { showViewAll?: boolean }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
@@ -221,7 +221,11 @@ export default function UpcomingTrainings() {
             poultry farming.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div
+            className={`mt-8 flex w-full flex-wrap items-center gap-3 ${
+              showViewAll ? "justify-center" : "justify-end"
+            }`}
+          >
             <button
               type="button"
               onClick={() => step(-1)}
@@ -238,13 +242,15 @@ export default function UpcomingTrainings() {
             >
               <ArrowRight className="h-5 w-5" />
             </button>
-            <Link
-              to="/training"
-              className="group inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-base font-medium text-cream transition-all duration-300 hover:bg-gold-deep"
-            >
-              View All Trainings
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            {showViewAll && (
+              <Link
+                to="/training"
+                className="group inline-flex items-center gap-3 rounded-full bg-forest px-6 py-3.5 text-base font-medium text-cream transition-all duration-300 hover:bg-gold-deep"
+              >
+                View All Trainings
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            )}
           </div>
         </header>
 
