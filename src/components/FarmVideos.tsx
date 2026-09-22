@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Play, Youtube } from "lucide-react";
+import { ArrowLeft, ArrowRight, Leaf, Play, Youtube } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 const VIDEOS = [
   {
@@ -45,76 +47,104 @@ function useReveal<T extends HTMLElement>() {
 export default function FarmVideos() {
   const reveal = useReveal<HTMLDivElement>();
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const [activeVideo, setActiveVideo] = useState(0);
 
   const scrollBy = (dir: 1 | -1) => {
     const el = trackRef.current;
     if (!el) return;
-    el.scrollBy({ left: dir * (el.clientWidth * 0.7), behavior: "smooth" });
+    const nextIndex = Math.min(Math.max(activeVideo + dir, 0), VIDEOS.length - 1);
+    const card = el.children.item(nextIndex);
+    if (!(card instanceof HTMLElement)) return;
+    card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+    setActiveVideo(nextIndex);
+  };
+
+  const updateActiveVideo = () => {
+    const el = trackRef.current;
+    if (!el) return;
+    const cards = Array.from(el.children).filter(
+      (child): child is HTMLElement => child instanceof HTMLElement,
+    );
+    if (!cards.length) return;
+    const nearest = cards.reduce(
+      (best, card, index) => {
+        const distance = Math.abs(card.offsetLeft - el.scrollLeft);
+        return distance < best.distance ? { index, distance } : best;
+      },
+      { index: 0, distance: Number.POSITIVE_INFINITY },
+    );
+    setActiveVideo(nearest.index);
   };
 
   return (
-    <section id="videos" className="relative overflow-hidden bg-cream py-16 sm:py-20">
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-16 h-72 w-72 rounded-full bg-forest/10 blur-3xl"
-      />
+    <section id="videos" className="overflow-hidden bg-cream py-16 sm:py-20 lg:py-24">
       <div
         ref={reveal.ref}
-        className={`relative mx-auto grid max-w-[1400px] gap-10 px-5 transition-all duration-700 sm:px-8 lg:grid-cols-[minmax(260px,340px)_1fr] lg:items-center ${
+        className={`mx-auto grid max-w-[1520px] gap-10 px-5 transition-all duration-700 sm:px-8 lg:grid-cols-[minmax(330px,390px)_minmax(0,1fr)] lg:items-center lg:gap-14 ${
           reveal.shown ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
         }`}
       >
-        {/* Left copy */}
-        <div>
-          <p className="text-sm font-semibold tracking-[0.18em] text-forest">
+        <div className="max-w-md">
+          <p className="flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-gold-deep sm:text-sm">
+            <Leaf className="h-5 w-5" aria-hidden="true" />
             LEARN WITH DWIT FARM
           </p>
-          <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+          <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.12] text-forest sm:text-5xl">
             Practical Knowledge,
             <br />
-            <span className="text-gold-deep">Directly From the Farm</span>.
+            <span className="text-gold-deep">Directly From</span>
+            <br />
+            the Farm<span className="text-gold-deep">.</span>
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-ink/70">
+          <p className="mt-6 text-base leading-relaxed text-forest/75 sm:text-lg">
             Real farming lessons, step by step.
             <br />
             Learn directly from our experts.
           </p>
-          <a
-            href={CHANNEL_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="group mt-7 inline-flex items-center gap-3 rounded-full border border-forest/40 bg-white/70 px-6 py-3 text-sm font-semibold text-forest transition-all duration-300 hover:-translate-y-0.5 hover:border-forest hover:shadow-[0_16px_34px_-18px_rgba(0,0,0,0.5)]"
+          <Button
+            asChild
+            className="group mt-8 h-14 rounded-full bg-forest px-7 text-sm font-semibold text-cream shadow-none hover:bg-forest/90"
           >
-            <Youtube className="h-5 w-5 text-red-600" />
-            Watch More on YouTube
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+            <a href={CHANNEL_URL} target="_blank" rel="noreferrer">
+              <Youtube className="text-destructive" />
+              Watch More on YouTube
+              <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </Button>
+          <p className="mt-8 text-xs font-semibold tracking-[0.18em] text-forest/55">
+            FARMING&nbsp;&nbsp; | &nbsp;&nbsp;TRAINING&nbsp;&nbsp; | &nbsp;&nbsp;TIPS&nbsp;&nbsp; | &nbsp;&nbsp;SUCCESS STORIES
+          </p>
         </div>
 
-        {/* Cards */}
         <div className="min-w-0">
-          <div className="mb-5 flex justify-end gap-3">
-            <button
+          <div className="mb-6 flex justify-end gap-3">
+            <Button
               type="button"
+              variant="outline"
+              size="icon"
               aria-label="Previous videos"
               onClick={() => scrollBy(-1)}
-              className="grid h-11 w-11 place-items-center rounded-full border border-forest/25 text-forest/70 transition-all duration-300 hover:border-forest hover:text-forest"
+              disabled={activeVideo === 0}
+              className="h-12 w-12 rounded-full border-forest/25 bg-transparent text-forest shadow-none hover:border-forest hover:bg-transparent hover:text-forest"
             >
               <ArrowLeft className="h-5 w-5" />
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
+              size="icon"
               aria-label="Next videos"
               onClick={() => scrollBy(1)}
-              className="grid h-11 w-11 place-items-center rounded-full border border-forest/60 text-forest transition-all duration-300 hover:bg-forest hover:text-cream"
+              disabled={activeVideo === VIDEOS.length - 1}
+              className="h-12 w-12 rounded-full bg-forest text-cream shadow-none hover:bg-forest/90"
             >
               <ArrowRight className="h-5 w-5" />
-            </button>
+            </Button>
           </div>
 
           <div
             ref={trackRef}
-            className="no-scrollbar -mx-1 flex snap-x snap-mandatory gap-6 overflow-x-auto px-1 pb-2"
+            onScroll={updateActiveVideo}
+            className="no-scrollbar -mx-1 flex snap-x snap-mandatory gap-6 overflow-x-auto px-1 pb-3"
           >
             {VIDEOS.map((v) => (
               <a
@@ -122,7 +152,7 @@ export default function FarmVideos() {
                 href={`https://www.youtube.com/watch?v=${v.id}`}
                 target="_blank"
                 rel="noreferrer"
-                className="group w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl bg-white shadow-[0_18px_40px_-28px_rgba(0,0,0,0.6)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_26px_50px_-24px_rgba(0,0,0,0.55)] sm:w-[52%] lg:w-[calc(33.333%-1rem)]"
+                className="group w-[88%] shrink-0 snap-start overflow-hidden rounded-lg bg-card shadow-[0_18px_45px_-30px_var(--color-ink)] transition-transform duration-300 hover:-translate-y-1 sm:w-[68%] lg:w-[calc(50%-0.75rem)]"
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
@@ -131,19 +161,31 @@ export default function FarmVideos() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <span className="absolute inset-0 grid place-items-center">
-                    <span className="grid h-14 w-20 place-items-center rounded-xl bg-red-600 shadow-lg transition-transform duration-300 group-hover:scale-110">
-                      <Play className="h-6 w-6 fill-white text-white" />
+                  <span className="absolute inset-0 grid place-items-center bg-ink/5">
+                    <span className="grid h-14 w-20 place-items-center rounded-lg bg-destructive shadow-lg transition-transform duration-300 group-hover:scale-105">
+                      <Play className="h-6 w-6 fill-cream text-cream" />
                     </span>
                   </span>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-display text-lg font-bold leading-snug text-ink">
+                <div className="min-h-32 p-5 sm:p-6">
+                  <h3 className="font-display text-xl font-bold leading-snug text-ink">
                     {v.title}
                   </h3>
-                  <p className="mt-2 text-sm text-ink/60">{v.subtitle}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-ink/55">{v.subtitle}</p>
                 </div>
               </a>
+            ))}
+          </div>
+
+          <div className="mt-6 flex justify-center gap-2" aria-label="Video position">
+            {VIDEOS.map((video, index) => (
+              <span
+                key={video.id}
+                aria-hidden="true"
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === activeVideo ? "w-8 bg-forest" : "w-2 bg-forest/20"
+                }`}
+              />
             ))}
           </div>
         </div>
