@@ -71,35 +71,21 @@ const CONTACT_ITEMS = [
 
 const LOCATIONS = [
   {
-    name: "Plaghar (Head Office)",
-    address: ["Dwit Farm, At/Post: N. Po. Khed,", "Tal. Vikramgad,", "Dist. Palghar,", "Maharashtra – 401605"],
-    phone: "+91 12345 67890",
-    email: "info@dwitfarm.com",
-    query: "Vikramgad, Palghar, Maharashtra",
+    name: "Dwit Farm Main Branch, Palghar",
+    address: ["Dwit Farm, At-Post Kev,", "Tal. Vikramgad,", "Dist. Palghar,", "Maharashtra – 401403"],
+    query: "Dwit Farm, Kev, Vikramgad, Palghar, Maharashtra 401403",
+    directionsUrl: "https://maps.app.goo.gl/S8bPc4FgNbjio2dW7",
   },
   {
-    name: "Pune Training Center",
+    name: "Dwit Farm Pune Branch",
     address: [
-      "Dwit Farm Training Center,",
-      "S.No. 25/1, Village Lonikand,",
-      "Tal. Haveli, Pune,",
-      "Maharashtra – 412216",
+      "At-Shivri, Post-Sasvad,",
+      "Tal. Purandar,",
+      "Dist. Pune,",
+      "Maharashtra – 412301",
     ],
-    phone: "+91 87654 32109",
-    email: "pune@dwitfarm.com",
-    query: "Lonikand, Haveli, Pune, Maharashtra",
-  },
-  {
-    name: "Nashik Training Center",
-    address: [
-      "Dwit Farm Training Center,",
-      "Near Trimbakeshwar Road,",
-      "Anjaneri, Nashik,",
-      "Maharashtra – 422213",
-    ],
-    phone: "+91 87654 32108",
-    email: "nashik@dwitfarm.com",
-    query: "Anjaneri, Nashik, Maharashtra",
+    query: "18.262243,76.658669",
+    directionsUrl: "https://maps.google.com/?q=18.262243,76.658669",
   },
 ];
 
@@ -262,10 +248,10 @@ function ContactPage() {
           <h2 className="font-display text-3xl font-bold text-forest">Our Locations</h2>
           <span className="mt-2 block h-[3px] w-12 rounded-full bg-gold" />
           <p className="mt-3 text-[15px] text-forest/70">
-            We have multiple centers to serve and support farmers better across regions.
+            Visit or connect with us at our Dwit Farm locations.
           </p>
 
-          <div className="mt-7 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-7 grid max-w-5xl gap-6 md:grid-cols-2">
             {LOCATIONS.map((loc) => (
               <article
                 key={loc.name}
@@ -285,22 +271,8 @@ function ContactPage() {
                   </div>
                 </div>
 
-                <ul className="mt-5 space-y-2 text-[14px] text-forest/80">
-                  <li className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 shrink-0 text-gold-deep" />
-                    <a href={`tel:${loc.phone.replace(/\s/g, "")}`} className="hover:text-gold-deep">
-                      {loc.phone}
-                    </a>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Mail className="h-4 w-4 shrink-0 text-gold-deep" />
-                    <a href={`mailto:${loc.email}`} className="hover:text-gold-deep">
-                      {loc.email}
-                    </a>
-                  </li>
-                </ul>
-
-                <div className="mt-5 overflow-hidden rounded-xl border border-forest/10">
+                <div className="mt-auto pt-5">
+                  <div className="overflow-hidden rounded-xl border border-forest/10">
                   <iframe
                     title={`Map of ${loc.name}`}
                     src={`https://www.google.com/maps?q=${encodeURIComponent(loc.query)}&output=embed`}
@@ -308,10 +280,11 @@ function ContactPage() {
                     referrerPolicy="no-referrer-when-downgrade"
                     className="block h-[150px] w-full"
                   />
+                  </div>
                 </div>
 
                 <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.query)}`}
+                  href={loc.directionsUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="group mt-5 inline-flex w-fit items-center gap-2 rounded-lg border border-forest/20 bg-white px-4 py-2.5 text-[14px] font-medium text-forest transition-all duration-300 hover:border-gold hover:text-gold-deep"
