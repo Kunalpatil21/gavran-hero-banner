@@ -10,9 +10,6 @@ import {
 } from "lucide-react";
 
 import puneAsset from "@/assets/city-pune.jpg.asset.json";
-import mumbaiAsset from "@/assets/city-mumbai.jpg.asset.json";
-import kolhapurAsset from "@/assets/city-kolhapur.jpg.asset.json";
-import nashikAsset from "@/assets/city-nashik.jpg.asset.json";
 
 type Training = {
   id: string;
@@ -29,49 +26,49 @@ type Training = {
 
 const TRAININGS: Training[] = [
   {
-    id: "pune",
+    id: "palghar-2026-10-04",
+    city: "PALGHAR",
+    district: "Palghar District",
+    address: "Dwit Farm, At-Post Kev, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401403",
+    mapUrl: "https://maps.app.goo.gl/S8bPc4FgNbjio2dW7",
+    image: puneAsset.url,
+    date: "04 Oct 2026",
+    day: "Sunday",
+    time: "10:00 AM – 6:30 PM",
+    whatsapp: "https://wa.me/919999999999",
+  },
+  {
+    id: "pune-2026-10-11",
     city: "PUNE",
     district: "Pune District",
-    address: "Dwit Farm, At/Post: N. Po. Khed, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401605",
-    mapUrl: "https://maps.google.com/?q=Dwit+Farm+Khed+Vikramgad+Palghar",
+    address: "Dwit Farm Pune Branch, At-Shivri, Post-Sasvad, Tal. Purandar, Dist. Pune, Maharashtra – 412301",
+    mapUrl: "https://maps.google.com/?q=18.262243,76.658669",
     image: puneAsset.url,
-    date: "30 Aug 2026",
+    date: "11 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
     whatsapp: "https://wa.me/919999999999",
   },
   {
-    id: "mumbai",
-    city: "MUMBAI",
-    district: "Mumbai City",
-    address: "Dwit Farm Training Center, Near Metro Station, Borivali (E), Mumbai, Maharashtra – 400066",
-    mapUrl: "https://maps.google.com/?q=Borivali+East+Mumbai",
-    image: mumbaiAsset.url,
-    date: "06 Sep 2026",
+    id: "palghar-2026-10-18",
+    city: "PALGHAR",
+    district: "Palghar District",
+    address: "Dwit Farm, At-Post Kev, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401403",
+    mapUrl: "https://maps.app.goo.gl/S8bPc4FgNbjio2dW7",
+    image: puneAsset.url,
+    date: "18 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
     whatsapp: "https://wa.me/919999999999",
   },
   {
-    id: "kolhapur",
-    city: "KOLHAPUR",
-    district: "Kolhapur District",
-    address: "Dwit Farm, Near Shiroli MIDC, Hatkanangale, Tal. Hatkanangale, Dist. Kolhapur – 416109",
-    mapUrl: "https://maps.google.com/?q=Shiroli+MIDC+Hatkanangale+Kolhapur",
-    image: kolhapurAsset.url,
-    date: "13 Sep 2026",
-    day: "Sunday",
-    time: "10:00 AM – 6:30 PM",
-    whatsapp: "https://wa.me/919999999999",
-  },
-  {
-    id: "nashik",
-    city: "NASHIK",
-    district: "Nashik District",
-    address: "Dwit Farm, Near Trimbakeshwar Road, Anandvalli, Nashik, Maharashtra – 422213",
-    mapUrl: "https://maps.google.com/?q=Anandvalli+Nashik",
-    image: nashikAsset.url,
-    date: "20 Sep 2026",
+    id: "pune-2026-10-25",
+    city: "PUNE",
+    district: "Pune District",
+    address: "Dwit Farm Pune Branch, At-Shivri, Post-Sasvad, Tal. Purandar, Dist. Pune, Maharashtra – 412301",
+    mapUrl: "https://maps.google.com/?q=18.262243,76.658669",
+    image: puneAsset.url,
+    date: "25 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
     whatsapp: "https://wa.me/919999999999",
