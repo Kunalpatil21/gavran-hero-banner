@@ -9,8 +9,8 @@ import {
   Check,
 } from "lucide-react";
 
-import puneAsset from "@/assets/city-pune.jpg.asset.json";
 import puneTrainingAsset from "@/assets/pune-training.png.asset.json";
+import palgharTrainingAsset from "@/assets/palghar-training.png.asset.json";
 
 type Training = {
   id: string;
@@ -32,7 +32,7 @@ const TRAININGS: Training[] = [
     district: "Palghar District",
     address: "Dwit Farm, At-Post Kev, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401403",
     mapUrl: "https://maps.app.goo.gl/S8bPc4FgNbjio2dW7",
-    image: puneAsset.url,
+    image: palgharTrainingAsset.url,
     date: "04 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
@@ -56,7 +56,7 @@ const TRAININGS: Training[] = [
     district: "Palghar District",
     address: "Dwit Farm, At-Post Kev, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401403",
     mapUrl: "https://maps.app.goo.gl/S8bPc4FgNbjio2dW7",
-    image: puneAsset.url,
+    image: palgharTrainingAsset.url,
     date: "18 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
