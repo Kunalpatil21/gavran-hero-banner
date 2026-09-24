@@ -10,10 +10,18 @@ const QUICK_LINKS = [
 ];
 
 const SOCIALS = [
-  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com" },
+  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@dwit-farm_38" },
   { icon: Facebook, label: "Facebook", href: "https://www.facebook.com" },
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com" },
-  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919226466497" },
+  {
+    icon: Instagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/dwit_agrofarm?igsh=anA5d3Y1YTlnbmxk&utm_source=qr",
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    href: "https://chat.whatsapp.com/EImQv9Rx2Ey61bD4UnTe08?mode=gi_t",
+  },
 ];
 
 function LinkColumn({ title, links }: { title: string; links: string[] }) {
