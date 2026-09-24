@@ -140,7 +140,6 @@ function TrainingPage() {
             <h2 className="text-center font-display text-3xl font-extrabold text-forest sm:text-4xl">
               Training Formats
             </h2>
-            <p className="mt-2 text-center text-gold-deep">❧</p>
 
             <div className="mt-8 grid gap-0 overflow-hidden rounded-2xl bg-cream sm:grid-cols-3">
               {FORMATS.map(({ icon: Icon, title, text }, i) => (
