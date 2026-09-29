@@ -152,6 +152,11 @@
     color: var(--color-cream);
     font-family: var(--font-sans);
   }
+
+  :focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 3px;
+  }
 }
 
 @keyframes hero-rise {

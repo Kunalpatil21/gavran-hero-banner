@@ -45,7 +45,7 @@ const TOPICS: Topic[] = [
       "पिल्ले येण्यापूर्वीची तयारी",
       "कोंबड्यांचे संरक्षण",
     ],
-    headerColor: "bg-[#6B7B3C]",
+    headerColor: "bg-forest/80",
   },
   {
     id: "rearing",
@@ -58,7 +58,7 @@ const TOPICS: Topic[] = [
       "ऋतूनुसार व्यवस्थापन",
       "कोंबड्यांच्या विविध जाती",
     ],
-    headerColor: "bg-[#8B5A2B]",
+    headerColor: "bg-gold-deep",
   },
   {
     id: "health",
@@ -71,7 +71,7 @@ const TOPICS: Topic[] = [
       "लसीकरण",
       "औषधांचे योग्य व्यवस्थापन",
     ],
-    headerColor: "bg-[#D97706]",
+    headerColor: "bg-gold",
   },
   {
     id: "feed",
@@ -84,7 +84,7 @@ const TOPICS: Topic[] = [
       "खाद्यावरील खर्च कमी करणे",
       "अझोला व BSF फार्मिंग",
     ],
-    headerColor: "bg-[#A3A948]",
+    headerColor: "bg-forest/65",
   },
   {
     id: "business",
@@ -97,7 +97,7 @@ const TOPICS: Topic[] = [
       "कोंबडी पालनाचे फायदे",
       "इन्क्युबेटर व कुक्कुट पिल्ले",
     ],
-    headerColor: "bg-[#4A6741]",
+    headerColor: "bg-forest",
   },
 ];
 
@@ -260,9 +260,9 @@ export default function WhatYouWillLearn() {
                 स्वतःचा व्यवसाय सुरू करण्यासाठी योग्य मार्गदर्शन मिळवा.
               </p>
 
-              <ol className="mt-7 grid grid-cols-3 gap-y-6 rounded-2xl border border-forest/10 bg-white/80 p-5 shadow-inner backdrop-blur sm:grid-cols-4 xl:grid-cols-7">
-                {TIMELINE.map(({ icon: Icon, label, sub }) => (
-                  <li key={label} className="group text-center">
+              <ol className="mt-7 grid grid-cols-2 gap-y-6 rounded-2xl border border-forest/10 bg-white/80 p-5 shadow-inner backdrop-blur sm:grid-cols-7">
+                {TIMELINE.map(({ icon: Icon, label, sub }, index) => (
+                  <li key={label} className={`group text-center ${index === TIMELINE.length - 1 ? "col-span-2 sm:col-span-1" : ""}`}>
                     <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-forest text-cream shadow-md transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-gold-deep sm:h-14 sm:w-14">
                       <Icon className="h-6 w-6" />
                     </span>
