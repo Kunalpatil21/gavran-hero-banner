@@ -1,17 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { type FormEvent } from "react";
 import {
   ArrowRight,
   Phone,
   Mail,
-  Clock,
   MessageCircle,
   Building2,
   Send,
-  Leaf,
-  Users,
-  MapPin,
-  Map as MapIcon,
   Bird,
 } from "lucide-react";
 
@@ -27,13 +22,13 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get in touch with DWIT Farm for Gavran poultry farming training, guidance and support. Phone, email, WhatsApp and training centre locations across Maharashtra.",
+          "Contact DWIT Farm for pure Gavran poultry products, practical training and guidance. Visit our Palghar or Pune locations.",
       },
       { property: "og:title", content: "Contact DWIT Farm — Gavran Poultry Training Support" },
       {
         property: "og:description",
         content:
-          "Reach DWIT Farm by phone, email or WhatsApp, or visit our training centres in Palghar, Pune and Nashik.",
+          "Reach DWIT Farm by phone, email or WhatsApp, or visit our locations in Palghar and Pune.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -47,25 +42,20 @@ const CONTACT_ITEMS = [
   {
     icon: Phone,
     title: "Phone",
-    lines: ["+91 12345 67890", "+91 98765 43210"],
-    href: "tel:+911234567890",
+    lines: ["+91 92264 66497"],
+    href: "tel:+919226466497",
   },
   {
     icon: Mail,
     title: "Email",
-    lines: ["info@dwitfarm.com", "training@dwitfarm.com"],
-    href: "mailto:info@dwitfarm.com",
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    lines: ["Monday – Sunday", "9:00 AM – 6:00 PM"],
+    lines: ["dwitfarm@gmail.com"],
+    href: "mailto:dwitfarm@gmail.com",
   },
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    lines: ["Click to chat with us", "+91 98765 43210"],
-    href: "https://wa.me/919876543210",
+    lines: ["Click to chat with us", "+91 92264 66497"],
+    href: "https://wa.me/919226466497",
   },
 ];
 
@@ -89,31 +79,29 @@ const LOCATIONS = [
   },
 ];
 
-const STATS = [
-  { icon: Leaf, value: "1000+", label: "Farmers Trained" },
-  { icon: Users, value: "50+", label: "Training Programs" },
-  { icon: MapPin, value: "3+", label: "Locations" },
-  { icon: MapIcon, value: "Across India", label: "Serving Farmers" },
-];
-
 const inputClass =
   "w-full rounded-lg border border-forest/15 bg-white/70 px-4 py-3 text-[15px] text-forest placeholder:text-forest/45 outline-none transition-colors duration-300 focus:border-gold focus:bg-white";
 
 function ContactPage() {
-  const [sent, setSent] = useState(false);
-
-
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    e.currentTarget.reset();
+    const values = new FormData(e.currentTarget);
+    const message = [
+      "DWIT Farm website enquiry",
+      `Name: ${String(values.get("name") ?? "")}`,
+      `Phone: ${String(values.get("phone") ?? "")}`,
+      `Email: ${String(values.get("email") ?? "")}`,
+      `Subject: ${String(values.get("subject") ?? "")}`,
+      `Message: ${String(values.get("message") ?? "")}`,
+    ].join("\n");
+    window.open(`https://wa.me/919226466497?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
     <>
       <SiteHeader />
 
-      <main className="bg-white">
+      <main className="bg-cream">
         {/* Banner */}
         <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
           <img
@@ -121,6 +109,8 @@ function ContactPage() {
             alt="Wooden DWIT Farm entrance gate leading to the poultry shed"
             className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center]"
             loading="eager"
+            width={1024}
+            height={1024}
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-20% via-cream/90 via-45% to-transparent to-72%" />
           <div className="absolute inset-0 -z-10 bg-cream/55 sm:hidden" />
@@ -198,11 +188,12 @@ function ContactPage() {
 
               <form onSubmit={onSubmit} className="mt-6 space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <input required maxLength={100} name="name" placeholder="Your Name*" className={inputClass} />
+                  <input required maxLength={100} name="name" aria-label="Your name" placeholder="Your Name*" className={inputClass} />
                   <input
                     required
                     maxLength={20}
                     name="phone"
+                    aria-label="Phone number"
                     type="tel"
                     placeholder="Phone Number*"
                     className={inputClass}
@@ -212,15 +203,17 @@ function ContactPage() {
                   required
                   maxLength={255}
                   name="email"
+                  aria-label="Email address"
                   type="email"
                   placeholder="Email Address*"
                   className={inputClass}
                 />
-                <input required maxLength={150} name="subject" placeholder="Subject*" className={inputClass} />
+                <input required maxLength={150} name="subject" aria-label="Subject" placeholder="Subject*" className={inputClass} />
                 <textarea
                   required
                   maxLength={1000}
                   name="message"
+                  aria-label="Your message"
                   rows={6}
                   placeholder="Your Message*"
                   className={`${inputClass} resize-none`}
@@ -233,11 +226,7 @@ function ContactPage() {
                   Send Message
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
-                {sent && (
-                  <p className="text-center text-[14px] font-medium text-gold-deep">
-                    Thank you! Your message has been sent.
-                  </p>
-                )}
+                <p className="text-center text-xs text-forest/60">Submitting opens WhatsApp with your message ready to send.</p>
               </form>
             </div>
           </div>
@@ -278,7 +267,7 @@ function ContactPage() {
                     src={`https://www.google.com/maps?q=${encodeURIComponent(loc.query)}&output=embed`}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="block h-[150px] w-full"
+                    className="block h-52 w-full sm:h-56"
                   />
                   </div>
                 </div>
@@ -313,32 +302,16 @@ function ContactPage() {
                 </p>
               </div>
             </div>
-            <a
-              href="/training"
+            <Link
+              to="/training"
               className="group inline-flex shrink-0 items-center gap-3 rounded-lg bg-gradient-to-r from-gold-deep to-gold px-7 py-4 text-[15px] font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-16px_var(--color-gold)]"
             >
               Join Our Training Programs
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            </Link>
           </div>
         </section>
 
-        {/* Stats strip */}
-        <section className="mx-auto max-w-[1400px] px-5 pb-14 pt-6 sm:px-8 lg:px-12">
-          <div className="grid gap-6 rounded-[18px] border border-forest/10 bg-cream/60 px-6 py-8 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-forest/10">
-            {STATS.map(({ icon: Icon, value, label }) => (
-              <div key={label} className="flex items-center justify-center gap-4">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold/15 text-gold-deep">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <div>
-                  <p className="font-display text-xl font-extrabold text-forest">{value}</p>
-                  <p className="text-[14px] text-forest/70">{label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
       </main>
 
       <SectionDivider />

@@ -21,7 +21,7 @@ const VIDEOS = [
   },
 ];
 
-const CHANNEL_URL = "https://www.youtube.com/@dwit-farm_38.";
+const CHANNEL_URL = "https://www.youtube.com/@dwit-farm_38";
 
 function useReveal<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);

@@ -17,13 +17,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Learn practical Gavran poultry farming directly from the farm with Umesh Patil. Hands-on training, farm experience and government certification.",
+          "DWIT Farm supplies pure Gavran chicks, hens, eggs and chicken across Maharashtra, with practical poultry farming training and guidance.",
       },
       { property: "og:title", content: "DWIT Farm — Gavran Poultry Farming & Training" },
       {
         property: "og:description",
         content:
-          "Practical Gavran poultry farming training on the farm with Umesh Patil — hands-on sessions and government certificate.",
+          "Pure Gavran poultry products from DWIT Farm, plus practical on-farm training and guidance for poultry farmers.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -62,13 +62,13 @@ function Index() {
       <div className="relative mx-auto flex min-h-screen max-w-[1600px] flex-col justify-center px-5 pt-32 pb-16 sm:px-8 sm:pt-36 lg:pb-24">
         <h1 className="font-display font-extrabold leading-[1.08] tracking-tight">
           <span
-            className="hero-rise block text-[15vw] text-cream sm:text-7xl lg:text-[5.6rem]"
+            className="hero-rise block text-5xl text-cream min-[375px]:text-6xl sm:text-7xl lg:text-[5.6rem]"
             style={{ animationDelay: "0.1s" }}
           >
             DWIT FARM
           </span>
           <span
-            className="hero-rise mt-3 block max-w-4xl text-[9vw] text-gold sm:text-4xl lg:text-[3.2rem]"
+            className="hero-rise mt-3 block max-w-4xl text-3xl text-gold sm:text-4xl lg:text-[3.2rem]"
             style={{ animationDelay: "0.2s" }}
           >
             शुद्ध गावरान कोंबडीसाठी एक विश्वासू नाव.

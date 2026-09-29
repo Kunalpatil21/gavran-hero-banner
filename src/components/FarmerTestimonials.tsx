@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Leaf } from "lucide-react";
 
 import farmer1 from "@/assets/farmer-1.jpg";
@@ -74,17 +75,16 @@ export default function FarmerTestimonials() {
               Ready to Grow Your Farming Business?
             </p>
             <p className="mt-1.5 text-[14px] text-cream/75">
-              Join thousands of happy farmers who have transformed their lives
-              with Dwit Farm training.
+              Learn practical Gavran poultry farming directly at DWIT Farm.
             </p>
           </div>
         </div>
-        <a
-          href="/training"
+        <Link
+          to="/training"
           className="inline-flex shrink-0 items-center rounded-md bg-gradient-to-r from-gold-deep to-gold px-7 py-3.5 text-sm font-semibold text-ink shadow-[0_16px_40px_-18px_rgba(0,0,0,0.95)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_-16px_var(--color-gold)]"
         >
           Join a Training Program
-        </a>
+        </Link>
       </div>
     </section>
   );

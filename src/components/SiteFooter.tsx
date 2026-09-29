@@ -1,17 +1,17 @@
-import { Phone, Mail, MapPin, ChevronRight, Youtube, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Phone, Mail, MapPin, ChevronRight, Youtube, Instagram, MessageCircle } from "lucide-react";
 import logoAsset from "@/assets/dwit-logo-primary.png.asset.json";
 
 const QUICK_LINKS = [
-  "Home",
-  "About Us",
-  "Our Training",
-  "Contract Farming",
-  "Contact Us",
-];
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
+  { label: "Our Training", to: "/training" },
+  { label: "Contract Farming", to: "/contract-farming" },
+  { label: "Contact Us", to: "/contact" },
+] as const;
 
 const SOCIALS = [
   { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@dwit-farm_38" },
-  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com" },
   {
     icon: Instagram,
     label: "Instagram",
@@ -24,21 +24,21 @@ const SOCIALS = [
   },
 ];
 
-function LinkColumn({ title, links }: { title: string; links: string[] }) {
+function LinkColumn({ title, links }: { title: string; links: typeof QUICK_LINKS }) {
   return (
     <div>
       <h3 className="font-display text-lg font-bold text-forest">{title}</h3>
       <span className="mt-2 block h-[3px] w-9 rounded-full bg-gold" />
       <ul className="mt-3 space-y-2">
-        {links.map((l) => (
-          <li key={l}>
-            <a
-              href="#"
+        {links.map((link) => (
+          <li key={link.label}>
+            <Link
+              to={link.to}
               className="group inline-flex items-center gap-2 text-[15px] text-forest/75 transition-colors duration-300 hover:text-gold-deep"
             >
               <ChevronRight className="h-3.5 w-3.5 text-gold-deep transition-transform duration-300 group-hover:translate-x-0.5" />
-              {l}
-            </a>
+              {link.label}
+            </Link>
           </li>
         ))}
       </ul>
@@ -130,16 +130,7 @@ export default function SiteFooter() {
       <div className="bg-forest">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-2 px-5 py-4 text-center text-sm text-cream/80 sm:flex-row sm:px-8 sm:text-left lg:px-12">
           <p>© 2026 Dwit Farm. All Rights Reserved.</p>
-          <span className="text-gold">❧</span>
-          <p className="flex items-center gap-4">
-            <a href="#" className="transition-colors hover:text-gold">
-              Privacy Policy
-            </a>
-            <span className="text-cream/30">|</span>
-            <a href="#" className="transition-colors hover:text-gold">
-              Terms &amp; Conditions
-            </a>
-          </p>
+          <p className="text-cream/65">Pure Gavran Poultry Farm &amp; Supplier</p>
         </div>
       </div>
     </footer>

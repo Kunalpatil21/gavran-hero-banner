@@ -22,7 +22,6 @@ type Training = {
   date: string;
   day: string;
   time: string;
-  whatsapp: string;
 };
 
 const TRAININGS: Training[] = [
@@ -36,7 +35,6 @@ const TRAININGS: Training[] = [
     date: "04 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
-    whatsapp: "https://wa.me/919999999999",
   },
   {
     id: "pune-2026-10-11",
@@ -48,7 +46,6 @@ const TRAININGS: Training[] = [
     date: "11 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
-    whatsapp: "https://wa.me/919999999999",
   },
   {
     id: "palghar-2026-10-18",
@@ -60,7 +57,6 @@ const TRAININGS: Training[] = [
     date: "18 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
-    whatsapp: "https://wa.me/919999999999",
   },
   {
     id: "pune-2026-10-25",
@@ -72,7 +68,6 @@ const TRAININGS: Training[] = [
     date: "25 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
-    whatsapp: "https://wa.me/919999999999",
   },
 ];
 
@@ -145,13 +140,13 @@ function TrainingCard({ t }: { t: Training }) {
         </div>
 
         <div className="mt-auto flex items-center gap-2.5 pt-4">
-          <a
-            href="/training"
+          <Link
+            to="/training"
             className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-forest px-3 py-3 text-sm font-semibold text-cream transition-colors duration-300 hover:bg-gold-deep"
           >
             View Details
             <ArrowRight className="h-3.5 w-3.5" />
-          </a>
+          </Link>
           <a
             href={t.mapUrl}
             target="_blank"
