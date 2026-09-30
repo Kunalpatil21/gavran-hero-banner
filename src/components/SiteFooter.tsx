@@ -92,9 +92,9 @@ export default function SiteFooter() {
                   <MapPin className="h-4 w-4" />
                 </span>
                 <p className="text-[15px] leading-snug text-forest/85">
-                  At/Post: M. Po. Khed, Tal. Vikramgad,
+                  At-Post Kev, Tal. Vikramgad,
                   <br />
-                  Dist. Palghar, Maharashtra, India
+                  Dist. Palghar, Maharashtra – 401403
                 </p>
               </li>
             </ul>
