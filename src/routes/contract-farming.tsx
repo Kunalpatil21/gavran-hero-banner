@@ -58,10 +58,10 @@ export const Route = createFileRoute("/contract-farming")({
 const WHY = [
   { icon: ShieldCheck, title: "रोग कमी, पक्षी निरोगी", text: "नियोजित आरोग्य व्यवस्थापन आणि योग्य निगा." },
   { icon: ChartNoAxesCombined, title: "वाढ चांगली, उत्पादन वाढते", text: "प्रत्येक टप्प्यावर व्यावहारिक मार्गदर्शन." },
-  { icon: CircleDollarSign, title: "खर्च कमी, नफा जास्त", text: "खाद्य व संसाधनांचे शास्त्रीय नियोजन." },
+  { icon: CircleDollarSign, title: "खर्चाचे योग्य नियोजन", text: "खाद्य व संसाधनांचे व्यावहारिक नियोजन." },
   { icon: Leaf, title: "वैज्ञानिक पालन पद्धती", text: "गावरान पक्ष्यांसाठी सिद्ध आणि सुयोग्य पद्धत." },
   { icon: Users, title: "तांत्रिक व प्रशिक्षण सहाय्य", text: "फार्म सुरू करण्यापासून सातत्यपूर्ण सपोर्ट." },
-  { icon: Handshake, title: "विश्वासार्ह बाजारपेठ", text: "ठरलेल्या गुणवत्तेनुसार पारदर्शक Buy Back प्रक्रिया." },
+  { icon: Handshake, title: "बाजारपेठेसाठी सहाय्य", text: "ठरलेल्या गुणवत्तेनुसार पारदर्शक Buy Back प्रक्रिया." },
 ];
 
 const DETAILS = [
@@ -148,10 +148,10 @@ const DETAILS = [
     image: hensAsset.url,
     points: [
       "दर्जेदार पिल्ले आणि तांत्रिक मार्गदर्शन",
-      "कमी जोखीम आणि नियमित प्रशिक्षण",
+      "नियमित प्रशिक्षण आणि मार्गदर्शन",
       "व्यवसाय वाढीसाठी मदत",
       "मार्केटिंगची चिंता कमी",
-      "DWIT Farm बँड अंतर्गत काम करण्याची संधी",
+      "DWIT Farm ब्रँड अंतर्गत काम करण्याची संधी",
     ],
   },
   {
@@ -221,8 +221,18 @@ function ContractFarmingPage() {
       return;
     }
     setErrors({});
+    const message = [
+      "DWIT Farm contract farming enquiry",
+      `Name: ${result.data.name}`,
+      `Mobile: ${result.data.mobile}`,
+      `WhatsApp: ${result.data.whatsapp}`,
+      `Location: ${result.data.city}, ${result.data.district}, ${result.data.state}`,
+      `Available area: ${result.data.area}`,
+      `Proposed capacity: ${result.data.capacity}`,
+      `Message: ${result.data.message}`,
+    ].join("\n");
+    window.open(`https://wa.me/919226466497?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     setSent(true);
-    form.reset();
   };
 
   return (
@@ -231,7 +241,7 @@ function ContractFarmingPage() {
 
       <main className="bg-white">
         <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
-          <img src={heroAsset.url} alt="DWIT Farm poultry sheds and free-range Gavran hens" className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center]" />
+          <img src={heroAsset.url} alt="DWIT Farm poultry sheds and free-range Gavran hens" width={1600} height={900} className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center]" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-20% via-cream/90 via-45% to-transparent to-72%" />
           <div className="absolute inset-0 -z-10 bg-cream/55 sm:hidden" />
           <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
@@ -259,8 +269,8 @@ function ContractFarmingPage() {
               <p className="text-sm font-semibold uppercase text-gold-deep">शेतकऱ्यांसोबत एक विश्वासार्ह भागीदारी</p>
               <h2 className="mt-2 font-display text-3xl font-extrabold text-forest sm:text-4xl">कॉन्ट्रॅक्ट फार्मिंग म्हणजे काय?</h2>
               <span className="mt-3 block h-1 w-16 rounded-full bg-gold" />
-              <p className="mt-5 text-[17px] leading-relaxed text-forest/80">DWIT Farm च्या मार्गदर्शनाखाली गावरान कोंबडी पालन करण्यासाठी शेतकऱ्यांसोबत करार पद्धतीने काम करण्याची ही एक विश्वासार्ह योजना आहे. काही शेती पालन करा, आम्ही तुमच्या संपूर्ण प्रक्रियेत मार्गदर्शन, तांत्रिक सपोर्ट आणि निश्चित बाजारपेठ देतो.</p>
-              <blockquote className="mt-6 border-l-4 border-gold bg-white/70 px-5 py-4 font-display text-xl font-bold text-forest">“तुमची मेहनत — आमची जबाबदारी — हमखास बाजारपेठ!”</blockquote>
+              <p className="mt-5 text-[17px] leading-relaxed text-forest/80">DWIT Farm च्या मार्गदर्शनाखाली गावरान कोंबडी पालन करण्यासाठी शेतकऱ्यांसोबत करार पद्धतीने काम करण्याची ही एक विश्वासार्ह योजना आहे. तुम्ही कुक्कुटपालन करा, आम्ही संपूर्ण प्रक्रियेत मार्गदर्शन, तांत्रिक सपोर्ट आणि विक्रीसाठी सहाय्य देतो.</p>
+              <blockquote className="mt-6 border-l-4 border-gold bg-white/70 px-5 py-4 font-display text-xl font-bold text-forest">“तुमची मेहनत — आमचे मार्गदर्शन — पारदर्शक भागीदारी.”</blockquote>
             </div>
           </div>
         </section>
@@ -278,7 +288,7 @@ function ContractFarmingPage() {
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="text-center"><h2 className="font-display text-3xl font-extrabold text-forest sm:text-4xl">कॉन्ट्रॅक्ट फार्मिंगची संपूर्ण माहिती</h2><p className="mt-2 text-forest/65">खालील प्रत्येक टप्प्यावर तुमच्या यशासाठी आम्ही सोबत</p></div>
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              {DETAILS.map(({ no, title, icon: Icon, image, points, alert }) => <article key={no} className="overflow-hidden rounded-lg border border-forest/10 bg-white shadow-sm transition hover:shadow-xl"><div className="grid min-h-[320px] sm:grid-cols-[1.16fr_0.84fr]"><div className="p-6"><div className="flex items-center gap-3"><span className={`grid h-11 w-11 place-items-center rounded-full font-bold text-cream ${alert ? "bg-gold-deep" : "bg-forest"}`}>{no}</span><Icon className={`h-5 w-5 ${alert ? "text-gold-deep" : "text-forest"}`} /></div><h3 className={`mt-4 font-display text-2xl font-bold ${alert ? "text-gold-deep" : "text-forest"}`}>{title}</h3><ul className="mt-4 space-y-2">{points.map((point) => <li key={point} className="flex gap-2.5 text-[14px] leading-relaxed text-forest/75"><span className={`mt-1 grid h-4 w-4 shrink-0 place-items-center rounded-full text-cream ${alert ? "bg-gold-deep" : "bg-forest"}`}><Check className="h-2.5 w-2.5" /></span>{point}</li>)}</ul></div><img src={image} alt="" className="h-56 w-full object-cover sm:h-full" loading="lazy" /></div></article>)}
+              {DETAILS.map(({ no, title, icon: Icon, image, points, alert }) => <article key={no} className="overflow-hidden rounded-lg border border-forest/10 bg-white shadow-sm transition hover:shadow-lg"><div className="grid min-h-[320px] sm:grid-cols-[1.16fr_0.84fr]"><div className="p-6"><div className="flex items-center gap-3"><span className={`grid h-11 w-11 place-items-center rounded-full font-bold text-cream ${alert ? "bg-gold-deep" : "bg-forest"}`}>{no}</span><Icon className={`h-5 w-5 ${alert ? "text-gold-deep" : "text-forest"}`} /></div><h3 className={`mt-4 font-display text-2xl font-bold ${alert ? "text-gold-deep" : "text-forest"}`}>{title}</h3><ul className="mt-4 space-y-2">{points.map((point) => <li key={point} className="flex gap-2.5 text-[14px] leading-relaxed text-forest/75"><span className={`mt-1 grid h-4 w-4 shrink-0 place-items-center rounded-full text-cream ${alert ? "bg-gold-deep" : "bg-forest"}`}><Check className="h-2.5 w-2.5" /></span>{point}</li>)}</ul></div><img src={image} alt={`${title} — DWIT Farm contract farming`} className="h-56 w-full object-cover sm:h-full" loading="lazy" /></div></article>)}
             </div>
           </div>
         </section>
@@ -318,7 +328,7 @@ function ContractFarmingPage() {
                 </div>
                 <div><label className={labelClass} htmlFor="cf-message">या कॉन्ट्रॅक्टबद्दल आपल्याला काही विचारायचे आहे का?</label><textarea id="cf-message" name="message" rows={4} maxLength={1000} className={`${inputClass} mt-1.5 resize-none`} />{errors.message && <p className="mt-1 text-xs text-gold-deep">{errors.message}</p>}</div>
                 <button type="submit" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-forest px-6 py-3.5 font-semibold text-cream transition hover:-translate-y-0.5 sm:w-auto">नोंदणी सबमिट करा <ArrowRight className="h-4 w-4" /></button>
-                {sent && <p role="status" className="text-sm font-semibold text-forest">धन्यवाद! तुमची माहिती तपासणीसाठी नोंदवली आहे. कृपया थेट संपर्कासाठी WhatsApp वापरा.</p>}
+                {sent && <p role="status" className="text-sm font-semibold text-forest">तुमचा अर्ज WhatsApp मध्ये तयार आहे. कृपया तो पाठवा.</p>}
               </form>
             </div>
 
@@ -327,8 +337,8 @@ function ContractFarmingPage() {
               <ul className="mt-7 space-y-5">
                 <ContactItem icon={Phone} title="फोन" value="+91 92264 66497" href="tel:+919226466497" />
                 <ContactItem icon={MessageCircle} title="WhatsApp" value="+91 92264 66497" href="https://wa.me/919226466497" />
-                <ContactItem icon={Mail} title="ईमेल" value="franchise@dwitfarm.com" href="mailto:franchise@dwitfarm.com" />
-                <ContactItem icon={MapPin} title="कार्यालयाचा पत्ता" value="Dwit Farm, At/Post: N. Po. Khed, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401605" />
+                <ContactItem icon={Mail} title="ईमेल" value="dwitfarm@gmail.com" href="mailto:dwitfarm@gmail.com" />
+                <ContactItem icon={MapPin} title="कार्यालयाचा पत्ता" value="DWIT Farm, At-Post Kev, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401403" />
               </ul>
               <div className="mt-9 flex items-end justify-between border-t border-forest/10 pt-7"><p className="max-w-[190px] font-display text-xl font-bold text-forest">तुमची मेहनत — आमची जबाबदारी...</p><Bird className="h-20 w-20 text-gold-deep/70" /></div>
             </aside>

@@ -18,7 +18,6 @@ import {
   CreditCard,
   MessageCircle,
   Check,
-  Sparkles,
 } from "lucide-react";
 
 import bannerAsset from "@/assets/gp-banner.jpg.asset.json";
@@ -180,14 +179,6 @@ const DELIVERY_INFO = [
   { icon: Truck, label: "डिलिव्हरी चार्ज:", value: "अंतरानुसार लागू (मोठ्या ऑर्डरवर फ्री डिलिव्हरी)" },
   { icon: CreditCard, label: "पेमेंट पद्धती:", value: "UPI, गुगल पे, फोन पे, बँक ट्रान्सफर, रोख" },
   { icon: Phone, label: "ऑर्डर करण्याची पद्धत:", value: "WhatsApp / कॉल" },
-];
-
-const GUARANTEES = [
-  "शुद्ध गावरान उत्पादन",
-  "रोगमुक्त आणि तंदुरुस्त",
-  "स्वच्छ आणि हायजेनिक",
-  "समाधान किंवा पुनर्पूर्तता",
-  "ग्राहक समाधान आमची प्राधान्यता",
 ];
 
 function SectionHeading({ label, title }: { label: string; title: string }) {
@@ -460,28 +451,6 @@ function GavranPoultryPage() {
           </div>
         </section>
 
-        {/* Guarantee strip */}
-        <section className="bg-white">
-          <div className="mx-auto max-w-[1400px] px-5 pb-12 sm:px-8 lg:px-12">
-            <div className="relative overflow-hidden rounded-2xl border border-forest/10 bg-cream/60 px-6 py-7">
-              <Sparkles className="pointer-events-none absolute -left-3 bottom-0 h-20 w-20 text-forest/10" />
-              <Sparkles className="pointer-events-none absolute -right-3 top-0 h-20 w-20 text-forest/10" />
-              <h3 className="text-center font-display text-[1.4rem] font-extrabold text-forest">
-                आमची हमी – शुद्धता, गुणवत्ता आणि विश्वास!
-              </h3>
-              <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-                {GUARANTEES.map((g) => (
-                  <li key={g} className="flex items-center gap-2 text-[14px] text-forest/80">
-                    <span className="grid h-6 w-6 place-items-center rounded-full border border-gold/40 text-gold-deep">
-                      <Check className="h-3.5 w-3.5" />
-                    </span>
-                    {g}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
       </main>
 
       <SectionDivider />
