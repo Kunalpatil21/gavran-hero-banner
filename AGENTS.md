@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Public enquiry forms open a prefilled WhatsApp message to DWIT Farm rather than displaying a false submitted state, because no persistent form service is connected.

@@ -26,7 +26,7 @@ export const Route = createFileRoute("/training")({
       {
         name: "description",
         content:
-          "Practical Gavran poultry farming training at DWIT Farm — beginner, farm management, health & nutrition and advanced programs with on-farm learning and lifetime support.",
+          "Practical Gavran poultry farming training at DWIT Farm covering farm setup, health, nutrition, management and business guidance through on-farm learning.",
       },
       { property: "og:title", content: "Poultry Farming Training — DWIT Farm Programs" },
       {
