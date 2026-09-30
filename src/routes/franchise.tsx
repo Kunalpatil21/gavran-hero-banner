@@ -59,13 +59,6 @@ const HERO_USP = [
   { icon: TrendingUp, label: "एकत्र वाढूया" },
 ];
 
-const STATS = [
-  { icon: Users, value: "500+", label: "प्रशिक्षित शेतकरी" },
-  { icon: MapPin, value: "25+", label: "जिल्ह्यांत उपस्थिती" },
-  { icon: Warehouse, value: "100+", label: "फ्रँचायझी पार्टनर" },
-  { icon: Handshake, value: "100%", label: "संपूर्ण सपोर्ट व मार्गदर्शन" },
-];
-
 const WHY = [
   { icon: Bird, title: "गुणवत्तापूर्ण पक्षी आणि खाद्य" },
   { icon: Presentation, title: "प्रशिक्षण व तांत्रिक मार्गदर्शन" },
@@ -108,13 +101,13 @@ const REQUIREMENTS = [
 ];
 
 const CONTACTS = [
-  { icon: Phone, title: "फोन", value: "+91 12345 67890", href: "tel:+911234567890" },
-  { icon: MessageCircle, title: "WhatsApp", value: "+91 12345 67890", href: "https://wa.me/911234567890" },
-  { icon: Mail, title: "ईमेल", value: "franchise@dwitfarm.com", href: "mailto:franchise@dwitfarm.com" },
+  { icon: Phone, title: "फोन", value: "+91 92264 66497", href: "tel:+919226466497" },
+  { icon: MessageCircle, title: "WhatsApp", value: "+91 92264 66497", href: "https://wa.me/919226466497" },
+  { icon: Mail, title: "ईमेल", value: "dwitfarm@gmail.com", href: "mailto:dwitfarm@gmail.com" },
   {
     icon: MapPin,
     title: "कार्यालयाचा पत्ता",
-    value: "Dwit Farm, At/Post: N. Po. Khed, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401605",
+    value: "DWIT Farm, At-Post Kev, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401403",
   },
 ];
 
@@ -128,8 +121,20 @@ function FranchisePage() {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const values = new FormData(e.currentTarget);
+    const message = [
+      "DWIT Farm franchise enquiry",
+      `Name: ${String(values.get("name") ?? "")}`,
+      `Mobile: ${String(values.get("mobile") ?? "")}`,
+      `WhatsApp: ${String(values.get("whatsapp") ?? "")}`,
+      `Email: ${String(values.get("email") ?? "")}`,
+      `Location: ${String(values.get("city") ?? "")}, ${String(values.get("district") ?? "")}, ${String(values.get("state") ?? "")}`,
+      `Available area: ${String(values.get("area") ?? "")}`,
+      `Investment range: ${String(values.get("investment") ?? "")}`,
+      `Message: ${String(values.get("message") ?? "")}`,
+    ].join("\n");
+    window.open(`https://wa.me/919226466497?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
     setSent(true);
-    e.currentTarget.reset();
   };
 
   return (
@@ -142,6 +147,8 @@ function FranchisePage() {
           <img
             src={heroAsset.url}
             alt="Gavran hens inside a Dwit Farm poultry shed"
+            width={1600}
+            height={900}
             className="absolute inset-y-0 right-0 -z-10 h-full w-full object-cover object-center lg:w-[62%]"
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-20% via-cream/90 via-42% to-transparent to-70%" />
@@ -214,22 +221,6 @@ function FranchisePage() {
             </div>
           </div>
 
-          {/* Stats card */}
-          <div className="mx-auto max-w-[1400px] px-5 pb-10 sm:px-8 lg:px-12">
-            <div className="grid gap-6 rounded-[18px] border border-forest/10 bg-white px-6 py-7 shadow-[0_24px_60px_-40px_rgba(20,40,20,0.6)] sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-forest/10">
-              {STATS.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="flex items-center justify-center gap-4 px-2">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold/15 text-forest">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <p className="font-display text-2xl font-extrabold text-forest">{value}</p>
-                    <p className="text-[13px] leading-snug text-forest/70">{label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </section>
 
         {/* Why partner */}
@@ -350,8 +341,8 @@ function FranchisePage() {
                 </span>
                 <div>
                   <p className="text-[13px] text-cream/70">किंवा WhatsApp करा</p>
-                  <a href="https://wa.me/911234567890" target="_blank" rel="noreferrer" className="font-display text-lg font-bold text-cream hover:text-gold">
-                    +91 12345 67890
+                  <a href="https://wa.me/919226466497" target="_blank" rel="noreferrer" className="font-display text-lg font-bold text-cream hover:text-gold">
+                    +91 92264 66497
                   </a>
                 </div>
               </div>
@@ -496,7 +487,7 @@ function FranchisePage() {
 
                 {sent && (
                   <p className="text-[14px] font-medium text-gold-deep">
-                    धन्यवाद! तुमची चौकशी मिळाली आहे. आमची टीम लवकरच संपर्क करेल.
+                    तुमची चौकशी WhatsApp मध्ये तयार आहे. कृपया ती पाठवा.
                   </p>
                 )}
               </form>
