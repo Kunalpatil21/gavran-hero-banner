@@ -28,6 +28,7 @@ import heroAsset from "@/assets/franchise-hero.jpg.asset.json";
 import chicksAsset from "@/assets/gp-chicks.jpg.asset.json";
 import hensAsset from "@/assets/gp-hens.jpg.asset.json";
 import farmAsset from "@/assets/hero-farm.png.asset.json";
+import responsibilityAsset from "@/assets/dwit-farm-responsibility.png.asset.json";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -69,7 +70,7 @@ const DETAILS = [
     no: "01",
     title: "DWIT Farm ची जबाबदारी",
     icon: ClipboardCheck,
-    image: chicksAsset.url,
+    image: responsibilityAsset.url,
     points: [
       "दर्जेदार गावरान पिल्ले पुरवणे",
       "Vaccination Time Table देणे",
