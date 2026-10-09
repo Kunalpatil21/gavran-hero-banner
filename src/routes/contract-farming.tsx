@@ -28,6 +28,7 @@ import heroAsset from "@/assets/franchise-hero.jpg.asset.json";
 import chicksAsset from "@/assets/gp-chicks.jpg.asset.json";
 import hensAsset from "@/assets/gp-hens.jpg.asset.json";
 import farmAsset from "@/assets/hero-farm.png.asset.json";
+import documentsAsset from "@/assets/dwit-agro-farm-documents.png.asset.json";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -125,7 +126,7 @@ const DETAILS = [
     no: "05",
     title: "आवश्यक कागदपत्रे",
     icon: FileText,
-    image: chicksAsset.url,
+    image: documentsAsset.url,
     points: ["आधार कार्ड", "PAN कार्ड (असल्यास)", "बँक पासबुक", "7/12 किंवा जमिनीचा पुरावा", "दोन फोटो"],
   },
   {
