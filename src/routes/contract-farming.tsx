@@ -29,6 +29,7 @@ import chicksAsset from "@/assets/gp-chicks.jpg.asset.json";
 import hensAsset from "@/assets/gp-hens.jpg.asset.json";
 import farmAsset from "@/assets/hero-farm.png.asset.json";
 import documentsAsset from "@/assets/dwit-agro-farm-documents.png.asset.json";
+import farmerBenefitsAsset from "@/assets/farmer-benefits.png.asset.json";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -146,7 +147,7 @@ const DETAILS = [
     no: "07",
     title: "शेतकऱ्यांना मिळणारे फायदे",
     icon: ChartNoAxesCombined,
-    image: hensAsset.url,
+    image: farmerBenefitsAsset.url,
     points: [
       "दर्जेदार पिल्ले आणि तांत्रिक मार्गदर्शन",
       "नियमित प्रशिक्षण आणि मार्गदर्शन",
