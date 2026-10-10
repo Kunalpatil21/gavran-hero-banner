@@ -18,7 +18,7 @@ import {
 
 import farmSetup from "@/assets/topic-farm-setup.jpg.asset.json";
 import chicks from "@/assets/dwit-gavran-rooster-and-hen.png.asset.json";
-import health from "@/assets/topic-health.jpg.asset.json";
+import health from "@/assets/dwit-poultry-health-medicine.png.asset.json";
 import feed from "@/assets/topic-feed.jpg.asset.json";
 import business from "@/assets/topic-business.jpg.asset.json";
 import session from "@/assets/training-session.jpg.asset.json";
@@ -64,7 +64,7 @@ const TOPICS: Topic[] = [
     id: "health",
     title: "आरोग्य आणि औषध",
     image: health.url,
-    alt: "Healthy country hen standing in a farmyard",
+    alt: "Poultry vaccines, medicines and health-care supplies on a farm",
     points: [
       "रोगांची लक्षणे",
       "औषधोपचार व काळजी",
