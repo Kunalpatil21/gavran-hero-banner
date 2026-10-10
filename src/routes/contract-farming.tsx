@@ -34,6 +34,7 @@ import requiredDocumentsAsset from "@/assets/dwit-required-documents.png.asset.j
 import contractDurationAsset from "@/assets/dwit-contract-duration-renewal.png.asset.json";
 import contractCancellationAsset from "@/assets/dwit-contract-cancellation.png.asset.json";
 import farmerBenefitsAsset from "@/assets/dwit-farmer-benefits.png.asset.json";
+import specialTermsAsset from "@/assets/dwit-special-terms-conditions.png.asset.json";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -164,7 +165,7 @@ const DETAILS = [
     no: "08",
     title: "विशेष अटी व शर्ती",
     icon: Scale,
-    image: farmAsset.url,
+    image: specialTermsAsset.url,
     alert: true,
     points: [
       "नैसर्गिक आपत्ती आल्यास दोन्ही पक्ष चर्चा करून निर्णय घेतील.",
