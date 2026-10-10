@@ -32,6 +32,7 @@ import responsibilityAsset from "@/assets/dwit-farm-responsibility.png.asset.jso
 import farmerResponsibilityAsset from "@/assets/dwit-farmer-responsibility.png.asset.json";
 import requiredDocumentsAsset from "@/assets/dwit-required-documents.png.asset.json";
 import contractDurationAsset from "@/assets/dwit-contract-duration-renewal.png.asset.json";
+import contractCancellationAsset from "@/assets/dwit-contract-cancellation.png.asset.json";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -136,7 +137,7 @@ const DETAILS = [
     no: "06",
     title: "करार रद्द होण्याची कारणे",
     icon: X,
-    image: heroAsset.url,
+    image: contractCancellationAsset.url,
     alert: true,
     points: [
       "कंपनीच्या नियमांचे उल्लंघन",
