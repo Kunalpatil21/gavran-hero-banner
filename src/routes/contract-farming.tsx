@@ -31,6 +31,7 @@ import farmAsset from "@/assets/hero-farm.png.asset.json";
 import responsibilityAsset from "@/assets/dwit-farm-responsibility.png.asset.json";
 import farmerResponsibilityAsset from "@/assets/dwit-farmer-responsibility.png.asset.json";
 import requiredDocumentsAsset from "@/assets/dwit-required-documents.png.asset.json";
+import contractDurationAsset from "@/assets/dwit-contract-duration-renewal.png.asset.json";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -117,7 +118,7 @@ const DETAILS = [
     no: "04",
     title: "करार कालावधी आणि नूतनीकरण",
     icon: FileCheck2,
-    image: heroAsset.url,
+    image: contractDurationAsset.url,
     points: [
       "कराराचा कालावधी 1 वर्ष / 3 वर्ष / 5 वर्ष असा असू शकतो.",
       "दोन्ही पक्षांच्या लेखी संमतीने कराराचे नूतनीकरण केले जाईल.",
