@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 import farmSetup from "@/assets/topic-farm-setup.jpg.asset.json";
-import chicks from "@/assets/topic-chicks.jpg.asset.json";
+import chicks from "@/assets/dwit-farm-hens-and-chicks.png.asset.json";
 import health from "@/assets/topic-health.jpg.asset.json";
 import feed from "@/assets/topic-feed.jpg.asset.json";
 import business from "@/assets/topic-business.jpg.asset.json";
@@ -51,7 +51,7 @@ const TOPICS: Topic[] = [
     id: "rearing",
     title: "कोंबडी संगोपन",
     image: chicks.url,
-    alt: "Two yellow chicks on farm ground",
+    alt: "Gavran hens and chicks together in a poultry farm",
     points: [
       "पिल्लांची योग्य निवड",
       "पिल्लांचे संगोपन",
