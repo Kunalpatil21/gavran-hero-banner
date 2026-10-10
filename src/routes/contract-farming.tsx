@@ -33,6 +33,7 @@ import farmerResponsibilityAsset from "@/assets/dwit-farmer-responsibility.png.a
 import requiredDocumentsAsset from "@/assets/dwit-required-documents.png.asset.json";
 import contractDurationAsset from "@/assets/dwit-contract-duration-renewal.png.asset.json";
 import contractCancellationAsset from "@/assets/dwit-contract-cancellation.png.asset.json";
+import farmerBenefitsAsset from "@/assets/dwit-farmer-benefits.png.asset.json";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -150,7 +151,7 @@ const DETAILS = [
     no: "07",
     title: "शेतकऱ्यांना मिळणारे फायदे",
     icon: ChartNoAxesCombined,
-    image: hensAsset.url,
+    image: farmerBenefitsAsset.url,
     points: [
       "दर्जेदार पिल्ले आणि तांत्रिक मार्गदर्शन",
       "नियमित प्रशिक्षण आणि मार्गदर्शन",
