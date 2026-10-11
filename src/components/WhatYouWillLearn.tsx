@@ -20,7 +20,7 @@ import farmSetup from "@/assets/dwit-poultry-farm-setup.png.asset.json";
 import chicks from "@/assets/dwit-gavran-rooster-and-hen.png.asset.json";
 import health from "@/assets/dwit-poultry-health-medicine.png.asset.json";
 import feed from "@/assets/dwit-poultry-feed-and-cost.png.asset.json";
-import business from "@/assets/topic-business.jpg.asset.json";
+import business from "@/assets/dwit-poultry-business-guidance.png.asset.json";
 import session from "@/assets/training-session.jpg.asset.json";
 
 
@@ -90,7 +90,7 @@ const TOPICS: Topic[] = [
     id: "business",
     title: "व्यवसाय मार्गदर्शन",
     image: business.url,
-    alt: "Free range flock of country hens",
+    alt: "Poultry business planning with charts, coins, a calculator and a farm model",
     points: [
       "कोंबड्यांच्या विक्रीची पद्धत",
       "नफा व खर्चाचे नियोजन",
