@@ -16,7 +16,7 @@ import {
   Headphones,
 } from "lucide-react";
 
-import farmSetup from "@/assets/topic-farm-setup.jpg.asset.json";
+import farmSetup from "@/assets/dwit-poultry-farm-setup.png.asset.json";
 import chicks from "@/assets/dwit-gavran-rooster-and-hen.png.asset.json";
 import health from "@/assets/dwit-poultry-health-medicine.png.asset.json";
 import feed from "@/assets/topic-feed.jpg.asset.json";
@@ -38,7 +38,7 @@ const TOPICS: Topic[] = [
     id: "setup",
     title: "फार्म सेट-अप",
     image: farmSetup.url,
-    alt: "Bamboo and wood poultry shed on a farm",
+    alt: "Poultry farm setup with a shed, feeders, water tank and outdoor hens",
     points: [
       "फार्म बनवण्याचे नियम",
       "शेडची उभारणी",
