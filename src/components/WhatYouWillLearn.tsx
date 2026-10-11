@@ -19,7 +19,7 @@ import {
 import farmSetup from "@/assets/dwit-poultry-farm-setup.png.asset.json";
 import chicks from "@/assets/dwit-gavran-rooster-and-hen.png.asset.json";
 import health from "@/assets/dwit-poultry-health-medicine.png.asset.json";
-import feed from "@/assets/topic-feed.jpg.asset.json";
+import feed from "@/assets/dwit-poultry-feed-and-cost.png.asset.json";
 import business from "@/assets/topic-business.jpg.asset.json";
 import session from "@/assets/training-session.jpg.asset.json";
 
@@ -77,7 +77,7 @@ const TOPICS: Topic[] = [
     id: "feed",
     title: "खाद्य व खर्च",
     image: feed.url,
-    alt: "Bowl of poultry feed with hens behind",
+    alt: "Poultry feed, grains, feeders and a calculator for feed cost planning",
     points: [
       "पिल्लांचे खाद्य नियोजन",
       "योग्य खाद्याचे प्रकार",
