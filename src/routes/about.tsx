@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import aboutBannerAsset from "@/assets/about-banner.png.asset.json";
+const aboutBannerAsset = "/images/about-banner.png";
 import AboutStory from "@/components/AboutStory";
 import AboutUmesh from "@/components/AboutUmesh";
 import OurPurpose from "@/components/OurPurpose";
@@ -44,7 +44,7 @@ function AboutPage() {
         <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
           {/* Background image (full-bleed) */}
           <img
-            src={aboutBannerAsset.url}
+            src={aboutBannerAsset}
             alt="Umesh Patil holding a Gavran hen at DWIT Farm with poultry shed in the background"
             loading="eager"
             width={1600}

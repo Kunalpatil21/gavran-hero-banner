@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Public enquiry forms open a prefilled WhatsApp message to DWIT Farm rather than displaying a false submitted state, because no persistent form service is connected.
+- Store all website image files, including logos, favicon and video thumbnails, in public/images and reference /images/ paths so cloned projects need no hosted asset service.

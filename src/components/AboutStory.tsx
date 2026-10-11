@@ -1,6 +1,6 @@
 import { Leaf } from "lucide-react";
 
-import gateImage from "@/assets/dwit-farm-gate.jpg";
+const gateImage = "/images/dwit-farm-gate.jpg";
 
 export default function AboutStory() {
   return (

@@ -9,8 +9,8 @@ import {
   Check,
 } from "lucide-react";
 
-import puneTrainingAsset from "@/assets/pune-training.png.asset.json";
-import palgharTrainingAsset from "@/assets/palghar-training.png.asset.json";
+const puneTrainingAsset = "/images/pune-training.png";
+const palgharTrainingAsset = "/images/palghar-training.png";
 
 type Training = {
   id: string;
@@ -31,7 +31,7 @@ const TRAININGS: Training[] = [
     district: "Palghar District",
     address: "Dwit Farm, At-Post Kev, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401403",
     mapUrl: "https://maps.app.goo.gl/S8bPc4FgNbjio2dW7",
-    image: palgharTrainingAsset.url,
+    image: palgharTrainingAsset,
     date: "04 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
@@ -42,7 +42,7 @@ const TRAININGS: Training[] = [
     district: "Pune District",
     address: "Dwit Farm Pune Branch, At-Shivri, Post-Sasvad, Tal. Purandar, Dist. Pune, Maharashtra – 412301",
     mapUrl: "https://maps.google.com/?q=18.262243,76.658669",
-    image: puneTrainingAsset.url,
+    image: puneTrainingAsset,
     date: "11 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
@@ -53,7 +53,7 @@ const TRAININGS: Training[] = [
     district: "Palghar District",
     address: "Dwit Farm, At-Post Kev, Tal. Vikramgad, Dist. Palghar, Maharashtra – 401403",
     mapUrl: "https://maps.app.goo.gl/S8bPc4FgNbjio2dW7",
-    image: palgharTrainingAsset.url,
+    image: palgharTrainingAsset,
     date: "18 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",
@@ -64,7 +64,7 @@ const TRAININGS: Training[] = [
     district: "Pune District",
     address: "Dwit Farm Pune Branch, At-Shivri, Post-Sasvad, Tal. Purandar, Dist. Pune, Maharashtra – 412301",
     mapUrl: "https://maps.google.com/?q=18.262243,76.658669",
-    image: puneTrainingAsset.url,
+    image: puneTrainingAsset,
     date: "25 Oct 2026",
     day: "Sunday",
     time: "10:00 AM – 6:30 PM",

@@ -10,7 +10,7 @@ import {
   Bird,
 } from "lucide-react";
 
-import gateImage from "@/assets/dwit-farm-gate.jpg";
+const gateImage = "/images/dwit-farm-gate.jpg";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";

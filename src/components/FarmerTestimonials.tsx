@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Leaf } from "lucide-react";
 
-import farmer1 from "@/assets/farmer-1.jpg";
-import farmer2 from "@/assets/farmer-2.jpg";
-import farmer3 from "@/assets/dwit-vinod-jadhav.png.asset.json";
+const farmer1 = "/images/farmer-1.jpg";
+const farmer2 = "/images/farmer-2.jpg";
+const farmer3 = "/images/dwit-vinod-jadhav.png";
 
 const TESTIMONIALS = [
   {
@@ -21,7 +21,7 @@ const TESTIMONIALS = [
     role: "प्रशिक्षणार्थी, महाराष्ट्र",
   },
   {
-    photo: farmer3.url,
+    photo: farmer3,
     quote:
       "DWIT Farm कडून मिळालेली माहिती आणि मार्गदर्शन खूप उपयोगी ठरले. गावरान कुक्कुटपालनाबद्दलचा माझा आत्मविश्वास वाढला आणि पुढे काय करायचे याची योग्य दिशा मिळाली.",
     name: "विनोद जाधव",

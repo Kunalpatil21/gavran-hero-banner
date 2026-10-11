@@ -1,6 +1,6 @@
 import { Leaf, Quote } from "lucide-react";
 
-import umeshAsset from "@/assets/umesh-patil-about.png.asset.json";
+const umeshAsset = "/images/umesh-patil-about.png";
 
 export default function AboutUmesh() {
   return (
@@ -9,7 +9,7 @@ export default function AboutUmesh() {
         {/* Photo */}
         <div className="overflow-hidden rounded-[20px] border border-forest/10 shadow-[0_28px_60px_-38px_rgba(20,40,20,0.7)]">
           <img
-            src={umeshAsset.url}
+            src={umeshAsset}
             alt="Umesh Patil"
             loading="lazy"
             width={960}

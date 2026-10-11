@@ -1,4 +1,4 @@
-import henFamily from "@/assets/hen-family.png";
+const henFamily = "/images/hen-family.png";
 
 export default function SectionDivider() {
   return (
