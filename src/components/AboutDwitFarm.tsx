@@ -10,7 +10,7 @@ import {
   Quote,
 } from "lucide-react";
 
-import umeshAsset from "@/assets/umesh-patil-home.png.asset.json";
+const umeshAsset = "/images/umesh-patil-home.png";
 
 const MISSION = [
   {
@@ -74,7 +74,7 @@ export default function AboutDwitFarm() {
           <div className="group relative mx-auto w-full max-w-sm lg:mx-0">
             <div className="relative overflow-hidden rounded-[28px] border border-gold/30 shadow-[0_34px_80px_-44px_rgba(20,40,20,0.9)]">
               <img
-                src={umeshAsset.url}
+                src={umeshAsset}
                 alt="उमेश पाटील — संस्थापक, द्वित्त फार्म"
                 loading="lazy"
                 width={960}

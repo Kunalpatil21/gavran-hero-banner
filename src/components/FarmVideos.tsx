@@ -156,7 +156,7 @@ export default function FarmVideos() {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <img
-                    src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
+                    src={`/images/youtube-${v.id}.jpg`}
                     alt={v.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"

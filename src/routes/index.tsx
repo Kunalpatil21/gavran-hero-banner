@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BadgeCheck, Bird, Sprout } from "lucide-react";
 
-import heroAsset from "@/assets/hero-farm.png.asset.json";
+const heroAsset = "/images/hero-farm.png";
 import UpcomingTrainings from "@/components/UpcomingTrainings";
 import WhatYouWillLearn from "@/components/WhatYouWillLearn";
 import AboutDwitFarm from "@/components/AboutDwitFarm";
@@ -48,7 +48,7 @@ function Index() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src={heroAsset.url}
+          src={heroAsset}
           alt="Gavran hens roaming freely under trees at DWIT Farm at golden hour"
           className="hero-zoom h-full w-full object-cover object-center will-change-transform"
         />

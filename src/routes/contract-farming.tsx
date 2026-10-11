@@ -24,17 +24,17 @@ import {
   X,
 } from "lucide-react";
 
-import heroAsset from "@/assets/franchise-hero.jpg.asset.json";
-import chicksAsset from "@/assets/gp-chicks.jpg.asset.json";
-import hensAsset from "@/assets/gp-hens.jpg.asset.json";
-import farmAsset from "@/assets/hero-farm.png.asset.json";
-import responsibilityAsset from "@/assets/dwit-farm-responsibility.png.asset.json";
-import farmerResponsibilityAsset from "@/assets/dwit-farmer-responsibility.png.asset.json";
-import requiredDocumentsAsset from "@/assets/dwit-required-documents.png.asset.json";
-import contractDurationAsset from "@/assets/dwit-contract-duration-renewal.png.asset.json";
-import contractCancellationAsset from "@/assets/dwit-contract-cancellation.png.asset.json";
-import farmerBenefitsAsset from "@/assets/dwit-farmer-benefits.png.asset.json";
-import specialTermsAsset from "@/assets/dwit-special-terms-conditions.png.asset.json";
+const heroAsset = "/images/franchise-hero.jpg";
+const chicksAsset = "/images/gp-chicks.jpg";
+const hensAsset = "/images/gp-hens.jpg";
+const farmAsset = "/images/hero-farm.png";
+const responsibilityAsset = "/images/dwit-farm-responsibility.png";
+const farmerResponsibilityAsset = "/images/dwit-farmer-responsibility.png";
+const requiredDocumentsAsset = "/images/dwit-required-documents.png";
+const contractDurationAsset = "/images/dwit-contract-duration-renewal.png";
+const contractCancellationAsset = "/images/dwit-contract-cancellation.png";
+const farmerBenefitsAsset = "/images/dwit-farmer-benefits.png";
+const specialTermsAsset = "/images/dwit-special-terms-conditions.png";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -76,7 +76,7 @@ const DETAILS = [
     no: "01",
     title: "DWIT Farm ची जबाबदारी",
     icon: ClipboardCheck,
-    image: responsibilityAsset.url,
+    image: responsibilityAsset,
     points: [
       "दर्जेदार गावरान पिल्ले पुरवणे",
       "Vaccination Time Table देणे",
@@ -92,7 +92,7 @@ const DETAILS = [
     no: "02",
     title: "शेतकऱ्याची जबाबदारी",
     icon: Sprout,
-    image: farmerResponsibilityAsset.url,
+    image: farmerResponsibilityAsset,
     alert: true,
     points: [
       "कंपनीच्या आराखड्यानुसार शेड तयार करणे",
@@ -108,7 +108,7 @@ const DETAILS = [
     no: "03",
     title: "Buy Back Policy",
     icon: Scale,
-    image: hensAsset.url,
+    image: hensAsset,
     points: [
       "ठराविक वजनानंतर किंवा वयानुसार पक्षी खरेदी केले जातील.",
       "खरेदी दर त्या वेळच्या बाजारभाव, गुणवत्ता आणि वजनावर ठरेल.",
@@ -121,7 +121,7 @@ const DETAILS = [
     no: "04",
     title: "करार कालावधी आणि नूतनीकरण",
     icon: FileCheck2,
-    image: contractDurationAsset.url,
+    image: contractDurationAsset,
     points: [
       "कराराचा कालावधी 1 वर्ष / 3 वर्ष / 5 वर्ष असा असू शकतो.",
       "दोन्ही पक्षांच्या लेखी संमतीने कराराचे नूतनीकरण केले जाईल.",
@@ -132,14 +132,14 @@ const DETAILS = [
     no: "05",
     title: "आवश्यक कागदपत्रे",
     icon: FileText,
-    image: requiredDocumentsAsset.url,
+    image: requiredDocumentsAsset,
     points: ["आधार कार्ड", "PAN कार्ड (असल्यास)", "बँक पासबुक", "7/12 किंवा जमिनीचा पुरावा", "दोन फोटो"],
   },
   {
     no: "06",
     title: "करार रद्द होण्याची कारणे",
     icon: X,
-    image: contractCancellationAsset.url,
+    image: contractCancellationAsset,
     alert: true,
     points: [
       "कंपनीच्या नियमांचे उल्लंघन",
@@ -152,7 +152,7 @@ const DETAILS = [
     no: "07",
     title: "शेतकऱ्यांना मिळणारे फायदे",
     icon: ChartNoAxesCombined,
-    image: farmerBenefitsAsset.url,
+    image: farmerBenefitsAsset,
     points: [
       "दर्जेदार पिल्ले आणि तांत्रिक मार्गदर्शन",
       "नियमित प्रशिक्षण आणि मार्गदर्शन",
@@ -165,7 +165,7 @@ const DETAILS = [
     no: "08",
     title: "विशेष अटी व शर्ती",
     icon: Scale,
-    image: specialTermsAsset.url,
+    image: specialTermsAsset,
     alert: true,
     points: [
       "नैसर्गिक आपत्ती आल्यास दोन्ही पक्ष चर्चा करून निर्णय घेतील.",
@@ -248,7 +248,7 @@ function ContractFarmingPage() {
 
       <main className="bg-white">
         <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
-          <img src={heroAsset.url} alt="DWIT Farm poultry sheds and free-range Gavran hens" width={1600} height={900} className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center]" />
+          <img src={heroAsset} alt="DWIT Farm poultry sheds and free-range Gavran hens" width={1600} height={900} className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center]" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cream from-20% via-cream/90 via-45% to-transparent to-72%" />
           <div className="absolute inset-0 -z-10 bg-cream/55 sm:hidden" />
           <div className="relative mx-auto w-full max-w-[1400px] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
@@ -271,7 +271,7 @@ function ContractFarmingPage() {
 
         <section className="bg-cream/45 py-14 sm:py-18">
           <div className="mx-auto grid max-w-[1400px] items-center gap-8 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:px-12">
-            <img src={hensAsset.url} alt="Healthy Gavran hens at a poultry farm" className="h-[310px] w-full rounded-lg object-cover shadow-xl" loading="lazy" />
+            <img src={hensAsset} alt="Healthy Gavran hens at a poultry farm" className="h-[310px] w-full rounded-lg object-cover shadow-xl" loading="lazy" />
             <div>
               <p className="text-sm font-semibold uppercase text-gold-deep">शेतकऱ्यांसोबत एक विश्वासार्ह भागीदारी</p>
               <h2 className="mt-2 font-display text-3xl font-extrabold text-forest sm:text-4xl">कॉन्ट्रॅक्ट फार्मिंग म्हणजे काय?</h2>
@@ -303,7 +303,7 @@ function ContractFarmingPage() {
         <section className="py-14 sm:py-18">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
             <div className="relative isolate overflow-hidden rounded-lg bg-forest px-7 py-10 text-cream sm:px-10 lg:px-14">
-              <img src={farmAsset.url} alt="DWIT Farm poultry sheds" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30" loading="lazy" />
+              <img src={farmAsset} alt="DWIT Farm poultry sheds" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30" loading="lazy" />
               <div className="absolute inset-0 -z-10 bg-gradient-to-r from-forest via-forest/95 to-forest/50" />
               <div className="max-w-3xl"><div className="flex items-center gap-4"><span className="grid h-14 w-14 place-items-center rounded-full bg-gold text-ink"><CircleDollarSign className="h-7 w-7" /></span><div><p className="font-semibold text-gold">DWIT FARM चे उद्दिष्ट</p><h2 className="font-display text-3xl font-extrabold sm:text-4xl">गावरान कुक्कुटपालनातून चांगला व्यवसाय उभा करा</h2></div></div><p className="mt-6 text-[17px] leading-relaxed text-cream/85">योग्य पिल्ले, फार्म व्यवस्थापनाचे मार्गदर्शन, आरोग्यविषयक मदत आणि Buy Back सुविधेसह DWIT Farm शेतकऱ्यांना गावरान कुक्कुटपालनाचा व्यवसाय सुरू करण्यासाठी आणि तो योग्य पद्धतीने पुढे नेण्यासाठी सहकार्य करते.</p></div>
             </div>

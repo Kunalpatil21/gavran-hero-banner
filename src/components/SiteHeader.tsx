@@ -2,7 +2,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import logoAsset from "@/assets/dwit-logo-primary.png.asset.json";
+const logoAsset = "/images/dwit-logo-primary.png";
 
 const NAV_ITEMS = [
   { label: "Home", to: "/" },
@@ -38,7 +38,7 @@ export default function SiteHeader() {
       <nav className="mx-auto grid max-w-[1600px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 sm:px-8 lg:grid-cols-[auto_1fr_auto]">
         <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="DWIT Farm home">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="DWIT Farm logo"
             width={56}
             height={56}

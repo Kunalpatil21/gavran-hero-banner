@@ -20,15 +20,15 @@ import {
   Check,
 } from "lucide-react";
 
-import bannerAsset from "@/assets/gp-banner.jpg.asset.json";
-import chicksAsset from "@/assets/gp-chicks.jpg.asset.json";
-import hensAsset from "@/assets/gp-hens.jpg.asset.json";
-import meatAsset from "@/assets/gp-meat.jpg.asset.json";
-import eggsAsset from "@/assets/gp-eggs.jpg.asset.json";
-import monthOldChicksImage from "@/assets/gp-month-old-chicks.jpg";
-import azollaBedImage from "@/assets/gp-azolla-bed.jpg";
-import poultryFeedImage from "@/assets/gp-poultry-feed.jpg";
-import poultryEquipmentImage from "@/assets/gp-poultry-equipment.jpg";
+const bannerAsset = "/images/gp-banner.jpg";
+const chicksAsset = "/images/gp-chicks.jpg";
+const hensAsset = "/images/gp-hens.jpg";
+const meatAsset = "/images/gp-meat.jpg";
+const eggsAsset = "/images/gp-eggs.jpg";
+const monthOldChicksImage = "/images/gp-month-old-chicks.jpg";
+const azollaBedImage = "/images/gp-azolla-bed.jpg";
+const poultryFeedImage = "/images/gp-poultry-feed.jpg";
+const poultryEquipmentImage = "/images/gp-poultry-equipment.jpg";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -69,7 +69,7 @@ const USPS = [
 const PRODUCTS = [
   {
     no: "01",
-    image: chicksAsset.url,
+    image: chicksAsset,
     alt: "एक दिवसांची गावरान पिल्ले",
     title: "१ दिवसांचे पिल्ले",
     english: "1-Day Chick",
@@ -89,7 +89,7 @@ const PRODUCTS = [
   },
   {
     no: "03",
-    image: hensAsset.url,
+    image: hensAsset,
     alt: "गावरान कोंबडा आणि कोंबडी",
     title: "गावरान कोंबडा / कोंबडी",
     english: "Hen / Cock",
@@ -99,7 +99,7 @@ const PRODUCTS = [
   },
   {
     no: "04",
-    image: eggsAsset.url,
+    image: eggsAsset,
     alt: "गावरान अंडी",
     title: "गावरान अंडी",
     english: "Eggs",
@@ -139,7 +139,7 @@ const PRODUCTS = [
   },
   {
     no: "08",
-    image: meatAsset.url,
+    image: meatAsset,
     alt: "स्वच्छ ताजे गावरान चिकन",
     title: "गावरान चिकन",
     english: "Pure Gavran Chicken",
@@ -209,7 +209,7 @@ function GavranPoultryPage() {
         {/* Banner */}
         <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
           <img
-            src={bannerAsset.url}
+            src={bannerAsset}
             alt="Farmer holding a healthy gavran hen with free-range chickens on the DWIT Farm"
             className="absolute inset-0 -z-10 h-full w-full object-cover object-[70%_center]"
             loading="eager"

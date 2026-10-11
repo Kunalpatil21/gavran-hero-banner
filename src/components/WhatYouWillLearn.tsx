@@ -16,12 +16,12 @@ import {
   Headphones,
 } from "lucide-react";
 
-import farmSetup from "@/assets/dwit-poultry-farm-setup.png.asset.json";
-import chicks from "@/assets/dwit-gavran-rooster-and-hen.png.asset.json";
-import health from "@/assets/dwit-poultry-health-medicine.png.asset.json";
-import feed from "@/assets/dwit-poultry-feed-and-cost.png.asset.json";
-import business from "@/assets/dwit-poultry-business-guidance.png.asset.json";
-import session from "@/assets/training-session.jpg.asset.json";
+const farmSetup = "/images/dwit-poultry-farm-setup.png";
+const chicks = "/images/dwit-gavran-rooster-and-hen.png";
+const health = "/images/dwit-poultry-health-medicine.png";
+const feed = "/images/dwit-poultry-feed-and-cost.png";
+const business = "/images/dwit-poultry-business-guidance.png";
+const session = "/images/training-session.jpg";
 
 
 type Topic = {
@@ -37,7 +37,7 @@ const TOPICS: Topic[] = [
   {
     id: "setup",
     title: "फार्म सेट-अप",
-    image: farmSetup.url,
+    image: farmSetup,
     alt: "Poultry farm setup with a shed, feeders, water tank and outdoor hens",
     points: [
       "फार्म बनवण्याचे नियम",
@@ -50,7 +50,7 @@ const TOPICS: Topic[] = [
   {
     id: "rearing",
     title: "कोंबडी संगोपन",
-    image: chicks.url,
+    image: chicks,
     alt: "Gavran rooster and hen standing together outdoors on a farm",
     points: [
       "पिल्लांची योग्य निवड",
@@ -63,7 +63,7 @@ const TOPICS: Topic[] = [
   {
     id: "health",
     title: "आरोग्य आणि औषध",
-    image: health.url,
+    image: health,
     alt: "Poultry vaccines, medicines and health-care supplies on a farm",
     points: [
       "रोगांची लक्षणे",
@@ -76,7 +76,7 @@ const TOPICS: Topic[] = [
   {
     id: "feed",
     title: "खाद्य व खर्च",
-    image: feed.url,
+    image: feed,
     alt: "Poultry feed, grains, feeders and a calculator for feed cost planning",
     points: [
       "पिल्लांचे खाद्य नियोजन",
@@ -89,7 +89,7 @@ const TOPICS: Topic[] = [
   {
     id: "business",
     title: "व्यवसाय मार्गदर्शन",
-    image: business.url,
+    image: business,
     alt: "Poultry business planning with charts, coins, a calculator and a farm model",
     points: [
       "कोंबड्यांच्या विक्रीची पद्धत",
@@ -305,7 +305,7 @@ export default function WhatYouWillLearn() {
             <div className="lg:sticky lg:top-24">
               <div className="group relative overflow-hidden rounded-[26px] border border-gold/30 shadow-[0_28px_70px_-40px_rgba(20,40,20,0.9)]">
                 <img
-                  src={session.url}
+                  src={session}
                   alt="Farmers attending a Gavran poultry training session with a trainer at DWIT Farm"
                   loading="lazy"
                   width={1200}

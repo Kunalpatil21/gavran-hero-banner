@@ -23,9 +23,9 @@ import {
   Handshake,
 } from "lucide-react";
 
-import heroAsset from "@/assets/franchise-hero.jpg.asset.json";
-import henAsset from "@/assets/franchise-hen.jpg.asset.json";
-import umeshAsset from "@/assets/umesh-patil.png.asset.json";
+const heroAsset = "/images/franchise-hero.jpg";
+const henAsset = "/images/franchise-hen.jpg";
+const umeshAsset = "/images/umesh-patil.png";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -145,7 +145,7 @@ function FranchisePage() {
         {/* Hero */}
         <section className="relative isolate overflow-hidden bg-cream">
           <img
-            src={heroAsset.url}
+            src={heroAsset}
             alt="Gavran hens inside a Dwit Farm poultry shed"
             width={1600}
             height={900}
@@ -203,7 +203,7 @@ function FranchisePage() {
             <div className="flex items-center justify-end">
               <div className="flex max-w-sm items-center gap-5 rounded-[18px] bg-forest/90 p-6 text-cream shadow-[0_24px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur-sm">
                 <img
-                  src={umeshAsset.url}
+                  src={umeshAsset}
                   alt="Umesh Patil, founder of Dwit Farm"
                   loading="lazy"
                   className="hidden h-28 w-28 shrink-0 rounded-full border-2 border-gold/50 object-cover object-top sm:block"
@@ -274,7 +274,7 @@ function FranchisePage() {
 
             <div className="relative isolate overflow-hidden rounded-[20px] border border-forest/10 bg-cream/60 p-7 sm:p-9">
               <img
-                src={henAsset.url}
+                src={henAsset}
                 alt="Gavran hen with a chick"
                 loading="lazy"
                 className="pointer-events-none absolute bottom-0 right-0 -z-10 h-52 w-52 object-cover opacity-90 [mask-image:radial-gradient(circle_at_60%_60%,black,transparent_72%)]"

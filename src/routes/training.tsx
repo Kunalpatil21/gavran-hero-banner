@@ -11,8 +11,8 @@ import {
   ClipboardList,
 } from "lucide-react";
 
-import trainingHero from "@/assets/training-hero.jpg.asset.json";
-import trainingSession from "@/assets/training-session.jpg.asset.json";
+const trainingHero = "/images/training-hero.jpg";
+const trainingSession = "/images/training-session.jpg";
 import SiteHeader from "@/components/SiteHeader";
 import SectionDivider from "@/components/SectionDivider";
 import SiteFooter from "@/components/SiteFooter";
@@ -69,7 +69,7 @@ function TrainingPage() {
         {/* Hero banner */}
         <section className="relative isolate flex min-h-[360px] items-center overflow-hidden bg-cream md:min-h-[400px] lg:min-h-[460px]">
           <img
-            src={trainingHero.url}
+            src={trainingHero}
             alt="Farmer holding a healthy Gavran hen beside an open poultry shed at DWIT Farm"
             width={1600}
             height={900}
@@ -125,7 +125,7 @@ function TrainingPage() {
               </div>
 
               <img
-                src={trainingSession.url}
+                src={trainingSession}
                 alt="Farmers attending an on-farm poultry training session at DWIT Farm"
                 loading="lazy"
                 className="h-full max-h-[420px] w-full rounded-xl object-cover shadow-[0_28px_60px_-40px_rgba(20,40,20,0.9)]"
