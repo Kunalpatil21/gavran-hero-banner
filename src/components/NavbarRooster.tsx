@@ -39,7 +39,7 @@ export default function NavbarRooster() {
       onClick={crow}
       aria-label="Gavran rooster — click to hear it crow"
       title="कुकडू कू!"
-      className="navbar-rooster h-[52px] w-[52px] shrink-0 rounded-full p-1 hover:bg-transparent focus-visible:ring-gold"
+      className="navbar-rooster h-[68px] w-[68px] shrink-0 rounded-full p-1 hover:bg-transparent focus-visible:ring-gold"
       data-crowing={playing}
     >
       <span className="rooster-art" aria-hidden="true">
