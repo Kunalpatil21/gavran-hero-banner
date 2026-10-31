@@ -170,6 +170,25 @@
   }
 }
 
+@keyframes rooster-flap {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  20% {
+    transform: translateY(-8%) rotate(-6deg) scale(1.08);
+  }
+  40% {
+    transform: translateY(0) rotate(4deg) scale(1.04);
+  }
+  60% {
+    transform: translateY(-6%) rotate(-4deg) scale(1.08);
+  }
+  80% {
+    transform: translateY(0) rotate(2deg) scale(1.02);
+  }
+}
+
 @keyframes slow-zoom {
   from {
     transform: scale(1.04);
@@ -188,6 +207,10 @@
   animation: slow-zoom 22s ease-out forwards alternate infinite;
 }
 
+@utility rooster-crow {
+  animation: rooster-flap 0.9s ease-in-out infinite;
+}
+
 @utility no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -198,7 +221,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-zoom,
-  .hero-rise {
+  .hero-rise,
+  .rooster-crow {
     animation: none;
     opacity: 1;
   }

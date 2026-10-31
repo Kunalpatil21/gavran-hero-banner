@@ -1,6 +1,9 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { ArrowRight, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const roosterImage = "/images/rooster.png";
+const roosterSound = "/audio/rooster-crow.ogg";
 
 const logoAsset = "/images/dwit-logo-primary.png";
 
@@ -17,6 +20,20 @@ export default function SiteHeader() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [crowing, setCrowing] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const crow = () => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio(roosterSound);
+      audioRef.current.addEventListener("ended", () => setCrowing(false));
+    }
+    const audio = audioRef.current;
+    if (!audio.paused) return; // never overlap clips
+    setCrowing(true);
+    audio.currentTime = 0;
+    void audio.play().catch(() => setCrowing(false));
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -74,13 +91,23 @@ export default function SiteHeader() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <Link
-            to="/training"
-            className="group hidden items-center gap-3 rounded-md bg-gradient-to-r from-gold-deep to-gold px-6 py-3 text-sm font-medium text-ink shadow-[0_10px_30px_-12px_rgba(0,0,0,0.9)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-12px_var(--color-gold)] sm:inline-flex"
+          <button
+            type="button"
+            onClick={crow}
+            aria-label="Gavran rooster — click to hear it crow"
+            title="कुकडू कू!"
+            className="group inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full p-1 transition-transform duration-300 hover:scale-110 hover:-rotate-3 focus-visible:scale-110"
           >
-            Join Training
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+            <img
+              src={roosterImage}
+              alt=""
+              width={48}
+              height={48}
+              className={`h-11 w-11 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)] sm:h-12 sm:w-12 ${
+                crowing ? "rooster-crow" : ""
+              }`}
+            />
+          </button>
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
