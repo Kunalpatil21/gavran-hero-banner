@@ -96,7 +96,7 @@ export default function SiteHeader() {
             onClick={crow}
             aria-label="Gavran rooster — click to hear it crow"
             title="कुकडू कू!"
-            className="group hidden shrink-0 cursor-pointer items-center justify-center rounded-full p-1 transition-transform duration-300 hover:scale-110 hover:-rotate-3 focus-visible:scale-110 sm:inline-flex"
+            className="group inline-flex shrink-0 cursor-pointer items-center justify-center rounded-full p-1 transition-transform duration-300 hover:scale-110 hover:-rotate-3 focus-visible:scale-110"
           >
             <img
               src={roosterImage}
