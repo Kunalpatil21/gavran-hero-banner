@@ -20,6 +20,20 @@ export default function SiteHeader() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [crowing, setCrowing] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const crow = () => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio(roosterSound);
+      audioRef.current.addEventListener("ended", () => setCrowing(false));
+    }
+    const audio = audioRef.current;
+    if (!audio.paused) return; // never overlap clips
+    setCrowing(true);
+    audio.currentTime = 0;
+    void audio.play().catch(() => setCrowing(false));
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
