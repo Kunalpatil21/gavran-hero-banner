@@ -6,7 +6,7 @@ export default function WhatsAppFloat() {
     <a
       href={WHATSAPP_COMMUNITY_URL}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       aria-label="Join Our WhatsApp Community"
       className="group fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-[0_12px_28px_-10px_rgba(0,0,0,0.65)] transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-ink sm:bottom-6 sm:right-6"
     >
