@@ -78,7 +78,7 @@ function isFuture(dateStr: string) {
   return training.getTime() >= today.getTime();
 }
 
-function TrainingCard({ t }: { t: Training }) {
+function TrainingCard({ t, showViewDetails }: { t: Training; showViewDetails: boolean }) {
   const upcoming = isFuture(t.date);
 
   return (
@@ -140,13 +140,15 @@ function TrainingCard({ t }: { t: Training }) {
         </div>
 
         <div className="mt-auto flex items-center gap-2.5 pt-4">
-          <Link
-            to="/training"
-            className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-forest px-3 py-3 text-sm font-semibold text-cream transition-colors duration-300 hover:bg-gold-deep"
-          >
-            View Details
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
+          {showViewDetails && (
+            <Link
+              to="/training"
+              className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-forest px-3 py-3 text-sm font-semibold text-cream transition-colors duration-300 hover:bg-gold-deep"
+            >
+              View Details
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          )}
           <a
             href={t.mapUrl}
             target="_blank"
@@ -163,7 +165,13 @@ function TrainingCard({ t }: { t: Training }) {
 }
 
 
-export default function UpcomingTrainings({ showViewAll = true }: { showViewAll?: boolean }) {
+export default function UpcomingTrainings({
+  showViewAll = true,
+  showViewDetails = true,
+}: {
+  showViewAll?: boolean;
+  showViewDetails?: boolean;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
@@ -253,7 +261,7 @@ export default function UpcomingTrainings({ showViewAll = true }: { showViewAll?
           className="no-scrollbar mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2"
         >
           {TRAININGS.map((t) => (
-            <TrainingCard key={t.id} t={t} />
+            <TrainingCard key={t.id} t={t} showViewDetails={showViewDetails} />
           ))}
         </div>
 
