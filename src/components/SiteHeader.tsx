@@ -75,6 +75,7 @@ export default function SiteHeader() {
         </ul>
 
         <div className="flex items-center gap-3">
+          <NavbarRooster />
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
@@ -84,7 +85,6 @@ export default function SiteHeader() {
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
-          <NavbarRooster />
         </div>
       </nav>
 
