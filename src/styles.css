@@ -140,6 +140,10 @@
   --color-cream: oklch(0.96 0.02 90);
   --color-forest: oklch(0.28 0.05 150);
   --color-ink: oklch(0.14 0.01 120);
+  /* WhatsApp brand colors kept as tokens so the floating button follows the same
+     theming path as the rest of the palette. */
+  --color-whatsapp: oklch(0.761 0.2015 149.74);
+  --color-whatsapp-foreground: oklch(1 0 0);
 }
 
 @layer base {
