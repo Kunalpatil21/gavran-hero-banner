@@ -96,7 +96,7 @@ function TrainingPage() {
           </div>
         </section>
 
-        <UpcomingTrainings showViewAll={false} />
+        <UpcomingTrainings showViewAll={false} showViewDetails={false} />
         <WhatYouWillLearn />
 
         {/* What you will learn */}
